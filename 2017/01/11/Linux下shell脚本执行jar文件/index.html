@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//litten.me">
-  <title>第二篇文章 | Star45的博客</title>
+  <title>Linux下shell脚本执行jar文件 | Star45的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="不知名学校毕业，就职于某电商网站。">
+  <meta name="description" content="使用shell脚本执行一些命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第二篇文章">
-<meta property="og:url" content="//litten.me/2017/01/11/第二篇文章/index.html">
+<meta property="og:title" content="Linux下shell脚本执行jar文件">
+<meta property="og:url" content="//litten.me/2017/01/11/Linux下shell脚本执行jar文件/index.html">
 <meta property="og:site_name" content="Star45的博客">
-<meta property="og:description" content="不知名学校毕业，就职于某电商网站。">
-<meta property="og:updated_time" content="2017-01-11T08:19:47.686Z">
+<meta property="og:description" content="使用shell脚本执行一些命令">
+<meta property="og:updated_time" content="2017-01-11T10:23:51.751Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第二篇文章">
-<meta name="twitter:description" content="不知名学校毕业，就职于某电商网站。">
+<meta name="twitter:title" content="Linux下shell脚本执行jar文件">
+<meta name="twitter:description" content="使用shell脚本执行一些命令">
   
     <link rel="alternative" href="/atom.xml" title="Star45的博客" type="application/atom+xml">
   
@@ -157,25 +157,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-第二篇文章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Linux下shell脚本执行jar文件" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      第二篇文章
+      Linux下shell脚本执行jar文件
     </h1>
   
 
-        <a href="/2017/01/11/第二篇文章/" class="archive-article-date">
-  	<time datetime="2017-01-11T08:19:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-11</time>
+        <a href="/2017/01/11/Linux下shell脚本执行jar文件/" class="archive-article-date">
+  	<time datetime="2017-01-11T10:11:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-11</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <blockquote>
+<p>使用shell脚本执行一些命令</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="以下是具体的命令脚本"><a href="#以下是具体的命令脚本" class="headerlink" title="以下是具体的命令脚本"></a>以下是具体的命令脚本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="comment">#description: 启动重启server服务 </span></div><div class="line"><span class="comment">#端口号，根据此端口号确定PID  </span></div><div class="line">PORT=9997  </div><div class="line"><span class="comment">#启动命令所在目录  </span></div><div class="line">HOME=<span class="string">'/usr/etc/server/java/server'</span>  </div><div class="line">  </div><div class="line"><span class="comment">#查询出监听了PORT端口TCP协议的程序  </span></div><div class="line">pid=`netstat -anp|grep <span class="variable">$PORT</span>|awk <span class="string">'&#123;printf $7&#125;'</span>|cut <span class="_">-d</span>/ <span class="_">-f</span>1`  </div><div class="line">  </div><div class="line">  </div><div class="line"><span class="function"><span class="title">start</span></span>()&#123;  </div><div class="line">   <span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$pid</span>"</span> ]; <span class="keyword">then</span>  </div><div class="line">      <span class="built_in">echo</span> <span class="string">"server already start,pid:<span class="variable">$pid</span>"</span>  </div><div class="line">      <span class="built_in">return</span> 0</div><div class="line">   <span class="keyword">fi</span></div><div class="line">   <span class="comment">#进入命令所在目录  </span></div><div class="line">   <span class="built_in">cd</span> <span class="variable">$HOME</span>  </div><div class="line">   nohup java -jar <span class="variable">$HOME</span>/pserver9997.jar &gt; <span class="variable">$HOME</span>/server.log 2&gt;&amp;1 &amp;   <span class="comment">#启动聊天服务器 把日志输出到HOME目录的server.log文件中   </span></div><div class="line">   <span class="built_in">echo</span> <span class="string">"start at port:<span class="variable">$PORT</span>"</span>  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="function"><span class="title">stop</span></span>()&#123;  </div><div class="line">   <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$pid</span>"</span> ]; <span class="keyword">then</span>  </div><div class="line">      <span class="built_in">echo</span> <span class="string">"not find program on port:<span class="variable">$PORT</span>"</span>  </div><div class="line">      <span class="built_in">return</span> 0</div><div class="line">   <span class="keyword">fi</span></div><div class="line">   <span class="comment">#结束程序，使用讯号2，如果不行可以尝试讯号9强制结束  </span></div><div class="line">   <span class="built_in">kill</span> -9 <span class="variable">$pid</span></div><div class="line">   rm -rf <span class="variable">$pid</span></div><div class="line">   <span class="built_in">echo</span> <span class="string">"kill program use signal 2,pid:<span class="variable">$pid</span>"</span>  </div><div class="line">&#125;  </div><div class="line"><span class="function"><span class="title">status</span></span>()&#123;  </div><div class="line">   <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$pid</span>"</span> ]; <span class="keyword">then</span>  </div><div class="line">      <span class="built_in">echo</span> <span class="string">"not find program on port:<span class="variable">$PORT</span>"</span>  </div><div class="line">   <span class="keyword">else</span>  </div><div class="line">      <span class="built_in">echo</span> <span class="string">"program is running,pid:<span class="variable">$pid</span>"</span>  </div><div class="line">   <span class="keyword">fi</span>  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span>  </div><div class="line">   start)  </div><div class="line">      start  </div><div class="line">   ;;  </div><div class="line">   stop)  </div><div class="line">      stop  </div><div class="line">   ;;</div><div class="line">   restart)  </div><div class="line">      <span class="variable">$0</span> stop</div><div class="line">      sleep 2</div><div class="line">      <span class="variable">$0</span> start</div><div class="line">    ;;</div><div class="line">   status)  </div><div class="line">      status  </div><div class="line">   ;;  </div><div class="line">   *)  </div><div class="line">      <span class="built_in">echo</span> <span class="string">"Usage: &#123;start|stop|status&#125;"</span>  </div><div class="line">   ;;  </div><div class="line"><span class="keyword">esac</span>  </div><div class="line">  </div><div class="line"><span class="built_in">exit</span> 0</div></pre></td></tr></table></figure>
+
       
 
       
@@ -204,6 +209,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color1">Linux</a>
+        </li>
+      
+		</ul>
+	</div>
+
       
 
       
@@ -254,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://litten.me/2017/01/11/第二篇文章/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://litten.me/2017/01/11/Linux下shell脚本执行jar文件/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -268,18 +284,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/01/11/第一篇文章/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/11/github维护/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          第一篇文章
+          github维护
         
       </div>
     </a>
   
   
-    <a href="/2012/12/19/a-chrismas-ico/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">圣诞到了，帮修改一个头像</div>
+    <a href="/2017/01/11/Sublime-Text-3-《第四章-插件》/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Sublime Text 3 《第四章 - 插件》</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -399,6 +415,22 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">杂谈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Sublime Text 3</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
