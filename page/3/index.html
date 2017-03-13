@@ -158,119 +158,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hexo/tag-plugins" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/tag-plugins/">标签插件（Tag Plugins）</a>
-    </h1>
-  
-
-        <a href="/2017/03/13/hexo/tag-plugins/" class="archive-article-date">
-  	<time datetime="2017-03-13T07:23:30.605Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>标签插件和 Front-matter 中的标签不同，它们是用于在文章中快速插入特定内容的插件。</p>
-<h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><p>在文章中插入引言，可包含作者、来源和标题。</p>
-<p><strong>别号：</strong> quote</p>
-<figure class="highlight twig"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">blockquote</span> [author[, <span class="name">source</span>]] [link] [source_link_title] %&#125;</span><span class="xml"></span></div><div class="line">content</div><div class="line"><span class="template-tag">&#123;% <span class="name">endblockquote</span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><p><strong>没有提供参数，则只输出普通的 blockquote</strong></p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">blockquote</span> %&#125;</span><span class="xml"></span></div><div class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</div><div class="line"><span class="template-tag">&#123;% <span class="name">endblockquote</span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
-</blockquote>
-<p><strong>引用书上的句子</strong></p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</div><div class="line"><span class="keyword">Do</span> <span class="keyword">not</span> just seek happiness <span class="keyword">for</span> yourself. Seek happiness <span class="keyword">for</span> <span class="keyword">all</span>. Through kindness. Through mercy.</div><div class="line">&#123;% endblockquote %&#125;</div></pre></td></tr></table></figure>
-<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
-<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
-<p><strong>引用 Twitter</strong></p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% blockquote <span class="meta">@DevDocs</span> <span class="string">https:</span><span class="comment">//twitter.com/devdocs/status/356095192085962752 %&#125;</span></div><div class="line"><span class="string">NEW:</span> DevDocs now comes with syntax highlighting. <span class="string">http:</span><span class="comment">//devdocs.io</span></div><div class="line">&#123;% endblockquote %&#125;</div></pre></td></tr></table></figure>
-<blockquote><p>NEW: DevDocs now comes with syntax highlighting. <a href="http://devdocs.io" target="_blank" rel="external">http://devdocs.io</a></p>
-<footer><strong>@DevDocs</strong><cite><a href="https://twitter.com/devdocs/status/356095192085962752" target="_blank" rel="external">twitter.com/devdocs/status/356095192085962752</a></cite></footer></blockquote>
-<p><strong>引用网络上的文章</strong></p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% blockquote Seth Godin http://sethgodin.typepad.<span class="keyword">com</span>/seths_blog/<span class="number">2009</span>/<span class="number">07</span>/welcome-<span class="keyword">to</span>-island-marketing.html Welcome <span class="keyword">to</span> Island Marketing %&#125;</div><div class="line">Every interaction <span class="keyword">is</span> both precious <span class="built_in">and</span> <span class="keyword">an</span> opportunity <span class="keyword">to</span> delight.</div><div class="line">&#123;% endblockquote %&#125;</div></pre></td></tr></table></figure>
-<blockquote><p>Every interaction is both precious and an opportunity to delight.</p>
-<footer><strong>Seth Godin</strong><cite><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html" target="_blank" rel="external">Welcome to Island Marketing</a></cite></footer></blockquote>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><p>在文章中插入代码。</p>
-<p><strong>别名：</strong> code</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% codeblock <span class="string">[title]</span> <span class="string">[lang:language]</span> <span class="string">[url]</span> <span class="string">[link text]</span> %&#125;</div><div class="line">code snippet</div><div class="line">&#123;% endcodeblock %&#125;</div></pre></td></tr></table></figure>
-<h3 id="样例-1"><a href="#样例-1" class="headerlink" title="样例"></a>样例</h3><p><strong>普通的代码块</strong></p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">codeblock</span> %&#125;</span><span class="xml"></span></div><div class="line">alert('Hello World!');</div><div class="line"><span class="template-tag">&#123;% <span class="name">endcodeblock</span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">alert</span>(<span class="string">'Hello World!'</span>);</div></pre></td></tr></table></figure>
-<p><strong>指定语言</strong></p>
-<figure class="highlight groovy"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% codeblock <span class="string">lang:</span>objc %&#125;</div><div class="line">[rectangle <span class="string">setX:</span> <span class="number">10</span> <span class="string">y:</span> <span class="number">10</span> <span class="string">width:</span> <span class="number">20</span> <span class="string">height:</span> <span class="number">20</span>];</div><div class="line">&#123;% endcodeblock %&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</div></pre></td></tr></table></figure>
-<p><strong>附加说明</strong></p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">codeblock</span> Array.map %&#125;</span><span class="xml"></span></div><div class="line">array.map(callback[, thisArg])</div><div class="line"><span class="template-tag">&#123;% <span class="name">endcodeblock</span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<figure class="highlight cpp"><figcaption><span>Array.map</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">array</span>.<span class="built_in">map</span>(callback[, thisArg])</div></pre></td></tr></table></figure>
-<p><strong>附加说明和网址</strong></p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;% codeblock _.compact ht<span class="symbol">tp:</span>//underscorejs.org/#compact Underscore.js %&#125;</div><div class="line">_.compact([<span class="number">0</span>, <span class="number">1</span>, <span class="built_in">false</span>, <span class="number">2</span>, '', <span class="number">3</span>]);</div><div class="line">=&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div><div class="line">&#123;% endcodeblock %&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight excel"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="external">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">_.compact([<span class="number">0</span>, <span class="number">1</span>, <span class="built_in">false</span>, <span class="number">2</span>, '', <span class="number">3</span>]);</div><div class="line">=&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</div></pre></td></tr></table></figure>
-<h2 id="反引号代码块"><a href="#反引号代码块" class="headerlink" title="反引号代码块"></a>反引号代码块</h2><p>另一种形式的代码块，不同的是它使用三个反引号来包裹。</p>
-
-&#96`` [language] [title] [url] [link text]
-code snippet
-&#96;``
-
-<h2 id="Pull-Quote"><a href="#Pull-Quote" class="headerlink" title="Pull Quote"></a>Pull Quote</h2><p>在文章中插入 Pull quote。</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">pullquote</span> [class] %&#125;</span><span class="xml"></span></div><div class="line">content</div><div class="line"><span class="template-tag">&#123;% <span class="name">endpullquote</span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<h2 id="jsFiddle"><a href="#jsFiddle" class="headerlink" title="jsFiddle"></a>jsFiddle</h2><p>在文章中嵌入 jsFiddle。</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% jsfiddle shorttag [tabs] [skin] [width] [height] %&#125;</div></pre></td></tr></table></figure>
-<h2 id="Gist"><a href="#Gist" class="headerlink" title="Gist"></a>Gist</h2><p>在文章中嵌入 Gist。</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% gist gist_id [filename] %&#125;</div></pre></td></tr></table></figure>
-<h2 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h2><p>在文章中插入 iframe。</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% iframe url [width] [height] %&#125;</div></pre></td></tr></table></figure>
-<h2 id="Image"><a href="#Image" class="headerlink" title="Image"></a>Image</h2><p>在文章中插入指定大小的图片。</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% img [<span class="keyword">class</span> names] /path/to/<span class="built_in">image</span> [<span class="built_in">width</span>] [<span class="built_in">height</span>] [title <span class="built_in">text</span> [alt <span class="built_in">text</span>]] %&#125;</div></pre></td></tr></table></figure>
-<h2 id="Link"><a href="#Link" class="headerlink" title="Link"></a>Link</h2><p>在文章中插入链接，并自动给外部链接添加 <code>target=&quot;_blank&quot;</code> 属性。</p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% link text url [external] [title] %&#125;</div></pre></td></tr></table></figure>
-<h2 id="Include-Code"><a href="#Include-Code" class="headerlink" title="Include Code"></a>Include Code</h2><p>插入 <code>source</code> 文件夹内的代码文件。</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% include_code [title] [<span class="keyword">lan</span><span class="variable">g:language</span>] path/<span class="keyword">to</span>/<span class="keyword">file</span> %&#125;</div></pre></td></tr></table></figure>
-<h2 id="Youtube"><a href="#Youtube" class="headerlink" title="Youtube"></a>Youtube</h2><p>在文章中插入 Youtube 视频。</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">youtube</span> video_id %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<h2 id="Vimeo"><a href="#Vimeo" class="headerlink" title="Vimeo"></a>Vimeo</h2><p>在文章中插入 Vimeo 视频。</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">vimeo</span> video_id %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<h2 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a>引用文章</h2><p>引用其他文章的链接。</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">post_path</span> slug %&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name">post_link</span> slug [title] %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<h2 id="引用资源"><a href="#引用资源" class="headerlink" title="引用资源"></a>引用资源</h2><p>引用文章的资源。</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">asset_path</span> slug %&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name">asset_img</span> slug [title] %&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name">asset_link</span> slug [title] %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<h2 id="Raw"><a href="#Raw" class="headerlink" title="Raw"></a>Raw</h2><p>如果您想在文章中插入 Swig 标签，可以尝试使用 Raw 标签，以免发生解析异常。</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">raw</span> %&#125;</span><span class="xml"></span></div><div class="line">content</div><div class="line"><span class="template-tag">&#123;% <span class="name">endraw</span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/hexo/tag-plugins/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
     <article id="post-hexo/templates" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -278,7 +165,7 @@ code snippet
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/templates/">模版</a>
+      <a class="article-title" href="/2017/03/13/hexo/templates/">16.模版</a>
     </h1>
   
 
@@ -289,72 +176,10 @@ code snippet
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>模板决定了网站内容的呈现方式，每个主题至少都应包含一个 <code>index</code> 模板，以下是各页面相对应的模板名称：</p>
-<table>
-<thead>
-<tr>
-<th>模板</th>
-<th>用途</th>
-<th>回调</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>index</code></td>
-<td>首页</td>
-<td></td>
-</tr>
-<tr>
-<td><code>post</code></td>
-<td>文章</td>
-<td><code>index</code></td>
-</tr>
-<tr>
-<td><code>page</code></td>
-<td>分页</td>
-<td><code>index</code></td>
-</tr>
-<tr>
-<td><code>archive</code></td>
-<td>归档</td>
-<td><code>index</code></td>
-</tr>
-<tr>
-<td><code>category</code></td>
-<td>分类归档</td>
-<td><code>archive</code></td>
-</tr>
-<tr>
-<td><code>tag</code></td>
-<td>标签归档</td>
-<td><code>archive</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="布局（Layout）"><a href="#布局（Layout）" class="headerlink" title="布局（Layout）"></a>布局（Layout）</h2><p>如果页面结构类似，例如两个模板都有页首（Header）和页脚（Footer），您可考虑通过「布局」让两个模板共享相同的结构。一个布局文件必须要能显示 <code>body</code> 变量的内容，如此一来模板的内容才会被显示，举例来说：</p>
-<figure class="highlight html"><figcaption><span>index.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">index</div></pre></td></tr></table></figure>
-<figure class="highlight html"><figcaption><span>layout.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;<span class="name">%-</span> <span class="attr">body</span> %&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>生成：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span>index<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>每个模板都默认使用 <code>layout</code> 布局，您可在 front-matter 指定其他布局，或是设为 <code>false</code> 来关闭布局功能，您甚至可在布局中再使用其他布局来建立嵌套布局。</p>
-<h2 id="局部模版（Partial）"><a href="#局部模版（Partial）" class="headerlink" title="局部模版（Partial）"></a>局部模版（Partial）</h2><p>局部模板让您在不同模板之间共享相同的组件，例如页首（Header）、页脚（Footer）或侧边栏（Sidebar）等，可利用局部模板功能分割为个别文件，让维护更加便利。举例来说：</p>
-<figure class="highlight html"><figcaption><span>partial/header.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"logo"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">config.title</span> %&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight html"><figcaption><span>index.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">partial</span>/<span class="attr">header</span>') %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span>Home page<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>生成：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"logo"</span>&gt;</span>My Site<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span>Home page<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h3><p>您可以在局部模板中指定局部变量并使用。</p>
-<figure class="highlight html"><figcaption><span>partial/header.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"logo"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">title</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight html"><figcaption><span>index.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">partial</span>/<span class="attr">header</span>', &#123;<span class="attr">title:</span> '<span class="attr">Hello</span> <span class="attr">World</span>'&#125;) %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span>Home page<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>生成：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"logo"</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span>Home page<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>如果您的主题太过于复杂，或是需要生成的文件量太过于庞大，可能会大幅降低性能，除了简化主题外，您可以考虑 Hexo 2.7 新增的局部缓存（Fragment Caching） 功能。</p>
-<p>本功能借鉴于 <a href="http://guides.rubyonrails.org/caching_with_rails.html#fragment-caching" target="_blank" rel="external">Ruby on Rails</a>，它储存局部内容，下次便能直接使用缓存内容，可以减少文件夹查询并使生成速度更快。</p>
-<p>它可用于页首、页脚、侧边栏等文件不常变动的位置，举例来说：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%- fragment_cache(<span class="string">'header'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'&lt;header&gt;&lt;/header&gt;'</span>;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>如果您使用局部模板的话，可以更简单：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%- partial(<span class="string">'header'</span>, &#123;&#125;, &#123;<span class="attr">cache</span>: <span class="literal">true</span>&#125;);</div></pre></td></tr></table></figure>
-<p>但是，如果您开启了 <code>relative_link</code> 参数的话，请勿使用局部缓存功能，因为相对链接在每个页面可能不同。</p>
-
+        <p>模板决定了网站内容的呈现方式，每个主题至少都应包含一个 <code>index</code> 模板，以下是各页面相对应的模板名称：<br>
+        
+          <a class="article-more-a" href="/2017/03/13/hexo/templates/#more">more >></a>
+        
       
 
       
@@ -391,7 +216,7 @@ code snippet
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/themes/">主题</a>
+      <a class="article-title" href="/2017/03/13/hexo/themes/">15.主题</a>
     </h1>
   
 
@@ -402,31 +227,10 @@ code snippet
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>创建 Hexo 主题非常容易，您只要在 <code>themes</code> 文件夹内，新增一个任意名称的文件夹，并修改 <code>_config.yml</code> 内的 <code>theme</code> 设定，即可切换主题。一个主题可能会有以下的结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── languages</div><div class="line">├── layout</div><div class="line">├── scripts</div><div class="line">└── source</div></pre></td></tr></table></figure>
-<h3 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h3><p>主题的配置文件。修改时会自动更新，无需重启服务器。</p>
-<h3 id="languages"><a href="#languages" class="headerlink" title="languages"></a>languages</h3><p>语言文件夹。请参见 <a href="internationalization.html">国际化 (i18n)</a>。</p>
-<h3 id="layout"><a href="#layout" class="headerlink" title="layout"></a>layout</h3><p>布局文件夹。用于存放主题的模板文件，决定了网站内容的呈现方式，Hexo 内建 <a href="http://paularmstrong.github.com/swig/" target="_blank" rel="external">Swig</a> 模板引擎，您可以另外安装插件来获得 <a href="https://github.com/hexojs/hexo-renderer-ejs" target="_blank" rel="external">EJS</a>、<a href="https://github.com/hexojs/hexo-renderer-haml" target="_blank" rel="external">Haml</a> 或 <a href="https://github.com/hexojs/hexo-renderer-jade" target="_blank" rel="external">Jade</a> 支持，Hexo 根据模板文件的扩展名来决定所使用的模板引擎，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">layout.ejs   - 使用 EJS</div><div class="line">layout.swig  - 使用 Swig</div></pre></td></tr></table></figure>
-<p>您可参考 <a href="templates.html">模板</a> 以获得更多信息。</p>
-<h3 id="scripts"><a href="#scripts" class="headerlink" title="scripts"></a>scripts</h3><p>脚本文件夹。在启动时，Hexo 会载入此文件夹内的 JavaScript 文件，请参见 <a href="plugins.html">插件</a> 以获得更多信息。</p>
-<h3 id="source"><a href="#source" class="headerlink" title="source"></a>source</h3><p>资源文件夹，除了模板以外的 Asset，例如 CSS、JavaScript 文件等，都应该放在这个文件夹中。文件或文件夹开头名称为 <code>_</code>（下划线线）或隐藏的文件会被忽略。</p>
-<p>如果文件可以被渲染的话，会经过解析然后储存到 <code>public</code> 文件夹，否则会直接拷贝到 <code>public</code> 文件夹。</p>
-<h3 id="发布"><a href="#发布" class="headerlink" title="发布"></a>发布</h3><p>当您完成主题后，可以考虑将它发布到 <a href="/themes">主题列表</a>，让更多人能够使用您的主题。在发布前建议先进行 <a href="https://github.com/hexojs/hexo-theme-unit-test" target="_blank" rel="external">主题单元测试</a>，确保每一项功能都能正常使用。发布主题的步骤和 <a href="contributing.html#更新文档">更新文档</a> 非常类似。</p>
-<ol>
-<li>Fork <a href="https://github.com/hexojs/site" target="_blank" rel="external">hexojs/site</a></li>
-<li><p>把库（repository）复制到电脑上，并安装所依赖的插件。</p>
- <figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> git clone https:<span class="comment">//github.com/&lt;username&gt;/site.git</span></div><div class="line"><span class="symbol">$</span> cd site</div><div class="line"><span class="symbol">$</span> npm install</div></pre></td></tr></table></figure>
-</li>
-<li><p>编辑 <code>source/_data/themes.yml</code>，在文件中新增您的主题，例如：</p>
- <figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">-<span class="ruby"> <span class="symbol">name:</span> landscape</span></div><div class="line">  description: A brand new default theme for Hexo.</div><div class="line">  link: https://github.com/hexojs/hexo-theme-landscape</div><div class="line">  preview: http://hexo.io/hexo-theme-landscape</div><div class="line">  tags:</div><div class="line">    -<span class="ruby"> official</span></div><div class="line">    -<span class="ruby"> responsive</span></div><div class="line">    -<span class="ruby"> widget</span></div><div class="line">    -<span class="ruby"> two_column</span></div><div class="line">    -<span class="ruby"> one_column</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>在 <code>source/themes/screenshots</code> 新增同名的截图档案，图片必须为 800x500 的 PNG 文件。</p>
-</li>
-<li>推送（push）分支。</li>
-<li>建立一个新的合并申请（pull request）并描述改动。</li>
-</ol>
-
+        <p>创建 Hexo 主题非常容易，您只要在 <code>themes</code> 文件夹内，新增一个任意名称的文件夹，并修改 <code>_config.yml</code> 内的 <code>theme</code> 设定，即可切换主题。一个主题可能会有以下的结构：<br>
+        
+          <a class="article-more-a" href="/2017/03/13/hexo/themes/#more">more >></a>
+        
       
 
       
@@ -463,7 +267,7 @@ code snippet
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/troubleshooting/">问题解答</a>
+      <a class="article-title" href="/2017/03/13/hexo/troubleshooting/">21.问题解答</a>
     </h1>
   
 
@@ -474,36 +278,10 @@ code snippet
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在使用 Hexo 时，您可能会遇到一些问题，下列的常见问题解答可能会对您有所帮助。如果您在这里找不道解答，可以在 <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a> 或 <a href="https://groups.google.com/group/hexo" target="_blank" rel="external">Google Group</a> 上提问。</p>
-<h2 id="YAML-解析错误"><a href="#YAML-解析错误" class="headerlink" title="YAML 解析错误"></a>YAML 解析错误</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">JS-YAML: incomplete explicit mapping pair; a key node is missed at line 18, column 29:</div><div class="line">      last_updated: Last updated: %s</div></pre></td></tr></table></figure>
-<p>如果 YAML 字符串中包含冒号（<code>:</code>）的话，请加上引号。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">JS-YAML: bad indentation of a mapping entry at line 18, column 31:</div><div class="line">      last_updated:&quot;Last updated: %s&quot;</div></pre></td></tr></table></figure>
-<p>请确认您使用空格进行缩进（Soft tab），并确认冒号后有加上一个空格。</p>
-<p>您可参阅 <a href="http://www.yaml.org/spec/1.2/spec.html" target="_blank" rel="external">YAML 规范</a> 以取得更多信息。</p>
-<h2 id="EMFILE-错误"><a href="#EMFILE-错误" class="headerlink" title="EMFILE 错误"></a>EMFILE 错误</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error: EMFILE, too many open files</div></pre></td></tr></table></figure>
-<p>虽然 Node.js 有非阻塞 I/O，同步 I/O 的数量仍被系统所限制，在生成大量静态文件的时候，您可能会碰到 EMFILE 错误，您可以尝试提高同步 I/O 的限制数量来解决此问题。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">ulimit</span> -n 10000</div></pre></td></tr></table></figure>
-<p>（这一命令只对Linux系统有效）</p>
-<h2 id="Git-部署问题"><a href="#Git-部署问题" class="headerlink" title="Git 部署问题"></a>Git 部署问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fatal: &apos;username.github.io&apos; does not appear to be a git repository</div></pre></td></tr></table></figure>
-<p>请确认您已经在电脑上 <a href="https://help.github.com/articles/set-up-git" target="_blank" rel="external">配置 git</a>，或改用 HTTPS 库（repository）地址。</p>
-<h2 id="服务器问题"><a href="#服务器问题" class="headerlink" title="服务器问题"></a>服务器问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error: listen EADDRINUSE</div></pre></td></tr></table></figure>
-<p>您可能同时开启两个 Hexo 服务器，或者有其他应用程序正在占用相同的端口，请尝试修改 <code>port</code> 参数，或是在启动 Hexo 服务器时加上 <code>-p</code> 选项。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server -p 5000</div></pre></td></tr></table></figure>
-<h2 id="插件安装问题"><a href="#插件安装问题" class="headerlink" title="插件安装问题"></a>插件安装问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm ERR! node-waf configure build</div></pre></td></tr></table></figure>
-<p>当您尝试安装以 C/C++ 或其他非 JavaScript 语言所编写的插件时，可能会遇到此类问题，请确认您已经在电脑上安装相对应的编译器。</p>
-<h2 id="DTrace-错误-（Mac-OS-X）"><a href="#DTrace-错误-（Mac-OS-X）" class="headerlink" title="DTrace 错误 （Mac OS X）"></a>DTrace 错误 （Mac OS X）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/default/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div><div class="line">&#123; [Error: Cannot find module &apos;./build/Debug/DTraceProviderBindings&apos;] code: &apos;MODULE_NOT_FOUND&apos; &#125;</div></pre></td></tr></table></figure>
-<p>DTrace 安装可能有错误 , 使用下列命令:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo --no-optional</div></pre></td></tr></table></figure></p>
-<p>参考 <a href="https://github.com/hexojs/hexo/issues/1326#issuecomment-113871796" target="_blank" rel="external">#1326</a></p>
-<h2 id="在-Jade-或-Swig-遍历资料"><a href="#在-Jade-或-Swig-遍历资料" class="headerlink" title="在 Jade 或 Swig 遍历资料"></a>在 Jade 或 Swig 遍历资料</h2><p>Hexo 使用 <a href="https://github.com/tommy351/warehouse" target="_blank" rel="external">Warehouse</a> 存储资料，它不是一般数组所以必须先进行类型转型才能遍历。</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">for</span></span> post <span class="keyword">in</span> site.posts.toArray() %&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">endfor</span></span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<h2 id="资料没有更新"><a href="#资料没有更新" class="headerlink" title="资料没有更新"></a>资料没有更新</h2><p>有时资料可能没有被更新，或是生成的文件与修改前的相同，您可以尝试清除缓存并再执行一次。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div></pre></td></tr></table></figure>
-<h2 id="泄露（Escape）内容"><a href="#泄露（Escape）内容" class="headerlink" title="泄露（Escape）内容"></a>泄露（Escape）内容</h2><p>Hexo 使用 <a href="http://mozilla.github.io/nunjucks/" target="_blank" rel="external">Nunjucks</a> 来解析文章（旧版本使用 <a href="http://paularmstrong.github.io/swig/" target="_blank" rel="external">Swig</a>，两者语法类似），内容若包含 <code>{{ }}</code> 或 <code>{% %}</code> 可能导致解析错误，您可以用 <code>raw</code> 标签包裹来避免潜在问题发生。</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">raw</span> %&#125;</span><span class="xml"></span></div><div class="line">Hello <span class="template-variable">&#123;&#123; sensitive &#125;&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name">endraw</span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<h2 id="ENOSPC-错误-（Linux）"><a href="#ENOSPC-错误-（Linux）" class="headerlink" title="ENOSPC 错误 （Linux）"></a>ENOSPC 错误 （Linux）</h2><p>运行 <code>$ hexo server</code> 命令有时会返回这样的错误：<br><figure class="highlight subunit"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Error: </span>watch ENOSPC ...</div></pre></td></tr></table></figure></p>
-<p>它可以用过运行 <code>$ npm dedupe</code> 来解决，如果不起作用的话，可以尝试在 Linux 终端中运行下列命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">echo</span> fs.inotify.max_user_watches=524288 | sudo tee <span class="_">-a</span> /etc/sysctl.conf &amp;&amp; sudo sysctl -p</div></pre></td></tr></table></figure></p>
-<p>这将会提高你能监视的文件数量。</p>
-
+        <p>在使用 Hexo 时，您可能会遇到一些问题，下列的常见问题解答可能会对您有所帮助。如果您在这里找不道解答，可以在 <a href="https://github.com/hexojs/hexo/issues">GitHub</a> 或 <a href="https://groups.google.com/group/hexo">Google Group</a> 上提问。<br>
+        
+          <a class="article-more-a" href="/2017/03/13/hexo/troubleshooting/#more">more >></a>
+        
       
 
       
@@ -540,7 +318,7 @@ code snippet
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/variables/">变量</a>
+      <a class="article-title" href="/2017/03/13/hexo/variables/">17.变量</a>
     </h1>
   
 
@@ -551,281 +329,10 @@ code snippet
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><table>
-<thead>
-<tr>
-<th>变量</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>site</code></td>
-<td><a href="#网站变量">网站变量</a></td>
-</tr>
-<tr>
-<td><code>page</code></td>
-<td>针对该页面的内容以及 front-matter 所设定的变量。</td>
-</tr>
-<tr>
-<td><code>config</code></td>
-<td>网站配置</td>
-</tr>
-<tr>
-<td><code>theme</code></td>
-<td>主题配置。继承自网站配置。</td>
-</tr>
-<tr>
-<td><code>_</code> (单下划线)</td>
-<td><a href="http://lodash.com/" target="_blank" rel="external">Lodash</a> 函数库</td>
-</tr>
-<tr>
-<td><code>path</code></td>
-<td>当前页面的路径（不含根路径）</td>
-</tr>
-<tr>
-<td><code>url</code></td>
-<td>当前页面的完整网址</td>
-</tr>
-<tr>
-<td><code>env</code></td>
-<td>环境变量</td>
-</tr>
-</tbody>
-</table>
-<h3 id="网站变量"><a href="#网站变量" class="headerlink" title="网站变量"></a>网站变量</h3><table>
-<thead>
-<tr>
-<th>变量</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>site.posts</code></td>
-<td>所有文章</td>
-</tr>
-<tr>
-<td><code>site.pages</code></td>
-<td>所有分页</td>
-</tr>
-<tr>
-<td><code>site.categories</code></td>
-<td>所有分类</td>
-</tr>
-<tr>
-<td><code>site.tags</code></td>
-<td>所有标签</td>
-</tr>
-</tbody>
-</table>
-<h3 id="页面变量"><a href="#页面变量" class="headerlink" title="页面变量"></a>页面变量</h3><p><strong>页面（page）</strong></p>
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>page.title</code></td>
-<td>页面标题</td>
-</tr>
-<tr>
-<td><code>page.date</code></td>
-<td>页面建立日期（<a href="http://momentjs.com/" target="_blank" rel="external">Moment.js</a> 对象）</td>
-</tr>
-<tr>
-<td><code>page.updated</code></td>
-<td>页面更新日期（<a href="http://momentjs.com/" target="_blank" rel="external">Moment.js</a> 对象）</td>
-</tr>
-<tr>
-<td><code>page.comments</code></td>
-<td>留言是否开启</td>
-</tr>
-<tr>
-<td><code>page.layout</code></td>
-<td>布局名称</td>
-</tr>
-<tr>
-<td><code>page.content</code></td>
-<td>页面的完整内容</td>
-</tr>
-<tr>
-<td><code>page.excerpt</code></td>
-<td>页面摘要</td>
-</tr>
-<tr>
-<td><code>page.more</code></td>
-<td>除了页面摘要的其余内容</td>
-</tr>
-<tr>
-<td><code>page.source</code></td>
-<td>页面原始路径</td>
-</tr>
-<tr>
-<td><code>page.full_source</code></td>
-<td>页面的完整原始路径</td>
-</tr>
-<tr>
-<td><code>page.path</code></td>
-<td>页面网址（不含根路径）。我们通常在主题中使用 <code>url_for(page.path)</code>。</td>
-</tr>
-<tr>
-<td><code>page.permalink</code></td>
-<td>页面的完整网址</td>
-</tr>
-<tr>
-<td><code>page.prev</code></td>
-<td>上一个页面。如果此为第一个页面则为 <code>null</code>。</td>
-</tr>
-<tr>
-<td><code>page.next</code></td>
-<td>下一个页面。如果此为最后一个页面则为 <code>null</code>。</td>
-</tr>
-<tr>
-<td><code>page.raw</code></td>
-<td>文章的原始内容</td>
-</tr>
-<tr>
-<td><code>page.photos</code></td>
-<td>文章的照片（用于相簿）</td>
-</tr>
-<tr>
-<td><code>page.link</code></td>
-<td>文章的外部链接（用于链接文章）</td>
-</tr>
-</tbody>
-</table>
-<p><strong>文章 (post):</strong> 和 <code>page</code> 布局类似，但是添加了下列变量。</p>
-<table>
-<thead>
-<tr>
-<th>Variable</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>page.published</code></td>
-<td>如果该文章已发布则为True</td>
-</tr>
-<tr>
-<td><code>page.categories</code></td>
-<td>该文章的所有分类</td>
-</tr>
-<tr>
-<td><code>page.tags</code></td>
-<td>该文章的所有标签</td>
-</tr>
-</tbody>
-</table>
-<p><strong>首页（index）</strong></p>
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>page.per_page</code></td>
-<td>每页显示的文章数量</td>
-</tr>
-<tr>
-<td><code>page.total</code></td>
-<td>总文章数</td>
-</tr>
-<tr>
-<td><code>page.current</code></td>
-<td>目前页数</td>
-</tr>
-<tr>
-<td><code>page.current_url</code></td>
-<td>目前分页的网址</td>
-</tr>
-<tr>
-<td><code>page.posts</code></td>
-<td>本页文章</td>
-</tr>
-<tr>
-<td><code>page.prev</code></td>
-<td>上一页的页数。如果此页是第一页的话则为 <code>0</code>。</td>
-</tr>
-<tr>
-<td><code>page.prev_link</code></td>
-<td>上一页的网址。如果此页是第一页的话则为 <code>&#39;&#39;</code>。</td>
-</tr>
-<tr>
-<td><code>page.next</code></td>
-<td>下一页的页数。如果此页是最后一页的话则为 <code>0</code>。</td>
-</tr>
-<tr>
-<td><code>page.next_link</code></td>
-<td>下一页的网址。如果此页是最后一页的话则为 <code>&#39;&#39;</code>。</td>
-</tr>
-<tr>
-<td><code>page.path</code></td>
-<td>当前页面的路径（不含根目录）。我们通常在主题中使用 <code>url_for(page.path)</code>。</td>
-</tr>
-</tbody>
-</table>
-<p><strong>归档 (archive)</strong>：与 <code>index</code> 布局相同，但新增以下变量。</p>
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>page.archive</code></td>
-<td>等于 <code>true</code></td>
-</tr>
-<tr>
-<td><code>page.year</code></td>
-<td>年份归档 (4位)</td>
-</tr>
-<tr>
-<td><code>page.month</code></td>
-<td>月份归档 (没有前导零的2位数)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>分类 (category)</strong>：与 <code>index</code> 布局相同，但新增以下变量。</p>
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>page.category</code></td>
-<td>分类名称</td>
-</tr>
-</tbody>
-</table>
-<p><strong>标签 (tag)</strong>：与 <code>index</code> 布局相同，但新增以下变量。</p>
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>page.tag</code></td>
-<td>标签名称</td>
-</tr>
-</tbody>
-</table>
-
+        <p>使用hexo变量<br>
+        
+          <a class="article-more-a" href="/2017/03/13/hexo/variables/#more">more >></a>
+        
       
 
       
@@ -907,6 +414,68 @@ code snippet
 
 
   
+    <article id="post-hexo/generating" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/10/hexo/generating/">12.生成文件</a>
+    </h1>
+  
+
+        <a href="/2017/03/10/hexo/generating/" class="archive-article-date">
+  	<time datetime="2017-03-10T10:11:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
+</a>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>使用hexo生产文件<br>
+        
+          <a class="article-more-a" href="/2017/03/10/hexo/generating/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">Hexo</a>
+        </li>
+      
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/10/hexo/generating/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-github维护" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -971,115 +540,30 @@ code snippet
 
 
   
-    <article id="post-hexo/writing" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Linux下shell脚本执行jar文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/11/hexo/writing/">Linux下shell脚本执行jar文件111</a>
+      <a class="article-title" href="/2017/01/11/Linux下shell脚本执行jar文件/">Linux下shell脚本执行jar文件</a>
     </h1>
   
 
-        <a href="/2017/01/11/hexo/writing/" class="archive-article-date">
+        <a href="/2017/01/11/Linux下shell脚本执行jar文件/" class="archive-article-date">
   	<time datetime="2017-01-11T10:11:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-11</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>您可以在命令中指定文章的布局（layout），默认为 <code>post</code>，可以通过修改 <code>_config.yml</code> 中的 <code>default_layout</code> 参数来指定默认布局。</p>
-<h3 id="布局（Layout）"><a href="#布局（Layout）" class="headerlink" title="布局（Layout）"></a>布局（Layout）</h3><p>Hexo 有三种默认布局：<code>post</code>、<code>page</code> 和 <code>draft</code>，它们分别对应不同的路径，而您自定义的其他布局和 <code>post</code> 相同，都将储存到 <code>source/_posts</code> 文件夹。</p>
-<table>
-<thead>
-<tr>
-<th>布局</th>
-<th>路径</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>post</code></td>
-<td><code>source/_posts</code></td>
-</tr>
-<tr>
-<td><code>page</code></td>
-<td><code>source</code></td>
-</tr>
-<tr>
-<td><code>draft</code></td>
-<td><code>source/_drafts</code></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>不要处理我的文章<br>如果你不想你的文章被处理，你可以将 Front-Matter 中的<code>layout:</code> 设为 <code>false</code> 。</p>
+        <blockquote>
+<p>使用shell脚本执行一些命令</p>
 </blockquote>
-<h3 id="文件名称"><a href="#文件名称" class="headerlink" title="文件名称"></a>文件名称</h3><p>Hexo 默认以标题做为文件名称，但您可编辑 <code>new_post_name</code> 参数来改变默认的文件名称，举例来说，设为 <code>:year-:month-:day-:title.md</code> 可让您更方便的通过日期来管理文章。</p>
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>:title</code></td>
-<td>标题（小写，空格将会被替换为短杠）</td>
-</tr>
-<tr>
-<td><code>:year</code></td>
-<td>建立的年份，比如， <code>2015</code></td>
-</tr>
-<tr>
-<td><code>:month</code></td>
-<td>建立的月份（有前导零），比如， <code>04</code></td>
-</tr>
-<tr>
-<td><code>:i_month</code></td>
-<td>建立的月份（无前导零），比如， <code>4</code></td>
-</tr>
-<tr>
-<td><code>:day</code></td>
-<td>建立的日期（有前导零），比如， <code>07</code></td>
-</tr>
-<tr>
-<td><code>:i_day</code></td>
-<td>建立的日期（无前导零），比如， <code>7</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h3><p>刚刚提到了 Hexo 的一种特殊布局：<code>draft</code>，这种布局在建立时会被保存到 <code>source/_drafts</code> 文件夹，您可通过 <code>publish</code> 命令将草稿移动到 <code>source/_posts</code> 文件夹，该命令的使用方式与 <code>new</code> 十分类似，您也可在命令中指定 <code>layout</code> 来指定布局。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo publish [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
-<p>草稿默认不会显示在页面中，您可在执行时加上 <code>--draft</code> 参数，或是把 <code>render_drafts</code> 参数设为 <code>true</code> 来预览草稿。</p>
-<h2 id="模版（Scaffold）"><a href="#模版（Scaffold）" class="headerlink" title="模版（Scaffold）"></a>模版（Scaffold）</h2><p>在新建文章时，Hexo 会根据 <code>scaffolds</code> 文件夹内相对应的文件来建立文件，例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new photo <span class="string">"My Gallery"</span></div></pre></td></tr></table></figure>
-<p>在执行这行指令时，Hexo 会尝试在 <code>scaffolds</code> 文件夹中寻找 <code>photo.md</code>，并根据其内容建立文章，以下是您可以在模版中使用的变量：</p>
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>layout</code></td>
-<td>布局</td>
-</tr>
-<tr>
-<td><code>title</code></td>
-<td>标题</td>
-</tr>
-<tr>
-<td><code>date</code></td>
-<td>文件建立日期</td>
-</tr>
-</tbody>
-</table>
-
+        
+          <a class="article-more-a" href="/2017/01/11/Linux下shell脚本执行jar文件/#more">more >></a>
+        
       
 
       
@@ -1102,7 +586,7 @@ code snippet
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/11/hexo/writing/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/01/11/Linux下shell脚本执行jar文件/">展开全文 >></a>
         </p>
       
 
@@ -1241,6 +725,10 @@ code snippet
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>

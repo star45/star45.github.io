@@ -6,24 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//star45.me">
-  <title>国际化（i18n） | Star45的博客</title>
+  <title>19.国际化（i18n） | Star45的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="若要让您的网站以不同语言呈现，您可使用国际化（internationalization）功能。请先在 _config.yml 中调整 language 设定，这代表的是预设语言，您也可设定多个语言来调整预设语言的顺位。
-12345language: zh-twlanguage: - zh-tw- en
-语言文件语言文件可以使用 YAML 或 JSON 编写，并放在主题文件夹中的 languages">
+  <meta name="description" content="若要让您的网站以不同语言呈现，您可使用国际化（internationalization）功能。请先在 _config.yml 中调整 language 设定，这代表的是预设语言，您也可设定多个语言来调整预设语言的顺位。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="国际化（i18n）">
+<meta property="og:title" content="19.国际化（i18n）">
 <meta property="og:url" content="//star45.me/2017/03/13/hexo/internationalization/index.html">
 <meta property="og:site_name" content="Star45的博客">
-<meta property="og:description" content="若要让您的网站以不同语言呈现，您可使用国际化（internationalization）功能。请先在 _config.yml 中调整 language 设定，这代表的是预设语言，您也可设定多个语言来调整预设语言的顺位。
-12345language: zh-twlanguage: - zh-tw- en
-语言文件语言文件可以使用 YAML 或 JSON 编写，并放在主题文件夹中的 languages">
-<meta property="og:updated_time" content="2017-03-13T06:36:18.524Z">
+<meta property="og:description" content="若要让您的网站以不同语言呈现，您可使用国际化（internationalization）功能。请先在 _config.yml 中调整 language 设定，这代表的是预设语言，您也可设定多个语言来调整预设语言的顺位。">
+<meta property="og:updated_time" content="2017-03-13T08:20:46.816Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="国际化（i18n）">
-<meta name="twitter:description" content="若要让您的网站以不同语言呈现，您可使用国际化（internationalization）功能。请先在 _config.yml 中调整 language 设定，这代表的是预设语言，您也可设定多个语言来调整预设语言的顺位。
-12345language: zh-twlanguage: - zh-tw- en
-语言文件语言文件可以使用 YAML 或 JSON 编写，并放在主题文件夹中的 languages">
+<meta name="twitter:title" content="19.国际化（i18n）">
+<meta name="twitter:description" content="若要让您的网站以不同语言呈现，您可使用国际化（internationalization）功能。请先在 _config.yml 中调整 language 设定，这代表的是预设语言，您也可设定多个语言来调整预设语言的顺位。">
   
     <link rel="alternative" href="/atom.xml" title="Star45的博客" type="application/atom+xml">
   
@@ -170,7 +164,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      国际化（i18n）
+      19.国际化（i18n）
     </h1>
   
 
@@ -181,8 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>若要让您的网站以不同语言呈现，您可使用国际化（internationalization）功能。请先在 <code>_config.yml</code> 中调整 <code>language</code> 设定，这代表的是预设语言，您也可设定多个语言来调整预设语言的顺位。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">language:</span> zh-tw</div><div class="line"></div><div class="line"><span class="attr">language:</span> </div><div class="line"><span class="bullet">-</span> zh-tw</div><div class="line"><span class="bullet">-</span> en</div></pre></td></tr></table></figure>
+        <p>若要让您的网站以不同语言呈现，您可使用国际化（internationalization）功能。请先在 <code>_config.yml</code> 中调整 <code>language</code> 设定，这代表的是预设语言，您也可设定多个语言来调整预设语言的顺位。<br><a id="more"></a><br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">language:</span> zh-tw</div><div class="line"></div><div class="line"><span class="attr">language:</span> </div><div class="line"><span class="bullet">-</span> zh-tw</div><div class="line"><span class="bullet">-</span> en</div></pre></td></tr></table></figure></p>
 <h3 id="语言文件"><a href="#语言文件" class="headerlink" title="语言文件"></a>语言文件</h3><p>语言文件可以使用 YAML 或 JSON 编写，并放在主题文件夹中的 <code>languages</code> 文件夹。您可以在语言文件中使用 <a href="https://github.com/alexei/sprintf.js" target="_blank" rel="external">printf 格式</a>。</p>
 <h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><p>在模板中，透过 <code>__</code> 或 <code>_p</code> 辅助函数，即可取得翻译后的字符串，前者用于一般使用；而后者用于复数字符串。例如：</p>
 <figure class="highlight yaml"><figcaption><span>en.yml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="attr">index:</span></div><div class="line"><span class="attr">  title:</span> Home</div><div class="line"><span class="attr">  add:</span> Add</div><div class="line"><span class="attr">  video:</span></div><div class="line"><span class="attr">    zero:</span> <span class="literal">No</span> videos</div><div class="line"><span class="attr">    one:</span> One video</div><div class="line"><span class="attr">    other:</span> %d videos</div></pre></td></tr></table></figure>
@@ -301,7 +294,7 @@
   
   
     <a href="/2017/03/13/hexo/migration/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">迁移</div>
+      <div class="article-nav-title">5.迁移</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -429,6 +422,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">Hexo</a>
               </li>
             
             <div class="clearfix"></div>
