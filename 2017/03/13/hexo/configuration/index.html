@@ -6,20 +6,111 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//star45.me">
-  <title>Sublime Text 3 《第四章 - 插件》 | Star45的博客</title>
+  <title>配置 | Star45的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="工欲善其事，必先利其器四、Sublime Text 3 插件详解">
+  <meta name="description" content="您可以在 _config.yml 中修改大部份的配置。
+网站
+
+
+参数
+描述
+
+
+
+
+title
+网站标题
+
+
+subtitle
+网站副标题
+
+
+description
+网站描述
+
+
+author
+您的名字
+
+
+language
+网站使用的语言
+
+
+timezone
+网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sublime Text 3 《第四章 - 插件》">
-<meta property="og:url" content="//star45.me/2017/01/11/Sublime-Text-3-《第四章-插件》/index.html">
+<meta property="og:title" content="配置">
+<meta property="og:url" content="//star45.me/2017/03/13/hexo/configuration/index.html">
 <meta property="og:site_name" content="Star45的博客">
-<meta property="og:description" content="工欲善其事，必先利其器四、Sublime Text 3 插件详解">
-<meta property="og:image" content="http://oj6yqioq5.bkt.clouddn.com/c995d1ee6d6b437992d5bfd7e24e8fd3.jpg">
-<meta property="og:updated_time" content="2017-01-11T10:16:29.661Z">
+<meta property="og:description" content="您可以在 _config.yml 中修改大部份的配置。
+网站
+
+
+参数
+描述
+
+
+
+
+title
+网站标题
+
+
+subtitle
+网站副标题
+
+
+description
+网站描述
+
+
+author
+您的名字
+
+
+language
+网站使用的语言
+
+
+timezone
+网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。">
+<meta property="og:updated_time" content="2017-03-13T07:28:41.147Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sublime Text 3 《第四章 - 插件》">
-<meta name="twitter:description" content="工欲善其事，必先利其器四、Sublime Text 3 插件详解">
-<meta name="twitter:image" content="http://oj6yqioq5.bkt.clouddn.com/c995d1ee6d6b437992d5bfd7e24e8fd3.jpg">
+<meta name="twitter:title" content="配置">
+<meta name="twitter:description" content="您可以在 _config.yml 中修改大部份的配置。
+网站
+
+
+参数
+描述
+
+
+
+
+title
+网站标题
+
+
+subtitle
+网站副标题
+
+
+description
+网站描述
+
+
+author
+您的名字
+
+
+language
+网站使用的语言
+
+
+timezone
+网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 。">
   
     <link rel="alternative" href="/atom.xml" title="Star45的博客" type="application/atom+xml">
   
@@ -159,194 +250,304 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Sublime-Text-3-《第四章-插件》" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-hexo/configuration" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Sublime Text 3 《第四章 - 插件》
+      配置
     </h1>
   
 
-        <a href="/2017/01/11/Sublime-Text-3-《第四章-插件》/" class="archive-article-date">
-  	<time datetime="2017-01-11T10:11:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-11</time>
+        <a href="/2017/03/13/hexo/configuration/" class="archive-article-date">
+  	<time datetime="2017-03-13T07:23:30.682Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://oj6yqioq5.bkt.clouddn.com/c995d1ee6d6b437992d5bfd7e24e8fd3.jpg" alt="SublimeText3.jpg" title="SublimeText3"></p>
-<h1 id="工欲善其事，必先利其器"><a href="#工欲善其事，必先利其器" class="headerlink" title="工欲善其事，必先利其器"></a>工欲善其事，必先利其器</h1><h1 id="四、Sublime-Text-3-插件详解"><a href="#四、Sublime-Text-3-插件详解" class="headerlink" title="四、Sublime Text 3 插件详解"></a>四、Sublime Text 3 插件详解</h1><a id="more"></a>
-<p><em>插件列表:</em></p>
-<ul>
-<li>SideBarEnhancements : 左侧菜单栏</li>
-<li>Anaconda : Python集成插件</li>
-<li>ConvertToUTF8 : 非utf8文本自动转换</li>
-<li>BetterCoffeeScript : Coffee支持</li>
-<li>emmet : ZenCoding</li>
-<li>Markdown preview : markdown预览</li>
-<li>MarkdownEditing : markdown高亮</li>
-<li>Gutter Color : 显示颜色，需要先运行brew install ImageMagick</li>
-<li>terminal : 直接打开终端</li>
-<li>Git : 直接使用Git命令(当然要先有git)</li>
-<li>各种格式化的插件就按照自己的需求选装吧</li>
-<li>安装完成后，一个绝对不会卡的轻便IDE就完成了！</li>
-</ul>
-<h2 id="1、SublimeTmpl"><a href="#1、SublimeTmpl" class="headerlink" title="1、SublimeTmpl"></a>1、SublimeTmpl</h2><ul>
-<li><p><strong>Sublime Text</strong> 新建文件的模版插件: SublimeTmpl写了个sublime的模版插件, 项目主页: <a href="https://github.com/kairyou/SublimeTmpl" target="_blank" rel="external">https://github.com/kairyou/SublimeTmpl</a> 这样就可以新建文件时使用模版的内容了, 目前添加了</p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">*   </span>html</div></pre></td></tr></table></figure>
-<ul>
-<li>js</li>
-<li>css</li>
-<li>php</li>
-<li>python</li>
-<li>ruby</li>
-</ul>
-<p>六种模版. 不需新建空白文件, 再从其他文件复制内容过来了.</p>
-<p>已增加对Sublime Text3的支持.</p>
-</li>
-<li><p><strong>使用</strong>:</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>.  ST菜单, <span class="keyword">File</span>-<span class="keyword">New</span> <span class="keyword">File</span> (SublimeTmpl), 选择列表里的相应菜单, 可直接使用模版新建文件.</div></pre></td></tr></table></figure>
-<ol>
-<li>命令, cmd+shift+p, 输入: “tmpl:”, 可以找到创建文件的菜单列表.</li>
-<li><p>快捷键, 默认快捷键见下面. 可以自己修改, 方法见”设置”部分.</p>
-<p>默认快捷键:</p>
-</li>
-</ol>
-<p>| 快捷键 | 目标文件 |<br>| — | — |<br>| ctrl+alt+h | html |<br>| ctrl+alt+j | javascript |<br>| ctrl+alt+c | css |<br>| ctrl+alt+p | php |<br>| ctrl+alt+r | ruby |<br>| ctrl+alt++shift+p | python |</p>
-</li>
-<li><p><strong>安装</strong>:</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span>\.  方法<span class="number">1</span>\. 通过 <span class="keyword">Package</span> <span class="title">Control</span></div></pre></td></tr></table></figure>
-<p>Package Control / Install Package, 搜索”SublimeTmpl” 或 “tmpl”, 安装.已经通过Package Control审核</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span><span class="string">\.</span>  方法<span class="number">2</span><span class="string">\.</span> Github</div></pre></td></tr></table></figure>
-<p>打开项目主页, <a href="http://lib.csdn.net/base/git" title="Git知识库" target="_blank" rel="external">Git</a> clone到ST的Packages文件夹(\Data\Packages), 或直接把ZIP格式的下载下来解压到Packages文件夹(文件夹名称必须为:SublimeTmpl).</p>
-</li>
-<li><p><strong>设置</strong>:</p>
-<p>菜单: Preferences / Packages Settings / SublimeTmpl, 可以编辑菜单/快捷键/新语法等等.</p>
-<p>如果你想贡献自己的package, 可以参考我这篇文章的介绍:<br><a href="http://www.fantxi.com/blog/archives/how-to-submit-a-sublime-package/" target="_blank" rel="external">http://www.fantxi.com/blog/archives/how-to-submit-a-sublime-package/</a></p>
-</li>
-<li><p><strong>新增特性</strong>:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">1</span>.  用户自定义模板 (Thanks <span class="variable">@Xu</span> Cheng Github)</div></pre></td></tr></table></figure>
-<p>自定义模板路径: “Data\Packages\User\SublimeTmpl\templates” 目录, 会优先使用.<br>默认模版路径: “Data\Packages\SublimeTmpl\templates” 目录.<br>用自己自定义的模板: 推荐把默认模版目录的*.tmpl文件 复制到 自定义模板路径, 再去修改.</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">2</span>.  模板支持 <span class="variable">$&#123;date&#125;</span> 变量</div></pre></td></tr></table></figure>
-<p>settings - user里面可以修改${date}默认的输出格式(“%Y-%m-%d %H:%M:%S”), 比如改成: “date_format” : “%Y-%m-%d”</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span>\.  模板支持自定义 <span class="meta">attr</span></div></pre></td></tr></table></figure>
-<p>settings - user里添加:</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="string">"attr"</span>: &#123;</div><div class="line"><span class="string">"author"</span>: <span class="string">"your name"</span> ,</div><div class="line"><span class="string">"email"</span>: <span class="string">"mail@yours.com"</span>,</div><div class="line"><span class="string">"link"</span>: <span class="string">"http://yours.com"</span>,</div><div class="line"><span class="string">"hello"</span>: <span class="string">"word"</span></div></pre></td></tr></table></figure>
-<p>}<br>`<br>就能在模板中使用 author{email} link{hello} 变量<br>Thanks @vfasky (Blog)</p>
-</li>
-<li><p><strong>另外, 关于新增语言的附加说明</strong></p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span><span class="string">\.</span>  新增SublimeTmpl里面没有的语言</div></pre></td></tr></table></figure>
-<p>首先请看: Packages Settings / SublimeTmpl / Settings - Default 的默认语法设置.<br>如果要新增语法, 请选择: SublimeTmpl / Settings - User, 内容格式参考Settings - Default的内容, 比如新增两个语言test和yours:</p>
-<p>` {</p>
-<pre><code>&quot;test&quot;: {&quot;syntax&quot;: &quot;Packages/test/test.tmLanguage&quot;},
-&quot;yours&quot;: {&quot;syntax&quot;: &quot;Packages/Yours/Yours.tmLanguage&quot;} }
-</code></pre><p>`</p>
-<p>`    新增开始菜单: 可以在SublimeTmpl / Settings - Menu里, 参照其他语法增加test和yours.</p>
-<pre><code>新增快捷键: 可以编辑:SublimeTmpl / Key Bindings User( 格式参考: SublimeTmpl / Key Bindings Default)
-</code></pre><ol>
-<li>新增Sublime的语言</li>
-</ol>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">这个我也没新建过, 可以去Package Control或者github上面找个其他人添加的新语言, 参考参考.</div><div class="line">如果没找到别人写好的, 可以参考如下网址, 自己做:</div><div class="line"></div><div class="line"><span class="bullet">1. </span>[<span class="string">官方文档</span>][<span class="symbol">1</span>], 利用AAAPackageDev这个插件制作</div><div class="line"><span class="bullet">2. </span>[<span class="string">textmate的doc</span>][<span class="symbol">2</span>], 和sublime大部分是相同的</div><div class="line"><span class="bullet">3. </span>[<span class="string">语法</span>][<span class="symbol">3</span>], 可以和自己新建的对比</div><div class="line"><span class="bullet">4. </span>[<span class="string">详解</span>][<span class="symbol">4</span>]，很全面的教程</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h1 id="四、快捷键（只针对目前的软件）"><a href="#四、快捷键（只针对目前的软件）" class="headerlink" title="四、快捷键（只针对目前的软件）"></a>四、快捷键（只针对目前的软件）</h1><ol>
-<li><code>ctrl+alt+f</code>格式化js代码 —— <em>jsFormat</em></li>
-<li><code>tab</code>html提示 ——- <em>emmet</em></li>
-<li><p>随心所欲的跳转<code>Cmd+P</code>之所以被叫做 Goto Anything 并不是虚名：</p>
-<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">*   `Command+P` 可以快速跳转到当前项目中的任意文件，可进行关键词匹配。</div></pre></td></tr></table></figure>
-<ul>
-<li><code>Command+P</code>后<code>@</code>(或是<code>Command+R</code>)可以快速列出/跳转到某个函数（很爽的是markdown 当中是匹配到标题，而且还是带缩进的！）。</li>
-<li><code>Command+P</code>后<code>#</code>可以在当前文件中进行搜索。</li>
-<li><code>Command+P</code>后 : (或是<code>Ctrl+G</code>)加上数字可以跳转到相应的行。<br>而更酷的是你可以用<code>Command+P</code>加上一些关键词跳转到某个文件同时加上 @ 来列出/跳转到目标文件中的某个函数，或是同时加上 # 来在目标文件中进行搜索，或是同时加上 : 和数字来跳转到目标文件中相应的行。</li>
-</ul>
-</li>
-</ol>
-<p>以下是个人总结不完全的快捷键总汇，祝愿各位顺利解放自己的鼠标。</p>
-<p>选择类</p>
-<p>Ctrl+D 选中光标所占的文本，继续操作则会选中下一个相同的文本。</p>
-<p>Alt+F3 选中文本按下快捷键，即可一次性选择全部的相同文本进行同时编辑。举个栗子：快速选中并更改所有相同的变量名、函数名等。</p>
-<p>Ctrl+L 选中整行，继续操作则继续选择下一行，效果和Shift+↓ 效果一样。</p>
-<p>Ctrl+Shift+L 先选中多行，再按下快捷键，会在每行行尾插入光标，即可同时编辑这些行。</p>
-<p>Ctrl+Shift+M 选择括号内的内容（继续选择父括号）。举个栗子：快速选中删除函数中的代码，重写函数体代码或重写括号内里的内容。</p>
-<p>Ctrl+M 光标移动至括号内结束或开始的位置。</p>
-<p>Ctrl+Enter 在下一行插入新行。举个栗子：即使光标不在行尾，也能快速向下插入一行。</p>
-<p>Ctrl+Shift+Enter 在上一行插入新行。举个栗子：即使光标不在行首，也能快速向上插入一行。</p>
-<p>Ctrl+Shift+[ 选中代码，按下快捷键，折叠代码。</p>
-<p>Ctrl+Shift+] 选中代码，按下快捷键，展开代码。</p>
-<p>Ctrl+K+0 展开所有折叠代码。</p>
-<p>Ctrl+← 向左单位性地移动光标，快速移动光标。</p>
-<p>Ctrl+→ 向右单位性地移动光标，快速移动光标。</p>
-<p>shift+↑ 向上选中多行。</p>
-<p>shift+↓ 向下选中多行。</p>
-<p>Shift+← 向左选中文本。</p>
-<p>Shift+→ 向右选中文本。</p>
-<p>Ctrl+Shift+← 向左单位性地选中文本。</p>
-<p>Ctrl+Shift+→ 向右单位性地选中文本。</p>
-<p>Ctrl+Shift+↑ 将光标所在行和上一行代码互换（将光标所在行插入到上一行之前）。</p>
-<p>Ctrl+Shift+↓ 将光标所在行和下一行代码互换（将光标所在行插入到下一行之后）。</p>
-<p>Ctrl+Alt+↑ 向上添加多行光标，可同时编辑多行。</p>
-<p>Ctrl+Alt+↓ 向下添加多行光标，可同时编辑多行。</p>
-<p>编辑类</p>
-<p>Ctrl+J 合并选中的多行代码为一行。举个栗子：将多行格式的CSS属性合并为一行。</p>
-<p>Ctrl+Shift+D 复制光标所在整行，插入到下一行。</p>
-<p>Tab 向右缩进。</p>
-<p>Shift+Tab 向左缩进。</p>
-<p>Ctrl+K+K 从光标处开始删除代码至行尾。</p>
-<p>Ctrl+Shift+K 删除整行。</p>
-<p>Ctrl+/ 注释单行。</p>
-<p>Ctrl+Shift+/ 注释多行。</p>
-<p>Ctrl+K+U 转换大写。</p>
-<p>Ctrl+K+L 转换小写。</p>
-<p>Ctrl+Z 撤销。</p>
-<p>Ctrl+Y 恢复撤销。</p>
-<p>Ctrl+U 软撤销，感觉和Gtrl+Z一样。</p>
-<p>Ctrl+F2 设置书签</p>
-<p>Ctrl+T 左右字母互换。</p>
-<p>F6 单词检测拼写</p>
-<p>搜索类</p>
-<p>Ctrl+F 打开底部搜索框，查找关键字。</p>
-<p>Ctrl+shift+F 在文件夹内查找，与普通编辑器不同的地方是sublime允许添加多个文件夹进行查找，略高端，未研究。</p>
-<p>Ctrl+P 打开搜索框。举个栗子：1、输入当前项目中的文件名，快速搜索文件，2、输入@和关键字，查找文件中函数名，3、输入：和数字，跳转到文件中该行代码，4、输入#和关键字，查找变量名。</p>
-<p>Ctrl+G 打开搜索框，自动带：，输入数字跳转到该行代码。举个栗子：在页面代码比较长的文件中快速定位。</p>
-<p>Ctrl+R 打开搜索框，自动带@，输入关键字，查找文件中的函数名。举个栗子：在函数较多的页面快速查找某个函数。</p>
-<p>Ctrl+：打开搜索框，自动带#，输入关键字，查找文件中的变量名、属性名等。</p>
-<p>Ctrl+Shift+P 打开命令框。场景栗子：打开命名框，输入关键字，调用sublime text或插件的功能，例如使用package安装插件。</p>
-<p>Esc 退出光标多行选择，退出搜索框，命令框等。</p>
-<p>显示类</p>
-<p>Ctrl+Tab 按文件浏览过的顺序，切换当前窗口的标签页。</p>
-<p>Ctrl+PageDown 向左切换当前窗口的标签页。</p>
-<p>Ctrl+PageUp 向右切换当前窗口的标签页。</p>
-<p>Alt+Shift+1窗口分屏，恢复默认1屏（非小键盘的数字）</p>
-<p>Alt+Shift+2 左右分屏-2列</p>
-<p>Alt+Shift+3 左右分屏-3列</p>
-<p>Alt+Shift+4 左右分屏-4列</p>
-<p>Alt+Shift+5 等分4屏</p>
-<p>Alt+Shift+8 垂直分屏-2屏</p>
-<p>Alt+Shift+9 垂直分屏-3屏</p>
-<p>Ctrl+K+B 开启/关闭侧边栏。</p>
-<p>F11 全屏模式</p>
-<p>Shift+F11 免打扰模式</p>
-<h1 id="五、开发环境"><a href="#五、开发环境" class="headerlink" title="五、开发环境"></a>五、开发环境</h1><h2 id="1、java开发环境"><a href="#1、java开发环境" class="headerlink" title="1、java开发环境"></a>1、java开发环境</h2><h2 id="2、Python开发环境"><a href="#2、Python开发环境" class="headerlink" title="2、Python开发环境"></a>2、Python开发环境</h2><ul>
-<li><p>SublimeREPL，REPL就是read-evaluation-print-loop，解释型语言编译运行的过程）。装了SublimeREPL插件后也支持了编辑器上直接的编译运行和交互，但还是有一些不满的地方。<br>SublimeREPL提供的功能当中有两个我比较常用的是运行<a href="http://lib.csdn.net/base/python" title="Python知识库" target="_blank" rel="external">Python</a>交互环境和直接运行当前文件，而python自带的IDLE跟人性化的做法是把这两者结合起来，所以我想实现的是对当前的文件运行python的交互环境。</p>
-</li>
-<li><p>SublimeREPL 允许你在编辑界面直接运行 Python 解释器。我倾向于在单独的终端窗口用 bpython 来运行，但有时 SublimeREPL 是很有帮助的。</p>
-</li>
-<li><p>Pylinter 这个插件提供了目前我所见到的最好的 pylint 编辑器整合。它自动检查 .py 文件，无论其何时被保存，并且会直接在编辑界面显示 pylint 违规。它还有一个快捷方式来禁用局部的 pylint 检查，通过插入一个 #pylint: 禁用注释。这个插件对于我确实非常有用。</p>
-</li>
-<li><p>Anaconda绝对是换到Sublime Text 3后最令我兴奋的插件，没有之一。在Sublime Text 2的时代，为配置一个好用的python开发环境， 我们需要分别安装All Autocomplete,SublimeREPL,Pylinter和PEP8等诸多插件。 Geek就是让一切变得更简单，该插件作者就为了简便，把这些功能集中起来了。 Anaconda把PyFlakes, pep8 和 McCabe以插件的方式集成起来。安装Anaconda后，通过配置即可完成一个良好的Python开发环境。</p>
-</li>
-</ul>
-<h2 id="3、markdown环境"><a href="#3、markdown环境" class="headerlink" title="3、markdown环境"></a>3、markdown环境</h2><ul>
-<li><p>markdown支持</p>
-<p><a href="http://www.ihunter.me/sublime-text-3%E4%B8%AD%E9%85%8D%E7%BD%AEmarkdown.html" target="_blank" rel="external">http://www.ihunter.me/sublime-text-3%E4%B8%AD%E9%85%8D%E7%BD%AEmarkdown.html</a></p>
-</li>
-</ul>
-<h2 id="4、git环境"><a href="#4、git环境" class="headerlink" title="4、git环境"></a>4、git环境</h2><p>版本库是软件开发中不可缺少的工具，该插件把Git常用命令加入了Command Palette，让开发人员进行代码管理方便不少。</p>
-<p>GitGutter<br>这个小插件是在修改后的文件行号前增加一些标识图片，方便与版本库对比，修改内容一目了然。</p>
-<p>Gist<br>创建、管理gist的插件，Gist是GitHub提供的又一强力工具，用Git将用户常用的代码片段在线管理起来。安装此插件后，打开其User-Setting， 增加个人的GitHub访问Token后，即可通过快捷键或Console使用。</p>
+        <p>您可以在 <code>_config.yml</code> 中修改大部份的配置。</p>
+<h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>网站标题</td>
+</tr>
+<tr>
+<td><code>subtitle</code></td>
+<td>网站副标题</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>网站描述</td>
+</tr>
+<tr>
+<td><code>author</code></td>
+<td>您的名字</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>网站使用的语言</td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>网站时区。Hexo 默认使用您电脑的时区。<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区列表</a>。比如说：<code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。</td>
+</tr>
+</tbody>
+</table>
+<p>其中，<code>description</code>主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
+<h2 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>网址</td>
+<td></td>
+</tr>
+<tr>
+<td><code>root</code></td>
+<td>网站根目录</td>
+<td></td>
+</tr>
+<tr>
+<td><code>permalink</code></td>
+<td>文章的 <a href="permalinks.html">永久链接</a> 格式</td>
+<td><code>:year/:month/:day/:title/</code></td>
+</tr>
+<tr>
+<td><code>permalink_defaults</code></td>
+<td>永久链接中各部分的默认值</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>网站存放在子目录<br>如果您的网站存放在子目录中，例如 <code>http://yoursite.com/blog</code>，则请将您的 <code>url</code> 设为 <code>http://yoursite.com/blog</code> 并把 <code>root</code> 设为 <code>/blog/</code>。</p>
+</blockquote>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source_dir</code></td>
+<td>资源文件夹，这个文件夹用来存放内容。</td>
+<td><code>source</code></td>
+</tr>
+<tr>
+<td><code>public_dir</code></td>
+<td>公共文件夹，这个文件夹用于存放生成的站点文件。</td>
+<td><code>public</code></td>
+</tr>
+<tr>
+<td><code>tag_dir</code></td>
+<td>标签文件夹</td>
+<td><code>tags</code></td>
+</tr>
+<tr>
+<td><code>archive_dir</code></td>
+<td>归档文件夹</td>
+<td><code>archives</code></td>
+</tr>
+<tr>
+<td><code>category_dir</code></td>
+<td>分类文件夹</td>
+<td><code>categories</code></td>
+</tr>
+<tr>
+<td><code>code_dir</code></td>
+<td>Include code 文件夹</td>
+<td><code>downloads/code</code></td>
+</tr>
+<tr>
+<td><code>i18n_dir</code></td>
+<td>国际化（i18n）文件夹</td>
+<td><code>:lang</code></td>
+</tr>
+<tr>
+<td><code>skip_render</code></td>
+<td>跳过指定文件的渲染，您可使用 <a href="https://github.com/isaacs/node-glob" target="_blank" rel="external">glob 表达式</a>来匹配路径。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>提示<br>如果您刚刚开始接触Hexo，通常没有必要修改这一部分的值。</p>
+</blockquote>
+<h2 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>new_post_name</code></td>
+<td>新文章的文件名称</td>
+<td>:title.md</td>
+</tr>
+<tr>
+<td><code>default_layout</code></td>
+<td>预设布局</td>
+<td>post</td>
+</tr>
+<tr>
+<td><code>auto_spacing</code></td>
+<td>在中文和英文之间加入空格</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>titlecase</code></td>
+<td>把标题转换为 title case</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>external_link</code></td>
+<td>在新标签中打开链接</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>filename_case</code></td>
+<td>把文件名称转换为 (1) 小写或 (2) 大写</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>render_drafts</code></td>
+<td>显示草稿</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>post_asset_folder</code></td>
+<td>启动 <a href="asset-folders.html">Asset 文件夹</a></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>relative_link</code></td>
+<td>把链接改为与根目录的相对位址</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>future</code></td>
+<td>显示未来的文章</td>
+<td>true</td>
+</tr>
+<tr>
+<td><code>highlight</code></td>
+<td>代码块的设置</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>相对地址<br>默认情况下，Hexo生成的超链接都是绝对地址。例如，如果您的网站域名为<code>example.com</code>,您有一篇文章名为<code>hello</code>，那么绝对链接可能像这样：<code>http://example.com/hello.html</code>，它是<strong>绝对</strong>于域名的。相对链接像这样：<code>/hello.html</code>，也就是说，无论用什么域名访问该站点，都没有关系，这在进行反向代理时可能用到。通常情况下，建议使用绝对地址。</p>
+</blockquote>
+<h2 id="分类-amp-标签"><a href="#分类-amp-标签" class="headerlink" title="分类 &amp; 标签"></a>分类 &amp; 标签</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default_category</code></td>
+<td>默认分类</td>
+<td><code>uncategorized</code></td>
+</tr>
+<tr>
+<td><code>category_map</code></td>
+<td>分类别名</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tag_map</code></td>
+<td>标签别名</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="日期-时间格式"><a href="#日期-时间格式" class="headerlink" title="日期 / 时间格式"></a>日期 / 时间格式</h2><p>Hexo 使用 <a href="http://momentjs.com/" target="_blank" rel="external">Moment.js</a> 来解析和显示时间。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>date_format</code></td>
+<td>日期格式</td>
+<td><code>YYYY-MM-DD</code></td>
+</tr>
+<tr>
+<td><code>time_format</code></td>
+<td>时间格式</td>
+<td><code>H:mm:ss</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>per_page</code></td>
+<td>每页显示的文章量 (0 = 关闭分页功能)</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>pagination_dir</code></td>
+<td>分页目录</td>
+<td><code>page</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>theme</code></td>
+<td>当前主题名称。值为<code>false</code>时禁用主题</td>
+</tr>
+<tr>
+<td><code>deploy</code></td>
+<td>部署部分的设置</td>
+</tr>
+</tbody>
+</table>
 
       
 
@@ -381,21 +582,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">工具</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">Sublime Text 3</a>
-        </li>
-      
-		</ul>
-	</div>
-
       
 
       
@@ -446,7 +632,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://star45.me/2017/01/11/Sublime-Text-3-《第四章-插件》/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://star45.me/2017/03/13/hexo/configuration/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -460,18 +646,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/01/11/Linux下shell脚本执行jar文件/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/03/13/hexo/commands/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Linux下shell脚本执行jar文件
+          指令
         
       </div>
     </a>
   
   
-    <a href="/2017/01/11/Sublime-Text-3-《第三章-教程》/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Sublime Text 3 《第三章 - 教程》</div>
+    <a href="/2017/03/13/hexo/data-files/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据文件</div>
       <i class="icon-circle-right"></i>
     </a>
   

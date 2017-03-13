@@ -6,17 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//star45.me">
-  <title>Star45的博客</title>
+  <title>辅助函数（Helpers） | Star45的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="不知名学校毕业，就职于某电商网站。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Star45的博客">
-<meta property="og:url" content="//star45.me/index.html">
+  <meta name="description" content="辅助函数帮助您在模版中快速插入内容。辅助函数不能在源文件中使用。
+网址url_for在路径前加上根路径，从 Hexo 2.7 开始您应该使用此函数而不是 config.root + path。
+1&amp;lt;%- url_for(path) %&amp;gt;
+relative_url取得与 from 相对的 to 路径。
+1&amp;lt;%- relative_url(from, to) %&amp;gt;
+gravat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="辅助函数（Helpers）">
+<meta property="og:url" content="//star45.me/2017/03/13/hexo/helpers/index.html">
 <meta property="og:site_name" content="Star45的博客">
-<meta property="og:description" content="不知名学校毕业，就职于某电商网站。">
+<meta property="og:description" content="辅助函数帮助您在模版中快速插入内容。辅助函数不能在源文件中使用。
+网址url_for在路径前加上根路径，从 Hexo 2.7 开始您应该使用此函数而不是 config.root + path。
+1&amp;lt;%- url_for(path) %&amp;gt;
+relative_url取得与 from 相对的 to 路径。
+1&amp;lt;%- relative_url(from, to) %&amp;gt;
+gravat">
+<meta property="og:updated_time" content="2017-03-13T06:36:18.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Star45的博客">
-<meta name="twitter:description" content="不知名学校毕业，就职于某电商网站。">
+<meta name="twitter:title" content="辅助函数（Helpers）">
+<meta name="twitter:description" content="辅助函数帮助您在模版中快速插入内容。辅助函数不能在源文件中使用。
+网址url_for在路径前加上根路径，从 Hexo 2.7 开始您应该使用此函数而不是 config.root + path。
+1&amp;lt;%- url_for(path) %&amp;gt;
+relative_url取得与 from 相对的 to 路径。
+1&amp;lt;%- relative_url(from, to) %&amp;gt;
+gravat">
   
     <link rel="alternative" href="/atom.xml" title="Star45的博客" type="application/atom+xml">
   
@@ -156,74 +172,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-hexo/generating" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-hexo/helpers" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/generating/">12.生成文件</a>
-    </h1>
-  
-
-        <a href="/2017/03/13/hexo/generating/" class="archive-article-date">
-  	<time datetime="2017-03-13T07:35:04.875Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-<p>使用 Hexo 生成静态文件快速而且简单。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<h3 id="监视文件变动"><a href="#监视文件变动" class="headerlink" title="监视文件变动"></a>监视文件变动</h3><p>Hexo 能够监视文件变动并立即重新生成静态文件，在生成时会比对文件的 SHA1 checksum，只有变动的文件才会写入。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate --watch</div></pre></td></tr></table></figure>
-<h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><p>您可执行下列的其中一个命令，让 Hexo 在生成完毕后自动部署网站，两个命令的作用是相同的。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate --deploy</div><div class="line">$ hexo deploy --generate</div></pre></td></tr></table></figure>
-<blockquote>
-<p>简写<br>上面两个命令可以简写为<br>$ hexo g -d<br>$ hexo d -g</p>
-</blockquote>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/hexo/generating/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo/helpers" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/helpers/">辅助函数（Helpers）</a>
+    <h1 class="article-title" itemprop="name">
+      辅助函数（Helpers）
     </h1>
   
 
@@ -953,6 +909,32 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>请关注我的公众号<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://ojle7m433.bkt.clouddn.com/weixin_qrcode_for_gh_12.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -960,962 +942,90 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/hexo/helpers/">展开全文 >></a>
-        </p>
-      
 
       
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo/asset-folders" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/asset-folders/">资源文件夹</a>
-    </h1>
-  
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
 
-        <a href="/2017/03/13/hexo/asset-folders/" class="archive-article-date">
-  	<time datetime="2017-03-13T07:23:30.693Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>资源（Asset）代表 <code>source</code> 文件夹中除了文章以外的所有文件，例如图片、CSS、JS 文件等。比方说，如果你的Hexo项目中只有少量图片，那最简单的方法就是将它们放在 <code>source/images</code> 文件夹中。然后通过类似于 <code>![](/images/image.jpg)</code> 的方法访问它们。</p>
-<h2 id="文章资源文件夹"><a href="#文章资源文件夹" class="headerlink" title="文章资源文件夹"></a>文章资源文件夹</h2><p>对于那些想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo也提供了更组织化的方式来管理资源。这个稍微有些复杂但是管理资源非常方便的功能可以通过将 <code>config.yml</code> 文件中的 <code>post_asset_folder</code> 选项设为 <code>true</code> 来打开。</p>
-<figure class="highlight yaml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
-<p>当资源文件管理功能打开后，Hexo将会在你每一次通过 <code>hexo new [layout] &lt;title&gt;</code> 命令创建新文章时自动创建一个文件夹。这个资源文件夹将会有与这个 markdown 文件一样的名字。将所有与你的文章有关的资源放在这个关联文件夹中之后，你可以通过相对路径来引用它们，这样你就得到了一个更简单而且方便得多的工作流。</p>
-<h2 id="相对路径引用的标签插件"><a href="#相对路径引用的标签插件" class="headerlink" title="相对路径引用的标签插件"></a>相对路径引用的标签插件</h2><p>通过常规的 markdown 语法和相对路径来引用图片和其它资源可能会导致它们在存档页或者主页上显示不正确。在Hexo 2时代，社区创建了很多插件来解决这个问题。但是，随着Hexo 3 的发布，许多新的标签插件被加入到了核心代码中。这使得你可以更简单地在文章中引用你的资源。</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">asset_path</span> slug %&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name">asset_img</span> slug [title] %&#125;</span><span class="xml"></span></div><div class="line"><span class="template-tag">&#123;% <span class="name">asset_link</span> slug [title] %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-<p>比如说：当你打开文章资源文件夹功能后，你把一个 <code>example.jpg</code> 图片放在了你的资源文件夹中，如果通过使用相对路径的常规 markdown 语法 <code>![](/example.jpg)</code> ，它将 <em>不会</em> 出现在首页上。（但是它会在文章中按你期待的方式工作）</p>
-<p>正确的引用图片方式是使用下列的标签插件而不是 markdown ：</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="symbol">%</span> asset_img <span class="built_in">example</span>.jpg This <span class="built_in">is</span> an <span class="built_in">example</span> <span class="built_in">image</span> <span class="symbol">%</span>&#125;</div></pre></td></tr></table></figure>
-<p>通过这种方式，图片将会同时出现在文章和主页以及归档页中。</p>
-
-      
-
-      
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://star45.me/2017/03/13/hexo/helpers/" alt="微信分享二维码">
     </div>
-    <div class="article-info article-info-index">
-      
-      
-      
+</div>
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/hexo/asset-folders/">展开全文 >></a>
-        </p>
-      
-
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
-
-
-
   
-    <article id="post-hexo/commands" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+<nav id="article-nav">
+  
+    <a href="/2017/03/13/hexo/generating/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/commands/">指令</a>
-    </h1>
-  
-
-        <a href="/2017/03/13/hexo/commands/" class="archive-article-date">
-  	<time datetime="2017-03-13T07:23:30.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init [folder]</div></pre></td></tr></table></figure>
-<p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
-<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new [layout] &lt;title&gt;</div></pre></td></tr></table></figure>
-<p>新建一篇文章。如果没有设置 <code>layout</code> 的话，默认使用 <a href="configuration.html">_config.yml</a> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<h2 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>生成静态文件。</p>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-d</code>, <code>--deploy</code></td>
-<td>文件生成后立即部署网站</td>
-</tr>
-<tr>
-<td><code>-w</code>, <code>--watch</code></td>
-<td>监视文件变动</td>
-</tr>
-</tbody>
-</table>
-<p>该命令可以简写为<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure></p>
-<h2 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo publish [layout] &lt;filename&gt;</div></pre></td></tr></table></figure>
-<p>发表草稿。</p>
-<h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-p</code>, <code>--port</code></td>
-<td>重设端口</td>
-</tr>
-<tr>
-<td><code>-s</code>, <code>--static</code></td>
-<td>只使用静态文件</td>
-</tr>
-<tr>
-<td><code>-l</code>, <code>--log</code></td>
-<td>启动日记记录，使用覆盖记录格式</td>
-</tr>
-</tbody>
-</table>
-<h2 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>部署网站。</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-g</code>, <code>--generate</code></td>
-<td>部署之前预先生成静态文件</td>
-</tr>
-</tbody>
-</table>
-<p>该命令可以简写为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
-<h2 id="render"><a href="#render" class="headerlink" title="render"></a>render</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo render &lt;file1&gt; [file2] ...</div></pre></td></tr></table></figure>
-<p>渲染文件。</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-o</code>, <code>--output</code></td>
-<td>设置输出路径</td>
-</tr>
-</tbody>
-</table>
-<h2 id="migrate"><a href="#migrate" class="headerlink" title="migrate"></a>migrate</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo migrate &lt;<span class="built_in">type</span>&gt;</div></pre></td></tr></table></figure>
-<p>从其他博客系统 <a href="migration.html">迁移内容</a>。</p>
-<h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div></pre></td></tr></table></figure>
-<p>清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)。</p>
-<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo list &lt;<span class="built_in">type</span>&gt;</div></pre></td></tr></table></figure>
-<p>列出网站资料。</p>
-<h2 id="version"><a href="#version" class="headerlink" title="version"></a>version</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo version</div></pre></td></tr></table></figure>
-<p>显示 Hexo 版本。</p>
-<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><h3 id="安全模式"><a href="#安全模式" class="headerlink" title="安全模式"></a>安全模式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo --safe</div></pre></td></tr></table></figure>
-<p>在安全模式下，不会载入插件和脚本。当您在安装新插件遭遇问题时，可以尝试以安全模式重新执行。</p>
-<h3 id="调试模式"><a href="#调试模式" class="headerlink" title="调试模式"></a>调试模式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo --debug</div></pre></td></tr></table></figure>
-<p>在终端中显示调试信息并记录到 <code>debug.log</code>。当您碰到问题时，可以尝试用调试模式重新执行一次，并 <a href="https://github.com/hexojs/hexo/issues/new" target="_blank" rel="external">提交调试信息到 GitHub</a>。</p>
-<h3 id="简洁模式"><a href="#简洁模式" class="headerlink" title="简洁模式"></a>简洁模式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo --silent</div></pre></td></tr></table></figure>
-<p>隐藏终端信息。</p>
-<h3 id="自定义配置文件的路径"><a href="#自定义配置文件的路径" class="headerlink" title="自定义配置文件的路径"></a>自定义配置文件的路径</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo --config custom.yml</div></pre></td></tr></table></figure>
-<p>自定义配置文件的路径，执行后将不再使用 <code>_config.yml</code>。</p>
-<h3 id="显示草稿"><a href="#显示草稿" class="headerlink" title="显示草稿"></a>显示草稿</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo --draft</div></pre></td></tr></table></figure>
-<p>显示 <code>source/_drafts</code> 文件夹中的草稿文章。</p>
-<h3 id="自定义-CWD"><a href="#自定义-CWD" class="headerlink" title="自定义 CWD"></a>自定义 CWD</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo --cwd /path/to/cwd</div></pre></td></tr></table></figure>
-<p>自定义当前工作目录（Current working directory）的路径。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/hexo/commands/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo/configuration" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+          12.生成文件
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/configuration/">配置</a>
-    </h1>
-  
-
-        <a href="/2017/03/13/hexo/configuration/" class="archive-article-date">
-  	<time datetime="2017-03-13T07:23:30.682Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>您可以在 <code>_config.yml</code> 中修改大部份的配置。</p>
-<h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>title</code></td>
-<td>网站标题</td>
-</tr>
-<tr>
-<td><code>subtitle</code></td>
-<td>网站副标题</td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>网站描述</td>
-</tr>
-<tr>
-<td><code>author</code></td>
-<td>您的名字</td>
-</tr>
-<tr>
-<td><code>language</code></td>
-<td>网站使用的语言</td>
-</tr>
-<tr>
-<td><code>timezone</code></td>
-<td>网站时区。Hexo 默认使用您电脑的时区。<a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="external">时区列表</a>。比如说：<code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。</td>
-</tr>
-</tbody>
-</table>
-<p>其中，<code>description</code>主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
-<h2 id="网址"><a href="#网址" class="headerlink" title="网址"></a>网址</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>url</code></td>
-<td>网址</td>
-<td></td>
-</tr>
-<tr>
-<td><code>root</code></td>
-<td>网站根目录</td>
-<td></td>
-</tr>
-<tr>
-<td><code>permalink</code></td>
-<td>文章的 <a href="permalinks.html">永久链接</a> 格式</td>
-<td><code>:year/:month/:day/:title/</code></td>
-</tr>
-<tr>
-<td><code>permalink_defaults</code></td>
-<td>永久链接中各部分的默认值</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>网站存放在子目录<br>如果您的网站存放在子目录中，例如 <code>http://yoursite.com/blog</code>，则请将您的 <code>url</code> 设为 <code>http://yoursite.com/blog</code> 并把 <code>root</code> 设为 <code>/blog/</code>。</p>
-</blockquote>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>source_dir</code></td>
-<td>资源文件夹，这个文件夹用来存放内容。</td>
-<td><code>source</code></td>
-</tr>
-<tr>
-<td><code>public_dir</code></td>
-<td>公共文件夹，这个文件夹用于存放生成的站点文件。</td>
-<td><code>public</code></td>
-</tr>
-<tr>
-<td><code>tag_dir</code></td>
-<td>标签文件夹</td>
-<td><code>tags</code></td>
-</tr>
-<tr>
-<td><code>archive_dir</code></td>
-<td>归档文件夹</td>
-<td><code>archives</code></td>
-</tr>
-<tr>
-<td><code>category_dir</code></td>
-<td>分类文件夹</td>
-<td><code>categories</code></td>
-</tr>
-<tr>
-<td><code>code_dir</code></td>
-<td>Include code 文件夹</td>
-<td><code>downloads/code</code></td>
-</tr>
-<tr>
-<td><code>i18n_dir</code></td>
-<td>国际化（i18n）文件夹</td>
-<td><code>:lang</code></td>
-</tr>
-<tr>
-<td><code>skip_render</code></td>
-<td>跳过指定文件的渲染，您可使用 <a href="https://github.com/isaacs/node-glob" target="_blank" rel="external">glob 表达式</a>来匹配路径。</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>提示<br>如果您刚刚开始接触Hexo，通常没有必要修改这一部分的值。</p>
-</blockquote>
-<h2 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>new_post_name</code></td>
-<td>新文章的文件名称</td>
-<td>:title.md</td>
-</tr>
-<tr>
-<td><code>default_layout</code></td>
-<td>预设布局</td>
-<td>post</td>
-</tr>
-<tr>
-<td><code>auto_spacing</code></td>
-<td>在中文和英文之间加入空格</td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>titlecase</code></td>
-<td>把标题转换为 title case</td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>external_link</code></td>
-<td>在新标签中打开链接</td>
-<td>true</td>
-</tr>
-<tr>
-<td><code>filename_case</code></td>
-<td>把文件名称转换为 (1) 小写或 (2) 大写</td>
-<td>0</td>
-</tr>
-<tr>
-<td><code>render_drafts</code></td>
-<td>显示草稿</td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>post_asset_folder</code></td>
-<td>启动 <a href="asset-folders.html">Asset 文件夹</a></td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>relative_link</code></td>
-<td>把链接改为与根目录的相对位址</td>
-<td>false</td>
-</tr>
-<tr>
-<td><code>future</code></td>
-<td>显示未来的文章</td>
-<td>true</td>
-</tr>
-<tr>
-<td><code>highlight</code></td>
-<td>代码块的设置</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>相对地址<br>默认情况下，Hexo生成的超链接都是绝对地址。例如，如果您的网站域名为<code>example.com</code>,您有一篇文章名为<code>hello</code>，那么绝对链接可能像这样：<code>http://example.com/hello.html</code>，它是<strong>绝对</strong>于域名的。相对链接像这样：<code>/hello.html</code>，也就是说，无论用什么域名访问该站点，都没有关系，这在进行反向代理时可能用到。通常情况下，建议使用绝对地址。</p>
-</blockquote>
-<h2 id="分类-amp-标签"><a href="#分类-amp-标签" class="headerlink" title="分类 &amp; 标签"></a>分类 &amp; 标签</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>default_category</code></td>
-<td>默认分类</td>
-<td><code>uncategorized</code></td>
-</tr>
-<tr>
-<td><code>category_map</code></td>
-<td>分类别名</td>
-<td></td>
-</tr>
-<tr>
-<td><code>tag_map</code></td>
-<td>标签别名</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="日期-时间格式"><a href="#日期-时间格式" class="headerlink" title="日期 / 时间格式"></a>日期 / 时间格式</h2><p>Hexo 使用 <a href="http://momentjs.com/" target="_blank" rel="external">Moment.js</a> 来解析和显示时间。</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date_format</code></td>
-<td>日期格式</td>
-<td><code>YYYY-MM-DD</code></td>
-</tr>
-<tr>
-<td><code>time_format</code></td>
-<td>时间格式</td>
-<td><code>H:mm:ss</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>per_page</code></td>
-<td>每页显示的文章量 (0 = 关闭分页功能)</td>
-<td><code>10</code></td>
-</tr>
-<tr>
-<td><code>pagination_dir</code></td>
-<td>分页目录</td>
-<td><code>page</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>theme</code></td>
-<td>当前主题名称。值为<code>false</code>时禁用主题</td>
-</tr>
-<tr>
-<td><code>deploy</code></td>
-<td>部署部分的设置</td>
-</tr>
-</tbody>
-</table>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/hexo/configuration/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo/data-files" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/data-files/">数据文件</a>
-    </h1>
-  
-
-        <a href="/2017/03/13/hexo/data-files/" class="archive-article-date">
-  	<time datetime="2017-03-13T07:23:30.675Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有时您可能需要在主题中使用某些资料，而这些资料并不在文章内，并且是需要重复使用的，那么您可以考虑使用 Hexo 3.0 新增的「数据文件」功能。此功能会载入 <code>source/_data</code> 内的 YAML 或 JSON 文件，如此一来您便能在网站中复用这些文件了。</p>
-<p>举例来说，在 <code>source/_data</code> 文件夹中新建 <code>menu.yml</code> 文件：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">Home:</span> /</div><div class="line"><span class="attr">Gallery:</span> /gallery/</div><div class="line"><span class="attr">Archives:</span> /archives/</div></pre></td></tr></table></figure>
-<p>您就能在模板中使用这些资料：</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name"><span class="name">for</span></span> link <span class="keyword">in</span> site.data.menu %&#125;</span><span class="xml"></span></div><div class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"</span></span><span class="template-variable">&#123;&#123; link &#125;&#125;</span><span class="xml"><span class="tag"><span class="string">"</span>&gt;</span></span><span class="template-variable">&#123;&#123; loop.key &#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></div><div class="line"><span class="template-tag">&#123;% <span class="name"><span class="name">endfor</span></span> %&#125;</span><span class="xml"></span></div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/hexo/data-files/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo/contributing" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/contributing/">贡献</a>
-    </h1>
-  
-
-        <a href="/2017/03/13/hexo/contributing/" class="archive-article-date">
-  	<time datetime="2017-03-13T07:23:30.675Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><p>我们非常欢迎您加入 Hexo 的开发，这份文件将帮助您了解开发流程。</p>
-<h3 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h3><p>请遵守以下准则：</p>
-<ul>
-<li>遵守 <a href="http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml" target="_blank" rel="external">Google JavaScript 代码风格</a>。</li>
-<li>使用 2 个空格缩排。</li>
-<li>不要把逗号放在最前面。</li>
-</ul>
-<h3 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h3><ol>
-<li>Fork <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">hexojs/hexo</a></li>
-<li><p>把库（repository）复制到电脑上，并安装所依赖的插件。</p>
- <figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> git clone https:<span class="comment">//github.com/&lt;username&gt;/hexo.git</span></div><div class="line"><span class="symbol">$</span> cd hexo</div><div class="line"><span class="symbol">$</span> npm install</div><div class="line"><span class="symbol">$</span> git submodule update --init</div></pre></td></tr></table></figure>
-</li>
-<li><p>新增一个功能分支。</p>
- <figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -<span class="selector-tag">b</span> new_feature</div></pre></td></tr></table></figure>
-</li>
-<li><p>开始开发。</p>
-</li>
-<li><p>推送（push）分支。</p>
- <figure class="highlight maxima"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">push</span> <span class="built_in">origin</span> new_feature</div></pre></td></tr></table></figure>
-</li>
-<li><p>建立一个新的合并申请（pull request）并描述变动。</p>
-</li>
-</ol>
-<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul>
-<li>不要修改 <code>package.json</code> 的版本号。</li>
-<li><p>只有在测试通过的情况下您的合并申请才会被批准，在提交前别忘了进行测试。</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm <span class="built_in">test</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="更新文档"><a href="#更新文档" class="headerlink" title="更新文档"></a>更新文档</h2><p>Hexo 文档开放源代码，您可以在 <a href="https://github.com/hexojs/site" target="_blank" rel="external">hexojs/site</a> 找到源代码。</p>
-<h3 id="工作流程-1"><a href="#工作流程-1" class="headerlink" title="工作流程"></a>工作流程</h3><ol>
-<li>Fork <a href="https://github.com/hexojs/site" target="_blank" rel="external">hexojs/site</a></li>
-<li><p>把库（repository）复制到电脑上，并安装所依赖的插件。</p>
- <figure class="highlight gams"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">$</span> git clone https:<span class="comment">//github.com/&lt;username&gt;/site.git</span></div><div class="line"><span class="symbol">$</span> cd site</div><div class="line"><span class="symbol">$</span> npm install</div></pre></td></tr></table></figure>
-</li>
-<li><p>开始编辑文件，您可以通过服务器预览变动。</p>
- <figure class="highlight axapta"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo <span class="keyword">server</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>推送（push）分支。</p>
-</li>
-<li>建立一个新的合并申请（pull request）并描述变动。</li>
-</ol>
-<h3 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h3><ol>
-<li>在 <code>source</code> 资料夹中建立一个新的语言资料夹（全小写）。</li>
-<li>把 <code>source</code> 资料夹中相关的文件（Markdown 和模板文件）复制到新的语言资料夹中。</li>
-<li>在 <code>source/_data/language.yml</code> 中新增语言。</li>
-<li>将 <code>en.yml</code> 复制到 <code>themes/navy/languages</code>中并命名为语言名称（全小写）。</li>
-</ol>
-<h2 id="反馈问题"><a href="#反馈问题" class="headerlink" title="反馈问题"></a>反馈问题</h2><p>当您在使用 Hexo 时遇到问题，您可以尝试在 <a href="troubleshooting.html">问题解答</a> 中寻找解答，或是在 <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a> 或 <a href="https://groups.google.com/group/hexo" target="_blank" rel="external">Google Group</a> 上提问。如果你没有找答案，请在 Github 报告它。</p>
-<ol>
-<li>在 <a href="commands.html#调试模式">调试模式</a> 中重现问题。</li>
-<li>运行 <code>hexo version</code> 并检查版本信息。</li>
-<li>把调试信息和版本信息都贴到 GitHub。</li>
-</ol>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/hexo/contributing/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo/deployment" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/13/hexo/deployment/">部署</a>
-    </h1>
-  
-
-        <a href="/2017/03/13/hexo/deployment/" class="archive-article-date">
-  	<time datetime="2017-03-13T07:23:30.674Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Hexo 提供了快速方便的一键部署功能，让您只需一条命令就能将网站部署到服务器上。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>在开始之前，您必须先在 <code>_config.yml</code> 中修改参数，一个正确的部署配置中至少要有 <code>type</code> 参数，例如：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div></pre></td></tr></table></figure>
-<p>您可同时使用多个 deployer，Hexo 会依照顺序执行每个 deployer。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">- type:</span> git</div><div class="line"><span class="attr">  repo:</span></div><div class="line"><span class="attr">- type:</span> heroku</div><div class="line"><span class="attr">  repo:</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p> 缩进<br>YAML依靠缩进来确定元素间的从属关系。因此，请确保每个deployer的缩进长度相同，并且使用空格缩进。</p>
-</blockquote>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>安装 <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">hexo-deployer-git</a>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p>修改配置。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repo:</span> &lt;repository url<span class="string">&gt;</span></div><div class="line"><span class="attr">  branch:</span> [branch]</div><div class="line"><span class="attr">  message:</span> [message]</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>repo</code></td>
-<td>库（Repository）地址</td>
-</tr>
-<tr>
-<td><code>branch</code></td>
-<td>分支名称。如果您使用的是 GitHub 或 GitCafe 的话，程序会尝试自动检测。</td>
-</tr>
-<tr>
-<td><code>message</code></td>
-<td>自定义提交信息 (默认为 <code>Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}</code>)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Heroku"><a href="#Heroku" class="headerlink" title="Heroku"></a>Heroku</h2><p>安装 <a href="https://github.com/hexojs/hexo-deployer-heroku" target="_blank" rel="external">hexo-deployer-heroku</a>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-heroku --save</div></pre></td></tr></table></figure>
-<p>修改配置。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> heroku</div><div class="line"><span class="attr">  repo:</span> &lt;repository url<span class="string">&gt;</span></div><div class="line"><span class="attr">  message:</span> [message]</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>repo</code></td>
-<td>Heroku 库（Repository）地址</td>
-</tr>
-<tr>
-<td><code>message</code></td>
-<td>自定提交信息 (默认为 <code>Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}</code>)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Rsync"><a href="#Rsync" class="headerlink" title="Rsync"></a>Rsync</h2><p>安装 <a href="https://github.com/hexojs/hexo-deployer-rsync" target="_blank" rel="external">hexo-deployer-rsync</a>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-rsync --save</div></pre></td></tr></table></figure>
-<p>修改配置。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> rsync</div><div class="line"><span class="attr">  host:</span> &lt;host<span class="string">&gt;</span></div><div class="line"><span class="attr">  user:</span> &lt;user<span class="string">&gt;</span></div><div class="line"><span class="attr">  root:</span> &lt;root<span class="string">&gt;</span></div><div class="line"><span class="attr">  port:</span> [port]</div><div class="line"><span class="attr">  delete:</span> [<span class="literal">true</span>|<span class="literal">false</span>]</div><div class="line"><span class="attr">  verbose:</span> [<span class="literal">true</span>|<span class="literal">false</span>]</div><div class="line"><span class="attr">  ignore_errors:</span> [<span class="literal">true</span>|<span class="literal">false</span>]</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>host</code></td>
-<td>远程主机的地址</td>
-<td></td>
-</tr>
-<tr>
-<td><code>user</code></td>
-<td>使用者名称</td>
-<td></td>
-</tr>
-<tr>
-<td><code>root</code></td>
-<td>远程主机的根目录</td>
-<td></td>
-</tr>
-<tr>
-<td><code>port</code></td>
-<td>端口</td>
-<td>22</td>
-</tr>
-<tr>
-<td><code>delete</code></td>
-<td>删除远程主机上的旧文件</td>
-<td>true</td>
-</tr>
-<tr>
-<td><code>verbose</code></td>
-<td>显示调试信息</td>
-<td>true</td>
-</tr>
-<tr>
-<td><code>ignore_errors</code></td>
-<td>忽略错误</td>
-<td>false</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>rsync部署模块的工作方式<br>需要注意的是，要求您提供的实际上是一个能通过SSH登陆远程主机的Linux用户。Hexo会自动处理关于rsync使用的一切操作。因此，您需要在远程主机上为您的Hexo站点建立一个用户，并允许其通过SSH登陆。不过，这里的<code>port</code>，的确是指rsync监听的端口，请确保防火墙打开了该端口。</p>
-</blockquote>
-<h2 id="OpenShift"><a href="#OpenShift" class="headerlink" title="OpenShift"></a>OpenShift</h2><p>安装 <a href="https://github.com/hexojs/hexo-deployer-openshift" target="_blank" rel="external">hexo-deployer-openshift</a>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-openshift --save</div></pre></td></tr></table></figure>
-<p>修改配置。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> openshift</div><div class="line"><span class="attr">  repo:</span> &lt;repository url<span class="string">&gt;</span></div><div class="line"><span class="attr">  message:</span> [message]</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>repo</code></td>
-<td>OpenShift 库（Repository）地址</td>
-</tr>
-<tr>
-<td><code>message</code></td>
-<td>自定提交信息 (默认为 <code>Site updated: {{ now('YYYY-MM-DD HH:mm:ss') }}</code>)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="FTPSync"><a href="#FTPSync" class="headerlink" title="FTPSync"></a>FTPSync</h2><p>安装 <a href="https://github.com/hexojs/hexo-deployer-ftpsync" target="_blank" rel="external">hexo-deployer-ftpsync</a>。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-ftpsync --save</div></pre></td></tr></table></figure>
-<p>修改配置。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> ftpsync</div><div class="line"><span class="attr">  host:</span> &lt;host<span class="string">&gt;</span></div><div class="line"><span class="attr">  user:</span> &lt;user<span class="string">&gt;</span></div><div class="line"><span class="attr">  pass:</span> &lt;password<span class="string">&gt;</span></div><div class="line"><span class="attr">  remote:</span> [remote]</div><div class="line"><span class="attr">  port:</span> [port]</div><div class="line"><span class="attr">  ignore:</span> [ignore]</div><div class="line"><span class="attr">  connections:</span> [connections]</div><div class="line"><span class="attr">  verbose:</span> [<span class="literal">true</span>|<span class="literal">false</span>]</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>host</code></td>
-<td>远程主机的地址</td>
-<td></td>
-</tr>
-<tr>
-<td><code>user</code></td>
-<td>使用者名称</td>
-<td></td>
-</tr>
-<tr>
-<td><code>pass</code></td>
-<td>密码</td>
-<td></td>
-</tr>
-<tr>
-<td><code>remote</code></td>
-<td>远程主机的根目录</td>
-<td><code>/</code></td>
-</tr>
-<tr>
-<td><code>port</code></td>
-<td>端口</td>
-<td>21</td>
-</tr>
-<tr>
-<td><code>ignore</code></td>
-<td>忽略的文件或目录</td>
-<td></td>
-</tr>
-<tr>
-<td><code>connections</code></td>
-<td>使用的连接数</td>
-<td>1</td>
-</tr>
-<tr>
-<td><code>verbose</code></td>
-<td>显示调试信息</td>
-<td>false</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>FTP部署可能出现的问题<br>您可能需要预先通过其他方式将所有文件上传到远程主机中。否则初次使用ftpsync插件就可能出现报错。另外，由于FTP协议的特征，它每传送一个文件就需要一次握手，相对速度较慢。</p>
-</blockquote>
-<h2 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h2><p>Hexo 生成的所有文件都放在 <code>public</code> 文件夹中，您可以将它们复制到您喜欢的地方。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/03/13/hexo/deployment/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
+      </div>
+    </a>
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+    <a href="/2017/03/13/hexo/asset-folders/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">资源文件夹</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
+</nav>
+
+
+
+
+
+
+
 
 
           </div>
@@ -1937,8 +1047,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
