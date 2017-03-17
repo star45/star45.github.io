@@ -8,19 +8,34 @@
   <link rel="dns-prefetch" href="//star45.me">
   <title>Spring系列1-Filter | Star45的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SpringFramework学习我们带着这些问题，去认识、学习CharacterEncodingFilter过滤器">
+  <meta name="description" content="SpringFramework学习
+Spring提供的Filter 是什么
+我们为什么要用Spring提供的Filter
+Spring提供的Filter 会给我们带来什么
+
+我们带着这些问题，去认识、学习Spring提供的Filter过滤器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring系列1-Filter">
 <meta property="og:url" content="//star45.me/2017/03/13/Spring系列1-Filter/index.html">
 <meta property="og:site_name" content="Star45的博客">
-<meta property="og:description" content="SpringFramework学习我们带着这些问题，去认识、学习CharacterEncodingFilter过滤器">
-<meta property="og:image" content="//star45.me/spring-CharacterEncodingFilter.png">
-<meta property="og:image" content="//star45.me/spring-CharacterEncodingFilter.png">
-<meta property="og:updated_time" content="2017-03-13T05:56:21.470Z">
+<meta property="og:description" content="SpringFramework学习
+Spring提供的Filter 是什么
+我们为什么要用Spring提供的Filter
+Spring提供的Filter 会给我们带来什么
+
+我们带着这些问题，去认识、学习Spring提供的Filter过滤器">
+<meta property="og:image" content="http://ojle7m433.bkt.clouddn.com/spring.png">
+<meta property="og:image" content="http://ojle7m433.bkt.clouddn.com/spring-CharacterEncodingFilter.png">
+<meta property="og:updated_time" content="2017-03-17T07:02:00.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring系列1-Filter">
-<meta name="twitter:description" content="SpringFramework学习我们带着这些问题，去认识、学习CharacterEncodingFilter过滤器">
-<meta name="twitter:image" content="//star45.me/spring-CharacterEncodingFilter.png">
+<meta name="twitter:description" content="SpringFramework学习
+Spring提供的Filter 是什么
+我们为什么要用Spring提供的Filter
+Spring提供的Filter 会给我们带来什么
+
+我们带着这些问题，去认识、学习Spring提供的Filter过滤器">
+<meta name="twitter:image" content="http://ojle7m433.bkt.clouddn.com/spring.png">
   
     <link rel="alternative" href="/atom.xml" title="Star45的博客" type="application/atom+xml">
   
@@ -87,7 +102,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/star45" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="http://weibo.com/star45" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weibo" target="_blank" href="http://weibo.com/starsxlk" title="weibo"><i class="icon-weibo"></i></a>
 		        
 					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 		        
@@ -130,7 +145,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/star45" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="http://weibo.com/star45" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weibo" target="_blank" href="http://weibo.com/starsxlk" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
 			        
@@ -172,25 +187,48 @@
   
 
         <a href="/2017/03/13/Spring系列1-Filter/" class="archive-article-date">
-  	<time datetime="2017-03-13T05:53:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
+  	<time datetime="2017-03-13T04:02:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-13</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="spring-CharacterEncodingFilter.png" alt="spring-CharacterEncodingFilter.png" title="CharacterEncodingFilter"></p>
-<h1 id="SpringFramework学习"><a href="#SpringFramework学习" class="headerlink" title="SpringFramework学习"></a>SpringFramework学习</h1><p>我们带着这些问题，去认识、学习CharacterEncodingFilter过滤器</p>
+        <p><img src="http://ojle7m433.bkt.clouddn.com/spring.png" alt="spring.png" title="Spring"></p>
+<h1 id="SpringFramework学习"><a href="#SpringFramework学习" class="headerlink" title="SpringFramework学习"></a>SpringFramework学习</h1><ul>
+<li>Spring提供的Filter 是什么</li>
+<li>我们为什么要用Spring提供的Filter</li>
+<li>Spring提供的Filter 会给我们带来什么</li>
+</ul>
+<p>我们带着这些问题，去认识、学习Spring提供的Filter过滤器</p>
 <a id="more"></a>
 <p>##</p>
 <blockquote>
 <p>Spring Framework 是一个开源的Java／Java EE全功能栈（full-stack）的应用程序框架，以Apache许可证形式发布，也有.NET平台上的移植版本。该框架基于 Expert One-on-One Java EE Design and Development（ISBN 0-7645-4385-7）一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。</p>
 </blockquote>
+<p>Spring提供的filter有如下这些，list filter:</p>
 <ul>
-<li>Sublime Text 3 是什么</li>
-<li>我们为什么要用Sublime Text3</li>
-<li>Sublime Text 3 会给我们带来什么</li>
+<li>AbstractRequestLoggingFilter</li>
+<li>CharacterEncodingFilter</li>
+<li>CommonsRequestLoggingFilter</li>
+<li>CompositeFilter</li>
+<li>DelegatingFilterProxy</li>
+<li>GenericFilterBean</li>
+<li>HiddenHttpMethodFilter</li>
+<li>HttpPutFormContentFilter</li>
+<li>Log4jNestedDiagnosticContextFilter</li>
+<li>OncePerRequestFilter</li>
+<li>RequestContextFilter</li>
+<li>ServletContextRequestLoggingFilter</li>
+<li>ShallowEtagHeaderFilter</li>
 </ul>
-<p><img src="spring-CharacterEncodingFilter.png" alt="spring-CharacterEncodingFilter.png" title="CharacterEncodingFilter"></p>
+<h3 id="一、CharacterEncodingFilter"><a href="#一、CharacterEncodingFilter" class="headerlink" title="一、CharacterEncodingFilter"></a>一、CharacterEncodingFilter</h3><p>CharacterEncodingFilter主要用于处理请求中的乱码问题。</p>
+<p>这个类的继承关系如下：</p>
+<p><img src="http://ojle7m433.bkt.clouddn.com/spring-CharacterEncodingFilter.png" alt="spring-CharacterEncodingFilter.png" title="CharacterEncodingFilter"></p>
+<p>CharacterEncodingFilter的部分源码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharacterEncodingFilter</span> <span class="keyword">extends</span> <span class="title">OncePerRequestFilter</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> String encoding;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> forceEncoding = <span class="keyword">false</span>;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doFilterInternal</span><span class="params">(</span></span></div><div class="line">            HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)</div><div class="line">            <span class="keyword">throws</span> ServletException, IOException &#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.encoding != <span class="keyword">null</span> &amp;&amp; (<span class="keyword">this</span>.forceEncoding || request.getCharacterEncoding() == <span class="keyword">null</span>)) &#123;</div><div class="line">            request.setCharacterEncoding(<span class="keyword">this</span>.encoding);</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.forceEncoding) &#123;</div><div class="line">                response.setCharacterEncoding(<span class="keyword">this</span>.encoding);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        filterChain.doFilter(request, response);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>forceEncoding 为 true 为设置response的编码，并不会对request参数造成影响。</p>
+<p>使用例子：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;filter&gt;</div><div class="line">    &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;</div><div class="line">    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</div><div class="line">        &lt;init-param&gt;</div><div class="line">            &lt;param-name&gt;encoding&lt;/param-name&gt;</div><div class="line">            &lt;param-value&gt;UTF-8&lt;/param-value&gt;</div><div class="line">        &lt;/init-param&gt;</div><div class="line">        &lt;init-param&gt;</div><div class="line">            &lt;param-name&gt;forceEncoding&lt;/param-name&gt;</div><div class="line">            &lt;param-value&gt;true&lt;/param-value&gt;</div><div class="line">        &lt;/init-param&gt;</div><div class="line">    &lt;/filter&gt;</div><div class="line">&lt;filter-mapping&gt;</div><div class="line">    &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;</div><div class="line">    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</div><div class="line">&lt;/filter-mapping&gt;</div></pre></td></tr></table></figure>
 
       
 
@@ -225,6 +263,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">framework</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">Spring</a>
+        </li>
+      
+		</ul>
+	</div>
+
       
 
       
@@ -289,18 +342,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/03/13/hexo/variables/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/03/13/hexo/2-setup/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          17.变量
+          2.建站
         
       </div>
     </a>
   
   
-    <a href="/2017/03/10/hexo/generating/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">12.生成文件</div>
+    <a href="/2017/03/13/hexo/1-index/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">1.概述</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -432,6 +485,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color3">建站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Spring</a>
               </li>
             
             <div class="clearfix"></div>
