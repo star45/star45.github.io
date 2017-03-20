@@ -26,7 +26,7 @@ Spring提供的Filter 会给我们带来什么
 我们带着这些问题，去认识、学习Spring提供的Filter过滤器">
 <meta property="og:image" content="http://ojle7m433.bkt.clouddn.com/spring.png">
 <meta property="og:image" content="http://ojle7m433.bkt.clouddn.com/spring-CharacterEncodingFilter.png">
-<meta property="og:updated_time" content="2017-03-17T07:02:00.991Z">
+<meta property="og:updated_time" content="2017-03-20T04:06:12.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring系列1-Filter">
 <meta name="twitter:description" content="SpringFramework学习
@@ -228,7 +228,7 @@ Spring提供的Filter 会给我们带来什么
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharacterEncodingFilter</span> <span class="keyword">extends</span> <span class="title">OncePerRequestFilter</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> String encoding;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> forceEncoding = <span class="keyword">false</span>;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doFilterInternal</span><span class="params">(</span></span></div><div class="line">            HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)</div><div class="line">            <span class="keyword">throws</span> ServletException, IOException &#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.encoding != <span class="keyword">null</span> &amp;&amp; (<span class="keyword">this</span>.forceEncoding || request.getCharacterEncoding() == <span class="keyword">null</span>)) &#123;</div><div class="line">            request.setCharacterEncoding(<span class="keyword">this</span>.encoding);</div><div class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.forceEncoding) &#123;</div><div class="line">                response.setCharacterEncoding(<span class="keyword">this</span>.encoding);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        filterChain.doFilter(request, response);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>forceEncoding 为 true 为设置response的编码，并不会对request参数造成影响。</p>
 <p>使用例子：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;filter&gt;</div><div class="line">    &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;</div><div class="line">    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;</div><div class="line">        &lt;init-param&gt;</div><div class="line">            &lt;param-name&gt;encoding&lt;/param-name&gt;</div><div class="line">            &lt;param-value&gt;UTF-8&lt;/param-value&gt;</div><div class="line">        &lt;/init-param&gt;</div><div class="line">        &lt;init-param&gt;</div><div class="line">            &lt;param-name&gt;forceEncoding&lt;/param-name&gt;</div><div class="line">            &lt;param-value&gt;true&lt;/param-value&gt;</div><div class="line">        &lt;/init-param&gt;</div><div class="line">    &lt;/filter&gt;</div><div class="line">&lt;filter-mapping&gt;</div><div class="line">    &lt;filter-name&gt;characterEncodingFilter&lt;/filter-name&gt;</div><div class="line">    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;</div><div class="line">&lt;/filter-mapping&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>characterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>encoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>forceEncoding<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>characterEncodingFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></div></pre></td></tr></table></figure>
 
       
 
@@ -472,6 +472,14 @@ Spring提供的Filter 会给我们带来什么
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">framework</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">工具</a>
               </li>
              
@@ -489,14 +497,6 @@ Spring提供的Filter 会给我们带来什么
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">建站</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">framework</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color2">Spring</a>
               </li>
             
             <div class="clearfix"></div>
