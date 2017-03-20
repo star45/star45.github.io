@@ -168,13 +168,38 @@
     </h1>
   
 
+        
         <a href="/2017/03/16/hexo/19-internationalization/" class="archive-article-date">
   	<time datetime="2017-03-16T07:11:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-16</time>
 </a>
+<a href="/2017/03/16/hexo/19-internationalization/" class="archive-article-date">
+    <time datetime="2017-03-16T07:11:08.000Z" itemprop="datePublished">2017-03-16</time>
+    <span id="busuanzi_container_page_pv" style="color:DarkGray">
+      view <span id="busuanzi_value_page_pv"></span> times
+    </span>
+</a>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+        
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
+      
+                      
+            <div id="toc" class="article-toc">
+            <h2>目录</h2>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#语言文件"><span class="toc-number">1.</span> <span class="toc-text">语言文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模板"><span class="toc-number">2.</span> <span class="toc-text">模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路径"><span class="toc-number">3.</span> <span class="toc-text">路径</span></a></li></ol>  
+            </div>
+            <script type="text/javascript">
+              var _article = document.getElementsByClassName('article')[0];
+              <!-- setTimeout("_article.style.marginRight = '211px'",0);  -->
+             setTimeout("_article.className += ' article2'",0); 
+              setTimeout("document.getElementById('toc').style.right = '15px'", 0);                
+            </script>
+          
+        
         <p>若要让您的网站以不同语言呈现，您可使用国际化（internationalization）功能。请先在 <code>_config.yml</code> 中调整 <code>language</code> 设定，这代表的是预设语言，您也可设定多个语言来调整预设语言的顺位。<br><a id="more"></a><br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">language:</span> zh-tw</div><div class="line"></div><div class="line"><span class="attr">language:</span> </div><div class="line"><span class="bullet">-</span> zh-tw</div><div class="line"><span class="bullet">-</span> en</div></pre></td></tr></table></figure></p>
 <h3 id="语言文件"><a href="#语言文件" class="headerlink" title="语言文件"></a>语言文件</h3><p>语言文件可以使用 YAML 或 JSON 编写，并放在主题文件夹中的 <code>languages</code> 文件夹。您可以在语言文件中使用 <a href="https://github.com/alexei/sprintf.js" target="_blank" rel="external">printf 格式</a>。</p>
 <h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><p>在模板中，透过 <code>__</code> 或 <code>_p</code> 辅助函数，即可取得翻译后的字符串，前者用于一般使用；而后者用于复数字符串。例如：</p>
@@ -320,7 +345,8 @@
 
 
 
-<div class="duoshuo">
+  
+  <div class="duoshuo">
 	<!-- 多说评论框 start -->
 	<div class="ds-thread" data-thread-key="hexo/19-internationalization" data-title="19.国际化（i18n）" data-url="//star45.me/2017/03/16/hexo/19-internationalization/"></div>
 	<!-- 多说评论框 end -->
@@ -338,6 +364,8 @@
 	</script>
 	<!-- 多说公共JS代码 end -->
 </div>
+
+  
 
 
 
