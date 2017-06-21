@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo,建站," />
+  <meta name="keywords" content="Framework,Guava," />
 
 
 
@@ -89,16 +89,21 @@
 
 
 
-<meta name="description" content="hexo服务器操作">
+<meta name="description" content="GoogleGuava实际开发Guava Lists.transform dubbo请求序列化问题问题引发今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。
+在实际工作中我们经常对一个List集合进行转化，常用的就是for循环和forEach。go">
 <meta property="og:type" content="article">
-<meta property="og:title" content="11.服务器">
-<meta property="og:url" content="//star45.me/2017/03/15/hexo/11-server/index.html">
+<meta property="og:title" content="googel-guava-qa-transform">
+<meta property="og:url" content="//star45.me/2017/04/19/google-guava/googel-guava-qa/index.html">
 <meta property="og:site_name" content="Star45的博客">
-<meta property="og:description" content="hexo服务器操作">
-<meta property="og:updated_time" content="2017-03-21T09:27:26.296Z">
+<meta property="og:description" content="GoogleGuava实际开发Guava Lists.transform dubbo请求序列化问题问题引发今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。
+在实际工作中我们经常对一个List集合进行转化，常用的就是for循环和forEach。go">
+<meta property="og:image" content="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png">
+<meta property="og:updated_time" content="2017-06-21T08:26:32.792Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="11.服务器">
-<meta name="twitter:description" content="hexo服务器操作">
+<meta name="twitter:title" content="googel-guava-qa-transform">
+<meta name="twitter:description" content="GoogleGuava实际开发Guava Lists.transform dubbo请求序列化问题问题引发今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。
+在实际工作中我们经常对一个List集合进行转化，常用的就是for循环和forEach。go">
+<meta name="twitter:image" content="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png">
 
 
 
@@ -126,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="//star45.me/2017/03/15/hexo/11-server/"/>
+  <link rel="canonical" href="//star45.me/2017/04/19/google-guava/googel-guava-qa/"/>
 
 
 
 
 
-  <title> 11.服务器 | Star45的博客 </title>
+  <title> googel-guava-qa-transform | Star45的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -281,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="//star45.me/2017/03/15/hexo/11-server/">
+    <link itemprop="mainEntityOfPage" href="//star45.me/2017/04/19/google-guava/googel-guava-qa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Star45">
@@ -302,7 +307,7 @@
             
             
               
-                11.服务器
+                googel-guava-qa-transform
               
             
           </h1>
@@ -317,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T11:11:08+08:00">
-                2017-03-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T17:13:07+08:00">
+                2017-04-19
               </time>
             
 
@@ -340,8 +345,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -358,8 +363,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/15/hexo/11-server/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/15/hexo/11-server/" itemprop="commentCount"></span>
+                <a href="/2017/04/19/google-guava/googel-guava-qa/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/04/19/google-guava/googel-guava-qa/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,23 +395,17 @@
       
 
       
-        <p>hexo服务器操作<br><a id="more"></a></p>
-<h2 id="hexo-server"><a href="#hexo-server" class="headerlink" title="hexo-server"></a><a href="https://github.com/hexojs/hexo-server" target="_blank" rel="external">hexo-server</a></h2><p>Hexo 3.0 把服务器独立成了个别模块，您必须先安装 <a href="https://github.com/hexojs/hexo-server" target="_blank" rel="external">hexo-server</a> 才能使用。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-server --save</div></pre></td></tr></table></figure>
-<p>安装完成后，输入以下命令以启动服务器，您的网站会在 <code>http://localhost:4000</code> 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，您无须重启服务器。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>如果您想要更改端口，或是在执行时遇到了 <code>EADDRINUSE</code> 错误，可以在执行时使用 <code>-p</code> 选项指定其他端口，如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server -p 5000</div></pre></td></tr></table></figure>
-<h3 id="静态模式"><a href="#静态模式" class="headerlink" title="静态模式"></a>静态模式</h3><p>在静态模式下，服务器只处理 <code>public</code> 文件夹内的文件，而不会处理文件变动，在执行时，您应该先自行执行 <code>hexo generate</code>，此模式通常用于生产环境（production mode）下。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server <span class="_">-s</span></div></pre></td></tr></table></figure>
-<h3 id="自定义-IP"><a href="#自定义-IP" class="headerlink" title="自定义 IP"></a>自定义 IP</h3><p>服务器默认运行在 <code>0.0.0.0</code>，您可以覆盖默认的 IP 设置，如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server -i 192.168.1.1</div></pre></td></tr></table></figure>
-<p>指定这个参数后，您就只能通过该IP才能访问站点。例如，对于一台使用无线网络的笔记本电脑，除了指向本机的<code>127.0.0.1</code>外，通常还有一个<code>192.168.*.*</code>的局域网IP，如果像上面那样使用<code>-i</code>参数，就不能用<code>127.0.0.1</code>来访问站点了。对于有公网IP的主机，如果您指定一个局域网IP作为<code>-i</code>参数的值，那么就无法通过公网来访问站点。</p>
-<h2 id="Pow"><a href="#Pow" class="headerlink" title="Pow"></a>Pow</h2><p><a href="http://pow.cx/" target="_blank" rel="external">Pow</a> 是一个 Mac 系统上的零配置 Rack 服务器，它也可以作为一个简单易用的静态文件服务器来使用。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ curl get.pow.cx | sh</div></pre></td></tr></table></figure>
-<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>在 <code>~/.pow</code> 文件夹建立链接（symlink）。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/.pow</div><div class="line">$ ln <span class="_">-s</span> /path/to/myapp</div></pre></td></tr></table></figure>
-<p>您的网站将会在 <code>http://myapp.dev</code> 下运行，网址根据链接名称而定。</p>
+        <p><img src="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png" alt="guava.png" title="guava"></p>
+<h1 id="GoogleGuava实际开发"><a href="#GoogleGuava实际开发" class="headerlink" title="GoogleGuava实际开发"></a>GoogleGuava实际开发</h1><h3 id="Guava-Lists-transform-dubbo请求序列化问题"><a href="#Guava-Lists-transform-dubbo请求序列化问题" class="headerlink" title="Guava Lists.transform dubbo请求序列化问题"></a>Guava Lists.transform dubbo请求序列化问题</h3><h4 id="问题引发"><a href="#问题引发" class="headerlink" title="问题引发"></a>问题引发</h4><p>今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。</p>
+<p>在实际工作中我们经常对一个List集合进行转化，常用的就是for循环和forEach。google Guava提供的 transform可以做到更优雅。<br>看例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//TODO 批量缓存圈子信息</span></div><div class="line"><span class="function"><span class="keyword">private</span> Map&lt;String,String&gt; <span class="title">cacheGomeShopGroupItem</span><span class="params">(List&lt;GomeStoreItem&gt; gomeStoreItems)</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">final</span> Map&lt;String,String&gt; shopGroupMap = Maps.newHashMap();</div><div class="line">    </div><div class="line">    <span class="comment">//1、普通for循环   </span></div><div class="line">    List&lt;String&gt; storeIds = Lists.newArrayList();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;gomeStoreItems.size()&amp;&amp;gomeStoreItems!=<span class="keyword">null</span> ; i++) &#123;</div><div class="line">        GomeStoreItem gomeStoreItem  = gomeStoreItems.get(i);</div><div class="line">        String storeId = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">if</span> (gomeStoreItem != <span class="keyword">null</span>)&#123;</div><div class="line">            storeId = gomeStoreItem.getGomeStoreId();</div><div class="line">        &#125;</div><div class="line">        storeIds.add(storeId);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">//2、使用transform转化</span></div><div class="line">    List&lt;String&gt; storeIds1 = Lists.newArrayList();</div><div class="line">    storeIds1.addAll(Lists.transform(gomeStoreItems, <span class="keyword">new</span> Function&lt;GomeStoreItem, String&gt;() &#123;</div><div class="line">        <span class="meta">@Nullable</span></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">apply</span><span class="params">(@Nullable GomeStoreItem gomeStoreItem)</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> gomeStoreItem.getGomeStoreId();</div><div class="line">        &#125;</div><div class="line">    &#125;));</div><div class="line"></div><div class="line">    List&lt;GomeShopGroupItem&gt; shopGroupItems = Lists.newArrayList();</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="comment">//正常的dubbo调用</span></div><div class="line">        CommonResultEntity&lt;List&lt;ShopGroupInfo&gt;&gt; resuletEntity = opensocialGroupFacade.shopGroupInfo(storeIds);</div><div class="line">        <span class="comment">//非正常的dubbo调用</span></div><div class="line">        CommonResultEntity&lt;List&lt;ShopGroupInfo&gt;&gt; resuletEntity1 = opensocialGroupFacade.shopGroupInfo(storeIds1);</div><div class="line">        </div><div class="line">        <span class="comment">// 业务代码 ......</span></div><div class="line">        </div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">        </div><div class="line">        logger.error(String.format(<span class="string">"查询圈子出错：storeIds：%s"</span>,JSON.toJSONString(storeIds)));</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> shopGroupMap;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4><p>以下是使用transform转化的List,使用dubbo调用发生的异常信息：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Failed to invoke the method shopGroupInfo in the service cn.com.mx.opensocial.group.service.IOpensocialGroupFacade. Tried 3 times of the providers [10.125.198.49:30006] (1/1) from the registry 10.125.198.74:2181 on the consumer 10.144.36.140 using the dubbo version 2.5.5.cat-SNAPSHOT. Last error is: Failed to invoke remote method: shopGroupInfo, provider: dubbo://10.125.198.49:30006/cn.com.mx.opensocial.group.service.IOpensocialGroupFacade?anyhost=true&amp;application=gome-detail-service&amp;check=false&amp;default.accepts=1000&amp;default.check=false&amp;default.timeout=5000&amp;dubbo=2.5.3&amp;heartbeat=100000&amp;interface=cn.com.mx.opensocial.group.service.IOpensocialGroupFacade&amp;methods=shopGroupInfo,strollGroups,checkIsMember&amp;owner=qiantai&amp;pid=4876&amp;providerside=venus-opensocial&amp;revision=1.1&amp;serialization=nativejava&amp;side=consumer&amp;timeout=8000&amp;timestamp=1498030003360&amp;version=1.0.0, cause: Failed to send message Request [id=12, version=2.0.0, twoway=true, event=false, broken=false, data=RpcInvocation [methodName=shopGroupInfo, parameterTypes=[interface java.util.List], arguments=[[1, 6, 10, 20, 30, 31, 40, 10122, 10132, 10138, 10140, 10142, 10145, 10146, 10150, 10159]], attachments=&#123;_catChildMessageId=gome-detail-service-0a90248c-416119-487610019, _catParentMessageId=gome-detail-service-0a90248c-416119-487610018, _rStrategy=null, path=cn.com.mx.opensocial.group.service.IOpensocialGroupFacade, consumerside=gome-detail-service, interface=cn.com.mx.opensocial.group.service.IOpensocialGroupFacade, _catRootMessageId=gome-detail-service-0a90248c-416119-487610018, @null=null, timeout=8000, version=1.0.0&#125;]] to /10.125.198.49:30006, cause: com.gome.item.services.GomeStoreServiceImpl$2</div></pre></td></tr></table></figure>
+<p><strong>cause: Failed to send message</strong> 可以看出发送请求的时候就失败了。那么第一考虑到的就是序列化，因为一次rpc调用肯定需要将参数序列化。</p>
+<p>1、ArrayList 实现了 java.io.Serializable接口；2、使用transform生成的TransformingRandomAccessList 并不是ArrayList类型并没有实现序列化接口，</p>
+<p>带着问题去查看guava源码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">   * Returns a list that applies &#123;<span class="doctag">@code</span> function&#125; to each element of &#123;<span class="doctag">@code</span></div><div class="line">   * fromList&#125;. The returned list is a transformed view of &#123;<span class="doctag">@code</span> fromList&#125;;</div><div class="line">   * changes to &#123;<span class="doctag">@code</span> fromList&#125; will be reflected in the returned list and vice</div><div class="line">   * versa.</div><div class="line">   *</div><div class="line">   * &lt;p&gt;Since functions are not reversible, the transform is one-way and new</div><div class="line">   * items cannot be stored in the returned list. The &#123;<span class="doctag">@code</span> add&#125;,</div><div class="line">   * &#123;<span class="doctag">@code</span> addAll&#125; and &#123;<span class="doctag">@code</span> set&#125; methods are unsupported in the returned</div><div class="line">   * list.</div><div class="line">   ........</div><div class="line">   */</div></pre></td></tr></table></figure></p>
+<p>大概意思：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * 该方法返回一个列表，这个列表中元素是运用方法中传入的功能函数(Function)对原列表中的元素进行处理后的结果,</div><div class="line">  * 它是原列表的一个功能视图，任何对原列表的改变将会体现到视图列表中。因为Function函数是不可逆的，</div><div class="line">  * 所以这样的转换是单向的，并且转换的结果不能存储在返回的列表中。</div><div class="line">  * 所有对视图列表的添加（add/addAll）、设置（set）等都是不被支持的。</div><div class="line">  */</div></pre></td></tr></table></figure></p>
+<p>所以说，返回的对象列表是一个视图，其中对它的任何更改都是无效的，并且也不建议对视图对象产生更改，如果需要更改返回的列表，那么需要自己进一步包装，如Lists.newArrayList(retList);<br>如果需要对返回的结果视图进行处理：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">List&lt;String&gt; storeIdsArrayList = Lists.newArrayList(storeIds);</div></pre></td></tr></table></figure></p>
+<p>这样就可以正常的去做为一个rpc请求的参数了。</p>
 
       
     </div>
@@ -462,9 +461,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+            <a href="/tags/Framework/" rel="tag"># Framework</a>
           
-            <a href="/tags/建站/" rel="tag"># 建站</a>
+            <a href="/tags/Guava/" rel="tag"># Guava</a>
           
         </div>
       
@@ -477,8 +476,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/14/hexo/10-data-files/" rel="next" title="10.数据文件">
-                <i class="fa fa-chevron-left"></i> 10.数据文件
+              <a href="/2017/03/28/面试/" rel="next" title="面试">
+                <i class="fa fa-chevron-left"></i> 面试
               </a>
             
           </div>
@@ -487,8 +486,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/15/hexo/12-generating/" rel="prev" title="12.生成文件">
-                12.生成文件 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/19/google-guava/google-guava1-basic/" rel="prev" title="google-guava1-basic">
+                google-guava1-basic <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -524,8 +523,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/15/hexo/11-server/"
-           data-title="11.服务器" data-url="//star45.me/2017/03/15/hexo/11-server/">
+      <div class="ds-thread" data-thread-key="2017/04/19/google-guava/googel-guava-qa/"
+           data-title="googel-guava-qa-transform" data-url="//star45.me/2017/04/19/google-guava/googel-guava-qa/">
       </div>
     
   </div>
@@ -685,7 +684,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo-server"><span class="nav-number">1.</span> <span class="nav-text">hexo-server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态模式"><span class="nav-number">1.1.</span> <span class="nav-text">静态模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义-IP"><span class="nav-number">1.2.</span> <span class="nav-text">自定义 IP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pow"><span class="nav-number">2.</span> <span class="nav-text">Pow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置"><span class="nav-number">2.2.</span> <span class="nav-text">设置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GoogleGuava实际开发"><span class="nav-number">1.</span> <span class="nav-text">GoogleGuava实际开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Guava-Lists-transform-dubbo请求序列化问题"><span class="nav-number">1.0.1.</span> <span class="nav-text">Guava Lists.transform dubbo请求序列化问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题引发"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">问题引发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题分析"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">问题分析</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
