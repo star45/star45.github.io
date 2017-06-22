@@ -1,0 +1,1162 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Star45的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="一些java面试问题总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试">
+<meta property="og:url" content="http://www.star45.xyz/2017/03/28/杂事/面试/index.html">
+<meta property="og:site_name" content="Star45的博客">
+<meta property="og:description" content="一些java面试问题总结">
+<meta property="og:updated_time" content="2017-03-28T09:49:04.816Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试">
+<meta name="twitter:description" content="一些java面试问题总结">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6399453191125075000',
+      author: 'Star45'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.star45.xyz/2017/03/28/杂事/面试/"/>
+
+
+
+
+
+  <title> 面试 | Star45的博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Star45的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不悔梦归处，只恨太匆匆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-works">
+          <a href="/works" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
+            
+            项目
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://www.star45.xyz/2017/03/28/杂事/面试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Star45">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ojle7m433.bkt.clouddn.com/longmao_1.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Star45的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                面试
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-28T16:15:24+08:00">
+                2017-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/28/杂事/面试/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/28/杂事/面试/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一些java面试问题总结"><a href="#一些java面试问题总结" class="headerlink" title="一些java面试问题总结"></a>一些java面试问题总结</h2><a id="more"></a>
+<h3 id="Java基础"><a href="#Java基础" class="headerlink" title="Java基础"></a>Java基础</h3><ul>
+<li>Hashtable和HashMap的区别。</li>
+<li>抽象类与接口的区别。</li>
+<li>final关键字的使用和区别。</li>
+<li>异常分类和处理机制。</li>
+<li>JDK版本区别。</li>
+<li>StringBuilder内部实现机制。</li>
+<li>反射机制的使用。</li>
+<li>匿名内部类的使用。</li>
+<li>泛型的概念和使用。</li>
+<li>弱引用和虚引用的概念和使用方式。</li>
+</ul>
+<h3 id="开源框架"><a href="#开源框架" class="headerlink" title="开源框架"></a>开源框架</h3><ul>
+<li>SpringMVC和Struts2的区别</li>
+<li>Spring IOC和AOP的概念以及实现方式</li>
+<li>Spring事务的管理</li>
+<li>Hibernate与MyBatis的比较</li>
+<li>Hibernate延迟加载的机制</li>
+</ul>
+<h3 id="JVM虚拟机"><a href="#JVM虚拟机" class="headerlink" title="JVM虚拟机"></a>JVM虚拟机</h3><ul>
+<li>GC算法有哪些</li>
+<li>垃圾回收器有哪些</li>
+<li>如何调优JVM</li>
+</ul>
+<h3 id="缓存和NoSQL"><a href="#缓存和NoSQL" class="headerlink" title="缓存和NoSQL"></a>缓存和NoSQL</h3><ul>
+<li>缓存的使用场景</li>
+<li>缓存命中率的计算</li>
+<li>Memcache与Redis的比较</li>
+<li>如何实现Redis的分片</li>
+<li>MongoDB的特点</li>
+</ul>
+<h3 id="分布式"><a href="#分布式" class="headerlink" title="分布式"></a>分布式</h3><ul>
+<li>zookeeper的用途</li>
+<li>dubbo的用途以及优点</li>
+<li>dubbo的实现原理</li>
+</ul>
+<h3 id="数据结构和算法"><a href="#数据结构和算法" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h3><ul>
+<li>单向链表的逆序排列</li>
+<li>双向链表的操作</li>
+<li>1亿个整数的倒序输出</li>
+<li>找出给定字符串中最长回文（回文：abcdcba，两端对称）</li>
+</ul>
+<h3 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h3><ul>
+<li>Get和Post的区别</li>
+<li>Https协议的实现</li>
+<li>长连接的管理</li>
+<li>Socket的基本方法</li>
+</ul>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><ul>
+<li>inner join和left join的区别</li>
+<li>复杂SQL语句</li>
+<li>数据库优化方式</li>
+<li>数据库拆分方式</li>
+<li>如何保证不同数据结构的数据一致性</li>
+</ul>
+<h3 id="安全"><a href="#安全" class="headerlink" title="安全"></a>安全</h3><ul>
+<li>什么是XSS攻击，具体如何实现？开放问题：如何保障系统安全？</li>
+</ul>
+<h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><ul>
+<li>写出一个设计模式的类图</li>
+<li>设计模式的意义是什么</li>
+<li>写个单例模式的代码</li>
+</ul>
+<h3 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h3><ul>
+<li>如何避免Quartz重复启动任务</li>
+<li>线程池满了如何处理额外的请求</li>
+<li>同一个对象的连个同步方法能否被两个线程同时调用</li>
+</ul>
+<p>华丽丽的分割线</p>
+<hr>
+<h2 id="部分答案"><a href="#部分答案" class="headerlink" title="部分答案"></a>部分答案</h2><h3 id="Java基础-1"><a href="#Java基础-1" class="headerlink" title="Java基础"></a>Java基础</h3><ul>
+<li><p>HashMap和Hashtable的区别</p>
+<ol>
+<li>HashMap是非线程安全的，Hashtable是线程安全的。</li>
+<li>HashMap的键值都可以为null，Hashtable的键值都不可以为null值。</li>
+<li>HashMap继承自AbstractMap类，Hashtable继承自Dictionary类。<blockquote>
+<p>ps : Properties类继承自Hashtable类。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>异常分类和处理机制</p>
+<ol>
+<li>分类：<ol>
+<li>运行时异常（Runtime Exception）</li>
+<li>受检查异常（Checked Exception）</li>
+<li></li>
+</ol>
+</li>
+<li>运行时异常：<ol>
+<li>必须继承RuntimeException类，</li>
+<li>定义方法时不必声明会抛出运行时异常。</li>
+<li>调用方法时不必捕获运行时异常。</li>
+</ol>
+</li>
+<li>受检查异常：<ol>
+<li>不继承自RumtimeException类</li>
+<li>定义方法时需要抛出可能会抛出的Checked Exception</li>
+<li>调用方法时需要捕获Checked Exception或者继续向上抛出。</li>
+</ol>
+</li>
+<li>逻辑上：<ol>
+<li>运行时异常：一般不需要或者不知道如何处理此类异常；</li>
+<li>受检验异常：一般需要知道如何处理可能发生的异常情况。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>StringBuilder内部实现机制</p>
+<p>  StringBuilder内部有一个字符数组，代码如下:</p>
+<ol>
+<li>char[] value;   //字符数组</li>
+<li>int count;      //字符串长度</li>
+<li><p>每一次append操作都是将新的字符串加入到可变长的字符数组中，长度计算方式与ArrayList类似。调用toString()方法时，new一个String对象即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> String(value, <span class="number">0</span>, count);<span class="comment">// Create a copy, don't share the array</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>ps: StringBuffer是线程安全的，StringBuilder是非线程安全的。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li><p>匿名内部类的使用</p>
+<p>  匿名内部类是没有名字的类，只在某一处被使用，不会被多处调用，一般是某个父类或接口的特定实现。</p>
+</li>
+<li><p>强引用、软引用、弱引用和虚引用</p>
+<ol>
+<li>强引用: 一般的引用都是强引用，即使OutOfMemory也不会回收这部分被把持的引用内存。</li>
+<li>软引用（SoftReference）: 如果内存空间足够，垃圾回收器就不会回收它；如果内存空间不足了，就会回收这些对象的内存。只要垃圾回收器没有回收它，该对象就可以被使用。++软引用可以用来实现内存敏感的高速缓存。++</li>
+<li>弱引用（WeakReference）：弱引用的对象拥有更短暂的生命周期。当垃圾回收期发现只有若引用的对象，不论内存空间足够与否，都会回收它。</li>
+<li>虚引用（）：虚引用不会决定对象的生命周期，如果一个对象仅持有一个虚引用，那么它随时可能被回收。++虚引用主要用来跟踪对象被垃圾回收器回收的活动。++<blockquote>
+<p>更多关于『强、软、弱和虚引用』参考文章：<a href="http://zhangjunhd.blog.51cto" target="_blank" rel="external">http://zhangjunhd.blog.51cto</a>….</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="开源框架-1"><a href="#开源框架-1" class="headerlink" title="开源框架"></a>开源框架</h3><ul>
+<li><p>SpringMVC和Struts2的区别</p>
+<ol>
+<li>SpringMVC的方法级别的拦截，Struts2是类级别的拦截；</li>
+<li>SpringMVC是基于Servlet实现Controller，Struts2是基于Filter实现；</li>
+<li>SpringMVC性能和安全性高于Struts2；</li>
+<li>SpringMVC更加组件化和流程化，易于扩展，比如返回JSON通过设置@ResponseBody即可；</li>
+<li>Struts2更加无耦合，比较纯粹，但是需要更多的自行开发的代码以支持更多功能。</li>
+</ol>
+</li>
+<li><p>Spring事务的管理</p>
+<ol>
+<li>分类：声明式事务、编程式事务<ol>
+<li>声明式事务：通过统一配置实现事务的统一管理，一般配置TransactionMananger以及相关属性即可。</li>
+<li>编程式事务（注解方式）：在需要事务的方法上配置相关的注解（包括事务类型、回滚策略等）</li>
+</ol>
+</li>
+<li>事务类型：<ol>
+<li>PROPAGATION_REQUIRED</li>
+<li>PROPAGATION_SUPPORTS<br>3.PROPAGATION_MANDATORY</li>
+<li>PROPAGATION_REQUIRES_NEW</li>
+<li>PROPAGATION_NOT_SUPPORTED</li>
+<li>PROPAGATION_NEVER</li>
+<li>PROPAGATION_NESTED</li>
+</ol>
+</li>
+<li>事务隔离级别<ol>
+<li>ISOLATION_DEFAULT</li>
+<li>ISOLATION_READ_UNCOMMITTED</li>
+<li>ISOLATION_READ_COMMITTED</li>
+<li>ISOLATION_REPEATABLE_READ</li>
+<li>ISOLATION_SERIALIZABLE</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Hibernate与MyBatis的比较<ol>
+<li>Hibernate完全实现对象关系映射（ORM），MyBatis实现的是SQL Mapping</li>
+<li>MyBatis可以进行更为细致的SQL优化，可以减少查询字段。比Hibernate容易掌握，Hibernate门槛较高。</li>
+<li>Hibernate的DAO层开发比MyBatis简单，Mybatis需要维护SQL和结果映射。</li>
+<li>Hibernate对对象的维护和缓存要比MyBatis好，对增删改查的对象的维护要方便。</li>
+<li>Hibernate数据库移植性很好，MyBatis的数据库移植性不好，不同的数据库需要写不同SQL。</li>
+<li>Hibernate有更好的二级缓存机制，可以使用第三方缓存。MyBatis本身提供的缓存机制不佳。</li>
+</ol>
+</li>
+</ul>
+<h3 id="JVM虚拟机-1"><a href="#JVM虚拟机-1" class="headerlink" title="JVM虚拟机"></a>JVM虚拟机</h3><ul>
+<li><p>GC算法有哪些</p>
+<ol>
+<li>引用计数</li>
+<li>复制</li>
+<li>标记-清除</li>
+<li>标记-压缩</li>
+<li>分代（新生代、老年代、永久代）</li>
+</ol>
+</li>
+<li><p>垃圾回收器有哪些</p>
+<ol>
+<li>串行回收器：新生代串行回收器、老年代串行回收器</li>
+<li>并行回收器：新生代ParNew回收器、新生代ParallelGC回收器、老年代ParallelGC回收器</li>
+<li>CMS回收器：（Concurrent Mark Sweep、并发标记清除）</li>
+<li>G1回收器（1.7以后代替CMS回收器）</li>
+</ol>
+</li>
+<li><p>如何调优JVM</p>
+<ol>
+<li>标准参数：<ol>
+<li>-client -server模式</li>
+<li>-Xmn、-Xms、-Xmx</li>
+<li>监控：jps、jstat、jinfo、jmap、jhat、jstack…</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Java 中堆和栈有什么区别？</p>
+<ol>
+<li>JVM 中堆和栈属于不同的内存区域，使用目的也不同。</li>
+<li>栈常用于保存方法帧和局部变量，而对象总是在堆上分配。</li>
+<li>栈通常都比堆小，也不会在多个线程之间共享，而堆被整个 JVM 的所有线程共享。</li>
+</ol>
+</li>
+</ul>
+<h3 id="缓存和NoSQL-1"><a href="#缓存和NoSQL-1" class="headerlink" title="缓存和NoSQL"></a>缓存和NoSQL</h3><ul>
+<li><p>缓存命中率的计算</p>
+<ol>
+<li>命中缓存次数/(命中缓存次数+未命中缓存次数) = 命中率</li>
+</ol>
+</li>
+<li><p>Memcache与Redis的区别</p>
+<ol>
+<li>memcache把数据存在内存之中，断电后会挂掉；Redis部分数据持久化在硬盘上，断电不会丢失。</li>
+<li>memcache存的是key-value对，redis支持更多的数据结构和数据类型</li>
+<li>memcache可以使用一致性hash做分布式，redis可以做主从同步</li>
+<li>redis单线程，只使用1个cpu</li>
+</ol>
+</li>
+<li><p>如何实现Redis的分片</p>
+<ol>
+<li>使用一致性哈希对数据进行映射</li>
+<li>实现方式：客户端分片（每个客户端对应一个分片）、代理协助分片、查询路由分片；</li>
+<li>使用redis集群，如codis（豌豆荚，依赖zookeeper）；</li>
+</ol>
+</li>
+</ul>
+<h3 id="分布式-1"><a href="#分布式-1" class="headerlink" title="分布式"></a>分布式</h3><ul>
+<li><p>zookeeper的用途</p>
+<ol>
+<li>zookeeper作为分布式应用协调系统，已经用到很多分布式项目中。可以用来完成统一命名服务、状态同步服务、集群管理、分布式应用配置项等管理工作。</li>
+<li>zookeeper的主要操作分一下几种：<ol>
+<li>创建节点</li>
+<li>读取节点数据</li>
+<li>更新节点数据</li>
+<li>删除节点</li>
+<li>监控节点变化</li>
+</ol>
+</li>
+<li>应用场景：<ol>
+<li>统一命名服务，使用create自动创建节点编号；</li>
+<li>配置管理，多个节点的共享配置，当配置发生变化时，可利用zookeeper让使用这些配置的节点获得通知，进行重新加载等操作。如dubbo服务。</li>
+<li>集群管理：集群选举主节点，资源定位。</li>
+<li>共享锁</li>
+<li>负载均衡</li>
+<li>应用项目：dubbo服务集群、redis集群、Hadoop集群等</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>dubbo的用途以及优点</p>
+<ol>
+<li>Dubbo是一个分布式服务框架，致力于提供高性能和透明化的RPC远程服务调用方案，以及SOA服务治理方案。</li>
+</ol>
+</li>
+</ul>
+<h3 id="数据结构和算法-1"><a href="#数据结构和算法-1" class="headerlink" title="数据结构和算法"></a>数据结构和算法</h3><ul>
+<li><p>将单项链表逆序排列</p>
+<p>  将单向链表逆序输出，方法有三种：</p>
+<ol>
+<li>遍历链表，将每个节点的内容存入一个数组中，然后逆序输出数组(最简单的做法)</li>
+<li>使用栈来逆序输出</li>
+<li>直接将链表（指针）逆序然后输出<blockquote>
+<p>单向链表详细信息参考文章：<a href="http://blog.csdn.net/jianyuer" target="_blank" rel="external">http://blog.csdn.net/jianyuer</a>…</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="海量数据操作"><a href="#海量数据操作" class="headerlink" title="海量数据操作"></a>海量数据操作</h3><p> 十道面试题与十个海量数据处理方法总结<br> <a href="http://blog.csdn.net/v_july_v/article/details/6279498" target="_blank" rel="external">http://blog.csdn.net/v_july_v/article/details/6279498</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://ojle7m433.bkt.clouddn.com/weixin_qrcode_for_gh_12.jpg" alt="Star45 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://ojle7m433.bkt.clouddn.com/weixin_qrcode_for_gh_12.jpg" alt="Star45 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://ojle7m433.bkt.clouddn.com/weixin_qrcode_for_gh_12.jpg" alt="Star45 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/13/spring/Spring系列2-Ioc/" rel="next" title="Spring系列1-Filter">
+                <i class="fa fa-chevron-left"></i> Spring系列1-Filter
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/19/google-guava/google-guava1-basic/" rel="prev" title="google-guava1-basic">
+                google-guava1-basic <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/03/28/杂事/面试/"
+           data-title="面试" data-url="http://www.star45.xyz/2017/03/28/杂事/面试/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ojle7m433.bkt.clouddn.com/longmao_1.jpeg"
+               alt="Star45" />
+          <p class="site-author-name" itemprop="name">Star45</p>
+           
+              <p class="site-description motion-element" itemprop="description">不知名学校毕业，就职于某电商网站。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/star45" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/starsxlk" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/star45" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.netcampus.cn" title="个人主页" target="_blank">个人主页</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.gome.com.cn" title="公司主页" target="_blank">公司主页</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些java面试问题总结"><span class="nav-number">1.</span> <span class="nav-text">一些java面试问题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java基础"><span class="nav-number">1.1.</span> <span class="nav-text">Java基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开源框架"><span class="nav-number">1.2.</span> <span class="nav-text">开源框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM虚拟机"><span class="nav-number">1.3.</span> <span class="nav-text">JVM虚拟机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存和NoSQL"><span class="nav-number">1.4.</span> <span class="nav-text">缓存和NoSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式"><span class="nav-number">1.5.</span> <span class="nav-text">分布式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构和算法"><span class="nav-number">1.6.</span> <span class="nav-text">数据结构和算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络编程"><span class="nav-number">1.7.</span> <span class="nav-text">网络编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库"><span class="nav-number">1.8.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安全"><span class="nav-number">1.9.</span> <span class="nav-text">安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设计模式"><span class="nav-number">1.10.</span> <span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程"><span class="nav-number">1.11.</span> <span class="nav-text">多线程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部分答案"><span class="nav-number">2.</span> <span class="nav-text">部分答案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java基础-1"><span class="nav-number">2.1.</span> <span class="nav-text">Java基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开源框架-1"><span class="nav-number">2.2.</span> <span class="nav-text">开源框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM虚拟机-1"><span class="nav-number">2.3.</span> <span class="nav-text">JVM虚拟机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缓存和NoSQL-1"><span class="nav-number">2.4.</span> <span class="nav-text">缓存和NoSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分布式-1"><span class="nav-number">2.5.</span> <span class="nav-text">分布式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据结构和算法-1"><span class="nav-number">2.6.</span> <span class="nav-text">数据结构和算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#海量数据操作"><span class="nav-number">2.7.</span> <span class="nav-text">海量数据操作</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Star45</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"star45"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+</body>
+</html>
