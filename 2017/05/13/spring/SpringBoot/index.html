@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Framework,SpringBoot," />
 
 
 
@@ -89,34 +89,18 @@
 
 
 
-<meta name="description" content="如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer
-
-如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）
-
-如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）
-
-如果你需要在对某个bean">
+<meta name="description" content="SpringBoot 学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Star45的博客">
-<meta property="og:url" content="//star45.me/2017/05/17/java8/SpringBoot/index.html">
+<meta property="og:title" content="SpringBoot 1">
+<meta property="og:url" content="//star45.me/2017/05/13/spring/SpringBoot/index.html">
 <meta property="og:site_name" content="Star45的博客">
-<meta property="og:description" content="如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer
-
-如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）
-
-如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）
-
-如果你需要在对某个bean">
-<meta property="og:updated_time" content="2017-05-17T05:43:17.672Z">
+<meta property="og:description" content="SpringBoot 学习">
+<meta property="og:image" content="http://ojle7m433.bkt.clouddn.com/spring.png">
+<meta property="og:updated_time" content="2017-06-22T02:24:05.554Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Star45的博客">
-<meta name="twitter:description" content="如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer
-
-如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）
-
-如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）
-
-如果你需要在对某个bean">
+<meta name="twitter:title" content="SpringBoot 1">
+<meta name="twitter:description" content="SpringBoot 学习">
+<meta name="twitter:image" content="http://ojle7m433.bkt.clouddn.com/spring.png">
 
 
 
@@ -144,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="//star45.me/2017/05/17/java8/SpringBoot/"/>
+  <link rel="canonical" href="//star45.me/2017/05/13/spring/SpringBoot/"/>
 
 
 
 
 
-  <title>  | Star45的博客 </title>
+  <title> SpringBoot 1 | Star45的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -299,7 +283,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="//star45.me/2017/05/17/java8/SpringBoot/">
+    <link itemprop="mainEntityOfPage" href="//star45.me/2017/05/13/spring/SpringBoot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Star45">
@@ -320,7 +304,7 @@
             
             
               
-                
+                SpringBoot 1
               
             
           </h1>
@@ -335,8 +319,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-17T13:43:10+08:00">
-                2017-05-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-13T12:02:45+08:00">
+                2017-05-13
               </time>
             
 
@@ -346,6 +330,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -354,8 +360,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/17/java8/SpringBoot/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/17/java8/SpringBoot/" itemprop="commentCount"></span>
+                <a href="/2017/05/13/spring/SpringBoot/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/13/spring/SpringBoot/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,9 +392,22 @@
       
 
       
-        <ol>
-<li><p>如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer</p>
-</li>
+        <p><img src="http://ojle7m433.bkt.clouddn.com/spring.png" alt="spring.png" title="Spring"></p>
+<h1 id="SpringBoot-学习"><a href="#SpringBoot-学习" class="headerlink" title="SpringBoot 学习"></a>SpringBoot 学习</h1><a id="more"></a>
+<p>springboot 整合dubbo使用 xml方式。</p>
+<p>用Dubbo做过几个项目了，从来没有碰到过Caused by: Java.lang.ClassCastException这种错误，最后经过反复的测试发现原来是因为依赖了<br>SpringBoot的开发者工具才出现的这一个问题，只要把下面的依赖去掉就解决了这一个问题：  </p>
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+    &lt;optional&gt;true&lt;/optional&gt;
+&lt;/dependency&gt;
+
+
+
+
+
+1. 如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer
+</code></pre><ol>
 <li><p>如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）</p>
 </li>
 <li><p>如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）</p>
@@ -449,6 +468,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Framework/" rel="tag"># Framework</a>
+          
+            <a href="/tags/SpringBoot/" rel="tag"># SpringBoot</a>
+          
+        </div>
+      
 
       
         
@@ -468,8 +495,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/18/spring/springboot/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/21/google-guava/googel-guava-生产问题/" rel="prev" title="googel-guava-生产问题">
+                googel-guava-生产问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -498,12 +525,15 @@
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/05/17/java8/SpringBoot/"
-           data-title="" data-url="//star45.me/2017/05/17/java8/SpringBoot/">
+      <div class="ds-thread" data-thread-key="2017/05/13/spring/SpringBoot/"
+           data-title="SpringBoot 1" data-url="//star45.me/2017/05/13/spring/SpringBoot/">
       </div>
     
   </div>
@@ -527,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ojle7m433.bkt.clouddn.com/longmao_1.jpeg"
@@ -543,7 +582,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -565,7 +604,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -644,6 +683,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBoot-学习"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot 学习</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

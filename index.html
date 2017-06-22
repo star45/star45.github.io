@@ -282,7 +282,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="//star45.me/2017/06/21/google-guava/googel-guava-qa/">
+    <link itemprop="mainEntityOfPage" href="//star45.me/2017/06/21/google-guava/googel-guava-生产问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Star45">
@@ -304,8 +304,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/06/21/google-guava/googel-guava-qa/" itemprop="url">
-                  googel-guava-qa-transform
+                <a class="post-title-link" href="/2017/06/21/google-guava/googel-guava-生产问题/" itemprop="url">
+                  googel-guava-生产问题
                 </a>
               
             
@@ -362,8 +362,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/21/google-guava/googel-guava-qa/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/21/google-guava/googel-guava-qa/" itemprop="commentCount"></span>
+                <a href="/2017/06/21/google-guava/googel-guava-生产问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/21/google-guava/googel-guava-生产问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,20 +390,15 @@
 
       
         
-          
-            <p><img src="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png" alt="guava.png" title="guava"></p>
-<h1 id="GoogleGuava实际开发"><a href="#GoogleGuava实际开发" class="headerlink" title="GoogleGuava实际开发"></a>GoogleGuava实际开发</h1><h3 id="Guava-Lists-transform-dubbo请求序列化问题"><a href="#Guava-Lists-transform-dubbo请求序列化问题" class="headerlink" title="Guava Lists.transform dubbo请求序列化问题"></a>Guava Lists.transform dubbo请求序列化问题</h3><h4 id="问题引发"><a href="#问题引发" class="headerlink" title="问题引发"></a>问题引发</h4><p>今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。</p>
-<p>在实际工作中我们经常对一个List集合进行转化，常用的就是for循环和forEach。google Guava提供的 transform可以做到更优雅。<br>看例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//TODO 批量缓存圈子信息</span></div><div class="line"><span class="function"><span class="keyword">private</span> Map&lt;String,String&gt; <span class="title">cacheGomeShopGroupItem</span><span class="params">(List&lt;GomeStoreItem&gt; gomeStoreItems)</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">final</span> Map&lt;String,String&gt; shopGroupMap = Maps.newHashMap();</div><div class="line">    </div><div class="line">    <span class="comment">//1、普通for循环   </span></div><div class="line">    List&lt;String&gt; storeIds = Lists.newArrayList();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;gomeStoreItems.size()&amp;&amp;gomeStoreItems!=<span class="keyword">null</span> ; i++) &#123;</div><div class="line">        GomeStoreItem gomeStoreItem  = gomeStoreItems.get(i);</div><div class="line">        String storeId = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">if</span> (gomeStoreItem != <span class="keyword">null</span>)&#123;</div><div class="line">            storeId = gomeStoreItem.getGomeStoreId();</div><div class="line">        &#125;</div><div class="line">        storeIds.add(storeId);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">//2、使用transform转化</span></div><div class="line">    List&lt;String&gt; storeIds1 = Lists.newArrayList();</div><div class="line">    storeIds1.addAll(Lists.transform(gomeStoreItems, <span class="keyword">new</span> Function&lt;GomeStoreItem, String&gt;() &#123;</div><div class="line">        <span class="meta">@Nullable</span></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">apply</span><span class="params">(@Nullable GomeStoreItem gomeStoreItem)</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> gomeStoreItem.getGomeStoreId();</div><div class="line">        &#125;</div><div class="line">    &#125;));</div><div class="line"></div><div class="line">    List&lt;GomeShopGroupItem&gt; shopGroupItems = Lists.newArrayList();</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="comment">//正常的dubbo调用</span></div><div class="line">        CommonResultEntity&lt;List&lt;ShopGroupInfo&gt;&gt; resuletEntity = opensocialGroupFacade.shopGroupInfo(storeIds);</div><div class="line">        <span class="comment">//非正常的dubbo调用</span></div><div class="line">        CommonResultEntity&lt;List&lt;ShopGroupInfo&gt;&gt; resuletEntity1 = opensocialGroupFacade.shopGroupInfo(storeIds1);</div><div class="line">        </div><div class="line">        <span class="comment">// 业务代码 ......</span></div><div class="line">        </div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">        </div><div class="line">        logger.error(String.format(<span class="string">"查询圈子出错：storeIds：%s"</span>,JSON.toJSONString(storeIds)));</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> shopGroupMap;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4><p>以下是使用transform转化的List,使用dubbo调用发生的异常信息：</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Failed to invoke the method shopGroupInfo in the service cn.com.mx.opensocial.group.service.IOpensocialGroupFacade. Tried 3 times of the providers [10.125.198.49:30006] (1/1) from the registry 10.125.198.74:2181 on the consumer 10.144.36.140 using the dubbo version 2.5.5.cat-SNAPSHOT. Last error is: Failed to invoke remote method: shopGroupInfo, provider: dubbo://10.125.198.49:30006/cn.com.mx.opensocial.group.service.IOpensocialGroupFacade?anyhost=true&amp;application=gome-detail-service&amp;check=false&amp;default.accepts=1000&amp;default.check=false&amp;default.timeout=5000&amp;dubbo=2.5.3&amp;heartbeat=100000&amp;interface=cn.com.mx.opensocial.group.service.IOpensocialGroupFacade&amp;methods=shopGroupInfo,strollGroups,checkIsMember&amp;owner=qiantai&amp;pid=4876&amp;providerside=venus-opensocial&amp;revision=1.1&amp;serialization=nativejava&amp;side=consumer&amp;timeout=8000&amp;timestamp=1498030003360&amp;version=1.0.0, cause: Failed to send message Request [id=12, version=2.0.0, twoway=true, event=false, broken=false, data=RpcInvocation [methodName=shopGroupInfo, parameterTypes=[interface java.util.List], arguments=[[1, 6, 10, 20, 30, 31, 40, 10122, 10132, 10138, 10140, 10142, 10145, 10146, 10150, 10159]], attachments=&#123;_catChildMessageId=gome-detail-service-0a90248c-416119-487610019, _catParentMessageId=gome-detail-service-0a90248c-416119-487610018, _rStrategy=null, path=cn.com.mx.opensocial.group.service.IOpensocialGroupFacade, consumerside=gome-detail-service, interface=cn.com.mx.opensocial.group.service.IOpensocialGroupFacade, _catRootMessageId=gome-detail-service-0a90248c-416119-487610018, @null=null, timeout=8000, version=1.0.0&#125;]] to /10.125.198.49:30006, cause: com.gome.item.services.GomeStoreServiceImpl$2</div></pre></td></tr></table></figure>
-<p><strong>cause: Failed to send message</strong> 可以看出发送请求的时候就失败了。那么第一考虑到的就是序列化，因为一次rpc调用肯定需要将参数序列化。</p>
-<p>1、ArrayList 实现了 java.io.Serializable接口；2、使用transform生成的TransformingRandomAccessList 并不是ArrayList类型并没有实现序列化接口，</p>
-<p>带着问题去查看guava源码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">   * Returns a list that applies &#123;<span class="doctag">@code</span> function&#125; to each element of &#123;<span class="doctag">@code</span></div><div class="line">   * fromList&#125;. The returned list is a transformed view of &#123;<span class="doctag">@code</span> fromList&#125;;</div><div class="line">   * changes to &#123;<span class="doctag">@code</span> fromList&#125; will be reflected in the returned list and vice</div><div class="line">   * versa.</div><div class="line">   *</div><div class="line">   * &lt;p&gt;Since functions are not reversible, the transform is one-way and new</div><div class="line">   * items cannot be stored in the returned list. The &#123;<span class="doctag">@code</span> add&#125;,</div><div class="line">   * &#123;<span class="doctag">@code</span> addAll&#125; and &#123;<span class="doctag">@code</span> set&#125; methods are unsupported in the returned</div><div class="line">   * list.</div><div class="line">   ........</div><div class="line">   */</div></pre></td></tr></table></figure></p>
-<p>大概意思：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * 该方法返回一个列表，这个列表中元素是运用方法中传入的功能函数(Function)对原列表中的元素进行处理后的结果,</div><div class="line">  * 它是原列表的一个功能视图，任何对原列表的改变将会体现到视图列表中。因为Function函数是不可逆的，</div><div class="line">  * 所以这样的转换是单向的，并且转换的结果不能存储在返回的列表中。</div><div class="line">  * 所有对视图列表的添加（add/addAll）、设置（set）等都是不被支持的。</div><div class="line">  */</div></pre></td></tr></table></figure></p>
-<p>所以说，返回的对象列表是一个视图，其中对它的任何更改都是无效的，并且也不建议对视图对象产生更改，如果需要更改返回的列表，那么需要自己进一步包装，如Lists.newArrayList(retList);<br>如果需要对返回的结果视图进行处理：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">List&lt;String&gt; storeIdsArrayList = Lists.newArrayList(storeIds);</div></pre></td></tr></table></figure></p>
-<p>这样就可以正常的去做为一个rpc请求的参数了。</p>
-
-          
+          <p><img src="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png" alt="guava.png" title="guava"></p>
+<h1 id="Google-Guava实际开发遇到的问题总结"><a href="#Google-Guava实际开发遇到的问题总结" class="headerlink" title="Google Guava实际开发遇到的问题总结"></a>Google Guava实际开发遇到的问题总结</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/21/google-guava/googel-guava-生产问题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -445,7 +440,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="//star45.me/2017/05/18/spring/springboot/">
+    <link itemprop="mainEntityOfPage" href="//star45.me/2017/05/13/spring/SpringBoot/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Star45">
@@ -467,8 +462,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/05/18/spring/springboot/" itemprop="url">
-                  未命名
+                <a class="post-title-link" href="/2017/05/13/spring/SpringBoot/" itemprop="url">
+                  SpringBoot 1
                 </a>
               
             
@@ -484,8 +479,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-18T17:58:05+08:00">
-                2017-05-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-13T12:02:45+08:00">
+                2017-05-13
               </time>
             
 
@@ -495,6 +490,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -503,8 +520,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/18/spring/springboot/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/18/spring/springboot/" itemprop="commentCount"></span>
+                <a href="/2017/05/13/spring/SpringBoot/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/13/spring/SpringBoot/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -531,156 +548,15 @@
 
       
         
-          
-            <p>springboot 整合dubbo使用 xml方式。</p>
-<p>用Dubbo做过几个项目了，从来没有碰到过Caused by: Java.lang.ClassCastException这种错误，最后经过反复的测试发现原来是因为依赖了<br>SpringBoot的开发者工具才出现的这一个问题，只要把下面的依赖去掉就解决了这一个问题：  </p>
-<pre><code>&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
-    &lt;optional&gt;true&lt;/optional&gt;
-&lt;/dependency&gt;
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="//star45.me/2017/05/17/java8/SpringBoot/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Star45">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ojle7m433.bkt.clouddn.com/longmao_1.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Star45的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/05/17/java8/SpringBoot/" itemprop="url">
-                  未命名
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-17T13:43:10+08:00">
-                2017-05-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/05/17/java8/SpringBoot/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/17/java8/SpringBoot/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer</p>
-</li>
-<li><p>如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）</p>
-</li>
-<li><p>如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）</p>
-</li>
-<li><p>如果你需要在对某个bean的实例化层面上开发，使用BeanPostProcessor（一般业务上的开发使用InitializingBean或者init-method能够满足）</p>
-</li>
-</ol>
-
-          
+          <p><img src="http://ojle7m433.bkt.clouddn.com/spring.png" alt="spring.png" title="Spring"></p>
+<h1 id="SpringBoot-学习"><a href="#SpringBoot-学习" class="headerlink" title="SpringBoot 学习"></a>SpringBoot 学习</h1>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/13/spring/SpringBoot/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -830,9 +706,20 @@
 
       
         
-          
-            
-          
+          <p><img src="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png" alt="guava.png" title="guava"></p>
+<h1 id="Google-Guava学习"><a href="#Google-Guava学习" class="headerlink" title="Google Guava学习"></a>Google Guava学习</h1><ul>
+<li>google-guava-functional</li>
+<li>我们为什么要用google-guava-functional</li>
+<li>google-guava-functional 会给我们带来什么</li>
+</ul>
+<p>我们带着这些问题，去认识、学习google-guava-functional</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/19/google-guava/google-guava4-functional/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -982,9 +869,20 @@
 
       
         
-          
-            
-          
+          <p><img src="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png" alt="guava.png" title="guava"></p>
+<h1 id="Google-Guava学习"><a href="#Google-Guava学习" class="headerlink" title="Google Guava学习"></a>Google Guava学习</h1><ul>
+<li>google-guava-caches</li>
+<li>我们为什么要用google-guava-caches</li>
+<li>google-guava-caches会给我们带来什么</li>
+</ul>
+<p>我们带着这些问题，去认识、学习google-guava-caches</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/19/google-guava/google-guava3-caches/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1297,9 +1195,20 @@
 
       
         
-          
-            
-          
+          <p><img src="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png" alt="guava.png" title="guava"></p>
+<h1 id="Google-Guava学习"><a href="#Google-Guava学习" class="headerlink" title="Google Guava学习"></a>Google Guava学习</h1><ul>
+<li>google-guava</li>
+<li>我们为什么要用google-guava</li>
+<li>google-guava 会给我们带来什么</li>
+</ul>
+<p>我们带着这些问题，去认识、学习google-guava</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/19/google-guava/google-guava1-basic/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1341,7 +1250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="//star45.me/2017/03/28/面试/">
+    <link itemprop="mainEntityOfPage" href="//star45.me/2017/03/28/杂事/面试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Star45">
@@ -1363,7 +1272,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/28/面试/" itemprop="url">
+                <a class="post-title-link" href="/2017/03/28/杂事/面试/" itemprop="url">
                   面试
                 </a>
               
@@ -1421,8 +1330,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/28/面试/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/28/面试/" itemprop="commentCount"></span>
+                <a href="/2017/03/28/杂事/面试/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/28/杂事/面试/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1452,7 +1361,170 @@
           <h2 id="一些java面试问题总结"><a href="#一些java面试问题总结" class="headerlink" title="一些java面试问题总结"></a>一些java面试问题总结</h2>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/28/面试/#more" rel="contents">
+            <a class="btn" href="/2017/03/28/杂事/面试/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="//star45.me/2017/03/13/spring/Spring系列1-Filter/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Star45">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://ojle7m433.bkt.clouddn.com/longmao_1.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Star45的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/13/spring/Spring系列1-Filter/" itemprop="url">
+                  Spring系列1-Filter
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-13T12:02:45+08:00">
+                2017-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/13/spring/Spring系列1-Filter/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/spring/Spring系列1-Filter/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="http://ojle7m433.bkt.clouddn.com/spring.png" alt="spring.png" title="Spring"></p>
+<h1 id="SpringFramework学习"><a href="#SpringFramework学习" class="headerlink" title="SpringFramework学习"></a>SpringFramework学习</h1><ul>
+<li>Spring提供的Filter 是什么</li>
+<li>我们为什么要用Spring提供的Filter</li>
+<li>Spring提供的Filter 会给我们带来什么</li>
+</ul>
+<p>我们带着这些问题，去认识、学习Spring提供的Filter过滤器</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/13/spring/Spring系列1-Filter/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1538,7 +1610,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1560,7 +1632,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

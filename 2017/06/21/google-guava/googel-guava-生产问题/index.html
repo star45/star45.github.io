@@ -89,20 +89,17 @@
 
 
 
-<meta name="description" content="GoogleGuava实际开发Guava Lists.transform dubbo请求序列化问题问题引发今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。
-在实际工作中我们经常对一个List集合进行转化，常用的就是for循环和forEach。go">
+<meta name="description" content="Google Guava实际开发遇到的问题总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="googel-guava-qa-transform">
-<meta property="og:url" content="//star45.me/2017/06/21/google-guava/googel-guava-qa/index.html">
+<meta property="og:title" content="googel-guava-生产问题">
+<meta property="og:url" content="//star45.me/2017/06/21/google-guava/googel-guava-生产问题/index.html">
 <meta property="og:site_name" content="Star45的博客">
-<meta property="og:description" content="GoogleGuava实际开发Guava Lists.transform dubbo请求序列化问题问题引发今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。
-在实际工作中我们经常对一个List集合进行转化，常用的就是for循环和forEach。go">
+<meta property="og:description" content="Google Guava实际开发遇到的问题总结">
 <meta property="og:image" content="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png">
-<meta property="og:updated_time" content="2017-06-21T08:39:38.004Z">
+<meta property="og:updated_time" content="2017-06-22T02:13:48.687Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="googel-guava-qa-transform">
-<meta name="twitter:description" content="GoogleGuava实际开发Guava Lists.transform dubbo请求序列化问题问题引发今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。
-在实际工作中我们经常对一个List集合进行转化，常用的就是for循环和forEach。go">
+<meta name="twitter:title" content="googel-guava-生产问题">
+<meta name="twitter:description" content="Google Guava实际开发遇到的问题总结">
 <meta name="twitter:image" content="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png">
 
 
@@ -131,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="//star45.me/2017/06/21/google-guava/googel-guava-qa/"/>
+  <link rel="canonical" href="//star45.me/2017/06/21/google-guava/googel-guava-生产问题/"/>
 
 
 
 
 
-  <title> googel-guava-qa-transform | Star45的博客 </title>
+  <title> googel-guava-生产问题 | Star45的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -286,7 +283,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="//star45.me/2017/06/21/google-guava/googel-guava-qa/">
+    <link itemprop="mainEntityOfPage" href="//star45.me/2017/06/21/google-guava/googel-guava-生产问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Star45">
@@ -307,7 +304,7 @@
             
             
               
-                googel-guava-qa-transform
+                googel-guava-生产问题
               
             
           </h1>
@@ -363,8 +360,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/06/21/google-guava/googel-guava-qa/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/21/google-guava/googel-guava-qa/" itemprop="commentCount"></span>
+                <a href="/2017/06/21/google-guava/googel-guava-生产问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/06/21/google-guava/googel-guava-生产问题/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -396,7 +393,8 @@
 
       
         <p><img src="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png" alt="guava.png" title="guava"></p>
-<h1 id="GoogleGuava实际开发"><a href="#GoogleGuava实际开发" class="headerlink" title="GoogleGuava实际开发"></a>GoogleGuava实际开发</h1><h3 id="Guava-Lists-transform-dubbo请求序列化问题"><a href="#Guava-Lists-transform-dubbo请求序列化问题" class="headerlink" title="Guava Lists.transform dubbo请求序列化问题"></a>Guava Lists.transform dubbo请求序列化问题</h3><h4 id="问题引发"><a href="#问题引发" class="headerlink" title="问题引发"></a>问题引发</h4><p>今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。</p>
+<h1 id="Google-Guava实际开发遇到的问题总结"><a href="#Google-Guava实际开发遇到的问题总结" class="headerlink" title="Google Guava实际开发遇到的问题总结"></a>Google Guava实际开发遇到的问题总结</h1><a id="more"></a>
+<h3 id="Guava-Lists-transform-dubbo请求序列化问题"><a href="#Guava-Lists-transform-dubbo请求序列化问题" class="headerlink" title="Guava Lists.transform dubbo请求序列化问题"></a>Guava Lists.transform dubbo请求序列化问题</h3><h4 id="问题引发"><a href="#问题引发" class="headerlink" title="问题引发"></a>问题引发</h4><p>今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。</p>
 <p>在实际工作中我们经常对一个List集合进行转化，常用的就是for循环和forEach。google Guava提供的 transform可以做到更优雅。<br>看例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//TODO 批量缓存圈子信息</span></div><div class="line"><span class="function"><span class="keyword">private</span> Map&lt;String,String&gt; <span class="title">cacheGomeShopGroupItem</span><span class="params">(List&lt;GomeStoreItem&gt; gomeStoreItems)</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">final</span> Map&lt;String,String&gt; shopGroupMap = Maps.newHashMap();</div><div class="line">    </div><div class="line">    <span class="comment">//1、普通for循环   </span></div><div class="line">    List&lt;String&gt; storeIds = Lists.newArrayList();</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;gomeStoreItems.size()&amp;&amp;gomeStoreItems!=<span class="keyword">null</span> ; i++) &#123;</div><div class="line">        GomeStoreItem gomeStoreItem  = gomeStoreItems.get(i);</div><div class="line">        String storeId = <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">if</span> (gomeStoreItem != <span class="keyword">null</span>)&#123;</div><div class="line">            storeId = gomeStoreItem.getGomeStoreId();</div><div class="line">        &#125;</div><div class="line">        storeIds.add(storeId);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="comment">//2、使用transform转化</span></div><div class="line">    List&lt;String&gt; storeIds1 = Lists.newArrayList();</div><div class="line">    storeIds1.addAll(Lists.transform(gomeStoreItems, <span class="keyword">new</span> Function&lt;GomeStoreItem, String&gt;() &#123;</div><div class="line">        <span class="meta">@Nullable</span></div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">apply</span><span class="params">(@Nullable GomeStoreItem gomeStoreItem)</span> </span>&#123;</div><div class="line">            <span class="keyword">return</span> gomeStoreItem.getGomeStoreId();</div><div class="line">        &#125;</div><div class="line">    &#125;));</div><div class="line"></div><div class="line">    List&lt;GomeShopGroupItem&gt; shopGroupItems = Lists.newArrayList();</div><div class="line">    <span class="keyword">try</span> &#123;</div><div class="line">        <span class="comment">//正常的dubbo调用</span></div><div class="line">        CommonResultEntity&lt;List&lt;ShopGroupInfo&gt;&gt; resuletEntity = opensocialGroupFacade.shopGroupInfo(storeIds);</div><div class="line">        <span class="comment">//非正常的dubbo调用</span></div><div class="line">        CommonResultEntity&lt;List&lt;ShopGroupInfo&gt;&gt; resuletEntity1 = opensocialGroupFacade.shopGroupInfo(storeIds1);</div><div class="line">        </div><div class="line">        <span class="comment">// 业务代码 ......</span></div><div class="line">        </div><div class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">        </div><div class="line">        logger.error(String.format(<span class="string">"查询圈子出错：storeIds：%s"</span>,JSON.toJSONString(storeIds)));</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> shopGroupMap;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4><p>以下是使用transform转化的List,使用dubbo调用发生的异常信息：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Failed to invoke the method shopGroupInfo in the service cn.com.mx.opensocial.group.service.IOpensocialGroupFacade. Tried 3 times of the providers [10.125.198.49:30006] (1/1) from the registry 10.125.198.74:2181 on the consumer 10.144.36.140 using the dubbo version 2.5.5.cat-SNAPSHOT. Last error is: Failed to invoke remote method: shopGroupInfo, provider: dubbo://10.125.198.49:30006/cn.com.mx.opensocial.group.service.IOpensocialGroupFacade?anyhost=true&amp;application=gome-detail-service&amp;check=false&amp;default.accepts=1000&amp;default.check=false&amp;default.timeout=5000&amp;dubbo=2.5.3&amp;heartbeat=100000&amp;interface=cn.com.mx.opensocial.group.service.IOpensocialGroupFacade&amp;methods=shopGroupInfo,strollGroups,checkIsMember&amp;owner=qiantai&amp;pid=4876&amp;providerside=venus-opensocial&amp;revision=1.1&amp;serialization=nativejava&amp;side=consumer&amp;timeout=8000&amp;timestamp=1498030003360&amp;version=1.0.0, cause: Failed to send message Request [id=12, version=2.0.0, twoway=true, event=false, broken=false, data=RpcInvocation [methodName=shopGroupInfo, parameterTypes=[interface java.util.List], arguments=[[1, 6, 10, 20, 30, 31, 40, 10122, 10132, 10138, 10140, 10142, 10145, 10146, 10150, 10159]], attachments=&#123;_catChildMessageId=gome-detail-service-0a90248c-416119-487610019, _catParentMessageId=gome-detail-service-0a90248c-416119-487610018, _rStrategy=null, path=cn.com.mx.opensocial.group.service.IOpensocialGroupFacade, consumerside=gome-detail-service, interface=cn.com.mx.opensocial.group.service.IOpensocialGroupFacade, _catRootMessageId=gome-detail-service-0a90248c-416119-487610018, @null=null, timeout=8000, version=1.0.0&#125;]] to /10.125.198.49:30006, cause: com.gome.item.services.GomeStoreServiceImpl$2</div></pre></td></tr></table></figure>
@@ -476,8 +474,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/18/spring/springboot/" rel="next" title="">
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/2017/05/13/spring/SpringBoot/" rel="next" title="SpringBoot 1">
+                <i class="fa fa-chevron-left"></i> SpringBoot 1
               </a>
             
           </div>
@@ -519,8 +517,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/06/21/google-guava/googel-guava-qa/"
-           data-title="googel-guava-qa-transform" data-url="//star45.me/2017/06/21/google-guava/googel-guava-qa/">
+      <div class="ds-thread" data-thread-key="2017/06/21/google-guava/googel-guava-生产问题/"
+           data-title="googel-guava-生产问题" data-url="//star45.me/2017/06/21/google-guava/googel-guava-生产问题/">
       </div>
     
   </div>
@@ -569,7 +567,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -591,7 +589,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -680,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GoogleGuava实际开发"><span class="nav-number">1.</span> <span class="nav-text">GoogleGuava实际开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Guava-Lists-transform-dubbo请求序列化问题"><span class="nav-number">1.0.1.</span> <span class="nav-text">Guava Lists.transform dubbo请求序列化问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题引发"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">问题引发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题分析"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">问题分析</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Google-Guava实际开发遇到的问题总结"><span class="nav-number">1.</span> <span class="nav-text">Google Guava实际开发遇到的问题总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Guava-Lists-transform-dubbo请求序列化问题"><span class="nav-number">1.0.1.</span> <span class="nav-text">Guava Lists.transform dubbo请求序列化问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题引发"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">问题引发</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题分析"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">问题分析</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
