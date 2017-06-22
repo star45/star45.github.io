@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Linux," />
 
 
 
@@ -89,34 +89,16 @@
 
 
 
-<meta name="description" content="如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer
-
-如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）
-
-如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）
-
-如果你需要在对某个bean">
+<meta name="description" content="使用shell脚本执行一些命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Star45的博客">
-<meta property="og:url" content="//star45.me/2017/05/17/java8/SpringBoot/index.html">
+<meta property="og:title" content="Linux下shell脚本执行jar文件">
+<meta property="og:url" content="//star45.me/2017/01/11/服务器/Linux下shell脚本执行jar文件/index.html">
 <meta property="og:site_name" content="Star45的博客">
-<meta property="og:description" content="如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer
-
-如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）
-
-如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）
-
-如果你需要在对某个bean">
-<meta property="og:updated_time" content="2017-05-17T05:43:17.672Z">
+<meta property="og:description" content="使用shell脚本执行一些命令">
+<meta property="og:updated_time" content="2017-03-28T09:49:16.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Star45的博客">
-<meta name="twitter:description" content="如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer
-
-如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）
-
-如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）
-
-如果你需要在对某个bean">
+<meta name="twitter:title" content="Linux下shell脚本执行jar文件">
+<meta name="twitter:description" content="使用shell脚本执行一些命令">
 
 
 
@@ -144,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="//star45.me/2017/05/17/java8/SpringBoot/"/>
+  <link rel="canonical" href="//star45.me/2017/01/11/服务器/Linux下shell脚本执行jar文件/"/>
 
 
 
 
 
-  <title>  | Star45的博客 </title>
+  <title> Linux下shell脚本执行jar文件 | Star45的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -299,7 +281,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="//star45.me/2017/05/17/java8/SpringBoot/">
+    <link itemprop="mainEntityOfPage" href="//star45.me/2017/01/11/服务器/Linux下shell脚本执行jar文件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Star45">
@@ -320,7 +302,7 @@
             
             
               
-                
+                Linux下shell脚本执行jar文件
               
             
           </h1>
@@ -335,8 +317,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-17T13:43:10+08:00">
-                2017-05-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-11T18:11:51+08:00">
+                2017-01-11
               </time>
             
 
@@ -346,6 +328,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -354,8 +358,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/17/java8/SpringBoot/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/17/java8/SpringBoot/" itemprop="commentCount"></span>
+                <a href="/2017/01/11/服务器/Linux下shell脚本执行jar文件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/11/服务器/Linux下shell脚本执行jar文件/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,16 +390,11 @@
       
 
       
-        <ol>
-<li><p>如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer</p>
-</li>
-<li><p>如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）</p>
-</li>
-<li><p>如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）</p>
-</li>
-<li><p>如果你需要在对某个bean的实例化层面上开发，使用BeanPostProcessor（一般业务上的开发使用InitializingBean或者init-method能够满足）</p>
-</li>
-</ol>
+        <blockquote>
+<p>使用shell脚本执行一些命令</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="以下是具体的命令脚本"><a href="#以下是具体的命令脚本" class="headerlink" title="以下是具体的命令脚本"></a>以下是具体的命令脚本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"><span class="comment">#description: 启动重启server服务 </span></div><div class="line"><span class="comment">#端口号，根据此端口号确定PID  </span></div><div class="line">PORT=9997  </div><div class="line"><span class="comment">#启动命令所在目录  </span></div><div class="line">HOME=<span class="string">'/usr/etc/server/java/server'</span>  </div><div class="line">  </div><div class="line"><span class="comment">#查询出监听了PORT端口TCP协议的程序  </span></div><div class="line">pid=`netstat -anp|grep <span class="variable">$PORT</span>|awk <span class="string">'&#123;printf $7&#125;'</span>|cut <span class="_">-d</span>/ <span class="_">-f</span>1`  </div><div class="line">  </div><div class="line">  </div><div class="line"><span class="function"><span class="title">start</span></span>()&#123;  </div><div class="line">   <span class="keyword">if</span> [ -n <span class="string">"<span class="variable">$pid</span>"</span> ]; <span class="keyword">then</span>  </div><div class="line">      <span class="built_in">echo</span> <span class="string">"server already start,pid:<span class="variable">$pid</span>"</span>  </div><div class="line">      <span class="built_in">return</span> 0</div><div class="line">   <span class="keyword">fi</span></div><div class="line">   <span class="comment">#进入命令所在目录  </span></div><div class="line">   <span class="built_in">cd</span> <span class="variable">$HOME</span>  </div><div class="line">   nohup java -jar <span class="variable">$HOME</span>/pserver9997.jar &gt; <span class="variable">$HOME</span>/server.log 2&gt;&amp;1 &amp;   <span class="comment">#启动聊天服务器 把日志输出到HOME目录的server.log文件中   </span></div><div class="line">   <span class="built_in">echo</span> <span class="string">"start at port:<span class="variable">$PORT</span>"</span>  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="function"><span class="title">stop</span></span>()&#123;  </div><div class="line">   <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$pid</span>"</span> ]; <span class="keyword">then</span>  </div><div class="line">      <span class="built_in">echo</span> <span class="string">"not find program on port:<span class="variable">$PORT</span>"</span>  </div><div class="line">      <span class="built_in">return</span> 0</div><div class="line">   <span class="keyword">fi</span></div><div class="line">   <span class="comment">#结束程序，使用讯号2，如果不行可以尝试讯号9强制结束  </span></div><div class="line">   <span class="built_in">kill</span> -9 <span class="variable">$pid</span></div><div class="line">   rm -rf <span class="variable">$pid</span></div><div class="line">   <span class="built_in">echo</span> <span class="string">"kill program use signal 2,pid:<span class="variable">$pid</span>"</span>  </div><div class="line">&#125;  </div><div class="line"><span class="function"><span class="title">status</span></span>()&#123;  </div><div class="line">   <span class="keyword">if</span> [ -z <span class="string">"<span class="variable">$pid</span>"</span> ]; <span class="keyword">then</span>  </div><div class="line">      <span class="built_in">echo</span> <span class="string">"not find program on port:<span class="variable">$PORT</span>"</span>  </div><div class="line">   <span class="keyword">else</span>  </div><div class="line">      <span class="built_in">echo</span> <span class="string">"program is running,pid:<span class="variable">$pid</span>"</span>  </div><div class="line">   <span class="keyword">fi</span>  </div><div class="line">&#125;  </div><div class="line">  </div><div class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span>  </div><div class="line">   start)  </div><div class="line">      start  </div><div class="line">   ;;  </div><div class="line">   stop)  </div><div class="line">      stop  </div><div class="line">   ;;</div><div class="line">   restart)  </div><div class="line">      <span class="variable">$0</span> stop</div><div class="line">      sleep 2</div><div class="line">      <span class="variable">$0</span> start</div><div class="line">    ;;</div><div class="line">   status)  </div><div class="line">      status  </div><div class="line">   ;;  </div><div class="line">   *)  </div><div class="line">      <span class="built_in">echo</span> <span class="string">"Usage: &#123;start|stop|status&#125;"</span>  </div><div class="line">   ;;  </div><div class="line"><span class="keyword">esac</span>  </div><div class="line">  </div><div class="line"><span class="built_in">exit</span> 0</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -449,6 +448,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+        </div>
+      
 
       
         
@@ -458,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/19/google-guava/google-guava4-functional/" rel="next" title="google-guava-functional">
-                <i class="fa fa-chevron-left"></i> google-guava-functional
+              <a href="/2017/01/11/工具/Sublime-Text-3-《第四章-插件》/" rel="next" title="Sublime Text 3 《第四章 - 插件》">
+                <i class="fa fa-chevron-left"></i> Sublime Text 3 《第四章 - 插件》
               </a>
             
           </div>
@@ -468,8 +473,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/18/spring/springboot/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/01/11/工具/github维护/" rel="prev" title="github维护">
+                github维护 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -498,12 +503,15 @@
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/05/17/java8/SpringBoot/"
-           data-title="" data-url="//star45.me/2017/05/17/java8/SpringBoot/">
+      <div class="ds-thread" data-thread-key="2017/01/11/服务器/Linux下shell脚本执行jar文件/"
+           data-title="Linux下shell脚本执行jar文件" data-url="//star45.me/2017/01/11/服务器/Linux下shell脚本执行jar文件/">
       </div>
     
   </div>
@@ -527,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ojle7m433.bkt.clouddn.com/longmao_1.jpeg"
@@ -644,6 +661,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#以下是具体的命令脚本"><span class="nav-number">1.</span> <span class="nav-text">以下是具体的命令脚本</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

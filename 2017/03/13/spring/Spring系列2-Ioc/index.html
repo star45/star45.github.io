@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Spring,framework," />
 
 
 
@@ -89,34 +89,33 @@
 
 
 
-<meta name="description" content="如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer
+<meta name="description" content="SpringFramework学习
+Spring Ioc 是什么
+我们为什么要用Spring Ioc
+Spring Ioc 会给我们带来什么
 
-如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）
-
-如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）
-
-如果你需要在对某个bean">
+我们带着这些问题，去认识、学习Spring Ioc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Star45的博客">
-<meta property="og:url" content="//star45.me/2017/05/17/java8/SpringBoot/index.html">
+<meta property="og:title" content="Spring系列1-Filter">
+<meta property="og:url" content="//star45.me/2017/03/13/spring/Spring系列2-Ioc/index.html">
 <meta property="og:site_name" content="Star45的博客">
-<meta property="og:description" content="如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer
+<meta property="og:description" content="SpringFramework学习
+Spring Ioc 是什么
+我们为什么要用Spring Ioc
+Spring Ioc 会给我们带来什么
 
-如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）
-
-如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）
-
-如果你需要在对某个bean">
-<meta property="og:updated_time" content="2017-05-17T05:43:17.672Z">
+我们带着这些问题，去认识、学习Spring Ioc">
+<meta property="og:image" content="http://ojle7m433.bkt.clouddn.com/spring.png">
+<meta property="og:updated_time" content="2017-04-19T09:03:40.978Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Star45的博客">
-<meta name="twitter:description" content="如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer
+<meta name="twitter:title" content="Spring系列1-Filter">
+<meta name="twitter:description" content="SpringFramework学习
+Spring Ioc 是什么
+我们为什么要用Spring Ioc
+Spring Ioc 会给我们带来什么
 
-如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）
-
-如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）
-
-如果你需要在对某个bean">
+我们带着这些问题，去认识、学习Spring Ioc">
+<meta name="twitter:image" content="http://ojle7m433.bkt.clouddn.com/spring.png">
 
 
 
@@ -144,13 +143,13 @@
 
 
 
-  <link rel="canonical" href="//star45.me/2017/05/17/java8/SpringBoot/"/>
+  <link rel="canonical" href="//star45.me/2017/03/13/spring/Spring系列2-Ioc/"/>
 
 
 
 
 
-  <title>  | Star45的博客 </title>
+  <title> Spring系列1-Filter | Star45的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -299,7 +298,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="//star45.me/2017/05/17/java8/SpringBoot/">
+    <link itemprop="mainEntityOfPage" href="//star45.me/2017/03/13/spring/Spring系列2-Ioc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Star45">
@@ -320,7 +319,7 @@
             
             
               
-                
+                Spring系列1-Filter
               
             
           </h1>
@@ -335,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-17T13:43:10+08:00">
-                2017-05-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-13T12:02:45+08:00">
+                2017-03-13
               </time>
             
 
@@ -354,8 +353,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/05/17/java8/SpringBoot/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/17/java8/SpringBoot/" itemprop="commentCount"></span>
+                <a href="/2017/03/13/spring/Spring系列2-Ioc/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/13/spring/Spring系列2-Ioc/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,16 +385,28 @@
       
 
       
-        <ol>
-<li><p>如果你需要在SpringApplication初始化的时候就做一些事情，使用ApplicationContextInitializer</p>
-</li>
-<li><p>如果你需要SpringApplication的某个特定阶段做一些事情，使用ApplicationListener（推荐）</p>
-</li>
-<li><p>如果你需要在beanFactory层面上开发，使用BeanFactoryPostProcessor（推荐）</p>
-</li>
-<li><p>如果你需要在对某个bean的实例化层面上开发，使用BeanPostProcessor（一般业务上的开发使用InitializingBean或者init-method能够满足）</p>
-</li>
+        <p><img src="http://ojle7m433.bkt.clouddn.com/spring.png" alt="spring.png" title="Spring"></p>
+<h1 id="SpringFramework学习"><a href="#SpringFramework学习" class="headerlink" title="SpringFramework学习"></a>SpringFramework学习</h1><ul>
+<li>Spring Ioc 是什么</li>
+<li>我们为什么要用Spring Ioc</li>
+<li>Spring Ioc 会给我们带来什么</li>
+</ul>
+<p>我们带着这些问题，去认识、学习Spring Ioc</p>
+<a id="more"></a>
+<p>##</p>
+<blockquote>
+<p>Spring Framework 是一个开源的Java／Java EE全功能栈（full-stack）的应用程序框架，以Apache许可证形式发布，也有.NET平台上的移植版本。该框架基于 Expert One-on-One Java EE Design and Development（ISBN 0-7645-4385-7）一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。</p>
+</blockquote>
+<h3 id="1-IoC理论的背景"><a href="#1-IoC理论的背景" class="headerlink" title="1. IoC理论的背景"></a>1. IoC理论的背景</h3><p>耦合关系不仅会出现在对象与对象之间，也会出现在软件系统的各模块之间，以及软件系统和硬件系统之间。如何降低系统之间、模块之间和对象之间的耦合度，是软件工程永远追求的目标之一。为了解决对象之间的耦合度过高的问题，软件专家Michael Mattson提出了IOC理论，用来实现对象之间的“解耦”，目前这个理论已经被成功地应用到实践当中，很多的J2EE项目均采用了IOC框架产品spring。</p>
+<h3 id="2-什么是控制反转-IoC"><a href="#2-什么是控制反转-IoC" class="headerlink" title="2. 什么是控制反转(IoC)"></a>2. 什么是控制反转(IoC)</h3><p>IOC是Inversion of Control的缩写，多数书籍翻译成“控制反转”。IOC理论提出的观点大体是这样的：借助于“第三方”实现具有依赖关系的对象之间的解耦。</p>
+<p>我们再来看看，控制反转(IOC)到底为什么要起这么个名字？我们来对比一下：<br>软件系统在没有引入IOC容器之前，如图1所示，对象A依赖于对象B，那么对象A在初始化或者运行到某一点的时候，自己必须主动去创建对象B或者使用已经创建的对象B。无论是创建还是使用对象B，控制权都在自己手上。<br>软件系统在引入IOC容器之后，这种情形就完全改变了，如图3所示，由于IOC容器的加入，对象A与对象B之间失去了直接联系，所以，当对象A运行到需要对象B的时候，IOC容器会主动创建一个对象B注入到对象A需要的地方。<br>通过前后的对比，我们不难看出来：对象A获得依赖对象B的过程,由主动行为变为了被动行为，控制权颠倒过来了，这就是“控制反转”这个名称的由来。</p>
+<h3 id="3-IOC的别名：依赖注入-DI"><a href="#3-IOC的别名：依赖注入-DI" class="headerlink" title="3.  IOC的别名：依赖注入(DI)"></a>3.  IOC的别名：依赖注入(DI)</h3><p>依赖注入(DI)和控制反转(IOC)是从不同的角度的描述的同一件事情，就是指通过引入IOC容器，利用依赖关系注入的方式，实现对象之间的解耦。</p>
+<h3 id="4-IOC为我们带来了什么好处"><a href="#4-IOC为我们带来了什么好处" class="headerlink" title="4.  IOC为我们带来了什么好处"></a>4.  IOC为我们带来了什么好处</h3><ol>
+<li>组件之间低耦合或者无耦合带来的好处。</li>
+<li></li>
 </ol>
+<h3 id="5-IOC容器的技术剖析"><a href="#5-IOC容器的技术剖析" class="headerlink" title="5.  IOC容器的技术剖析"></a>5.  IOC容器的技术剖析</h3><p>IOC中最基本的技术就是“反射(Reflection)”编程</p>
+<p>##待更新##</p>
 
       
     </div>
@@ -449,6 +460,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Spring/" rel="tag"># Spring</a>
+          
+            <a href="/tags/framework/" rel="tag"># framework</a>
+          
+        </div>
+      
 
       
         
@@ -458,8 +477,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/19/google-guava/google-guava4-functional/" rel="next" title="google-guava-functional">
-                <i class="fa fa-chevron-left"></i> google-guava-functional
+              <a href="/2017/01/11/工具/github维护/" rel="next" title="github维护">
+                <i class="fa fa-chevron-left"></i> github维护
               </a>
             
           </div>
@@ -468,8 +487,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/18/spring/springboot/" rel="prev" title="">
-                 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/13/spring/Spring系列1-Filter/" rel="prev" title="Spring系列1-Filter">
+                Spring系列1-Filter <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -498,12 +517,15 @@
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/05/17/java8/SpringBoot/"
-           data-title="" data-url="//star45.me/2017/05/17/java8/SpringBoot/">
+      <div class="ds-thread" data-thread-key="2017/03/13/spring/Spring系列2-Ioc/"
+           data-title="Spring系列1-Filter" data-url="//star45.me/2017/03/13/spring/Spring系列2-Ioc/">
       </div>
     
   </div>
@@ -527,8 +549,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ojle7m433.bkt.clouddn.com/longmao_1.jpeg"
@@ -644,6 +675,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringFramework学习"><span class="nav-number">1.</span> <span class="nav-text">SpringFramework学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-IoC理论的背景"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. IoC理论的背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-什么是控制反转-IoC"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 什么是控制反转(IoC)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-IOC的别名：依赖注入-DI"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.  IOC的别名：依赖注入(DI)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-IOC为我们带来了什么好处"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.  IOC为我们带来了什么好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-IOC容器的技术剖析"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.  IOC容器的技术剖析</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
