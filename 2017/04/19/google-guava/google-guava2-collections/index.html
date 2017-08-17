@@ -90,31 +90,19 @@
 
 
 <meta name="description" content="GoogleGuava学习
-google-guava-collections是什么
-我们为什么要用google-guava-collections
-google-guava-collections会给我们带来什么
-
-我们带着这些问题，去认识、学习google-guava-collections">
+使用Guava里的Collections，你将受益不菲。它能大量减少你工程里那些样本式的代码 (同时你还能使用它提供的新的速度更快的数据结构！).">
 <meta property="og:type" content="article">
 <meta property="og:title" content="google-guava-collections">
 <meta property="og:url" content="http://www.star45.xyz/2017/04/19/google-guava/google-guava2-collections/index.html">
 <meta property="og:site_name" content="Star45的博客">
 <meta property="og:description" content="GoogleGuava学习
-google-guava-collections是什么
-我们为什么要用google-guava-collections
-google-guava-collections会给我们带来什么
-
-我们带着这些问题，去认识、学习google-guava-collections">
+使用Guava里的Collections，你将受益不菲。它能大量减少你工程里那些样本式的代码 (同时你还能使用它提供的新的速度更快的数据结构！).">
 <meta property="og:image" content="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png">
-<meta property="og:updated_time" content="2017-06-21T08:27:03.775Z">
+<meta property="og:updated_time" content="2017-08-17T09:28:11.424Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="google-guava-collections">
 <meta name="twitter:description" content="GoogleGuava学习
-google-guava-collections是什么
-我们为什么要用google-guava-collections
-google-guava-collections会给我们带来什么
-
-我们带着这些问题，去认识、学习google-guava-collections">
+使用Guava里的Collections，你将受益不菲。它能大量减少你工程里那些样本式的代码 (同时你还能使用它提供的新的速度更快的数据结构！).">
 <meta name="twitter:image" content="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png">
 
 
@@ -408,17 +396,10 @@ google-guava-collections会给我们带来什么
 
       
         <p><img src="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png" alt="guava.png" title="guava"></p>
-<h1 id="GoogleGuava学习"><a href="#GoogleGuava学习" class="headerlink" title="GoogleGuava学习"></a>GoogleGuava学习</h1><ul>
-<li>google-guava-collections是什么</li>
-<li>我们为什么要用google-guava-collections</li>
-<li>google-guava-collections会给我们带来什么</li>
-</ul>
-<p>我们带着这些问题，去认识、学习google-guava-collections</p>
-<a id="more"></a>
-<blockquote>
-<p>使用Guava里的Collections，你将受益不菲。它能大量减少你工程里那些样本式的代码 (同时你还能使用它提供的新的速度更快的数据结构！).</p>
-</blockquote>
-<h3 id="Google-Collection-实现"><a href="#Google-Collection-实现" class="headerlink" title="Google Collection 实现"></a>Google Collection 实现</h3><h3 id="实际开发应用"><a href="#实际开发应用" class="headerlink" title="实际开发应用"></a>实际开发应用</h3><blockquote>
+<h1 id="GoogleGuava学习"><a href="#GoogleGuava学习" class="headerlink" title="GoogleGuava学习"></a>GoogleGuava学习</h1><blockquote>
+<p>使用Guava里的Collections，你将受益不菲。它能大量减少你工程里那些样本式的代码 (同时你还能使用它提供的新的速度更快的数据结构！).<br><a id="more"></a></p>
+<h3 id="Google-Collection-实现"><a href="#Google-Collection-实现" class="headerlink" title="Google Collection 实现"></a>Google Collection 实现</h3></blockquote>
+<h3 id="实际开发应用"><a href="#实际开发应用" class="headerlink" title="实际开发应用"></a>实际开发应用</h3><blockquote>
 <p>题外话：前几天开发一个功能的时候，需要一个复杂的数据接口。一个Map里面key-value结构，value的值是使用List。还需要排序、遍历检索等操作，虽然在机器中的运算是比较快的，但是整体的代码比较臃肿。这时候在review同事的代码中发现一个优秀的类库google-guava中的collection。一旦上手发现太爽了。</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Multimap&lt;Integer, WarrantyBean&gt; warrantyMultimap = ArrayListMultimap.create();</div><div class="line"><span class="keyword">for</span> (WarrantyBean warrantyBean : result)&#123;</div><div class="line">    Integer typeKey = warrantyBean.getProductWarrantyType();</div><div class="line">    warrantyMultimap.put(typeKey,warrantyBean);</div><div class="line">&#125;</div><div class="line">Map&lt;Integer,Collection&lt;WarrantyBean&gt;&gt;  warrantyMap = warrantyMultimap.asMap();</div></pre></td></tr></table></figure>
@@ -666,7 +647,7 @@ google-guava-collections会给我们带来什么
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
