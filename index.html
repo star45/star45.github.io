@@ -390,59 +390,16 @@
 
       
         
-          
-            <h2 id="swagger生成RestApi接口"><a href="#swagger生成RestApi接口" class="headerlink" title="swagger生成RestApi接口"></a>swagger生成RestApi接口</h2><h3 id="swagger-editor本地搭建"><a href="#swagger-editor本地搭建" class="headerlink" title="swagger-editor本地搭建"></a>swagger-editor本地搭建</h3><blockquote>
-<p>使用yaml语言手动编写接口。不建议使用Swagger注解在java工程里写，这样会导致代码太耦合与文档。</p>
+          <h1 id="Rest风格接口"><a href="#Rest风格接口" class="headerlink" title="Rest风格接口"></a>Rest风格接口</h1><blockquote>
+<p>Springboot，Swagger，yaml，Rest，跨域，ajax[get、post、put、delete]</p>
 </blockquote>
-<ol>
-<li>下载swagger-editor，<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https:<span class="comment">//github.com/swagger-api/swagger-editor.git</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>官方地址 <a href="https://swagger.io/download-page/，" target="_blank" rel="external">https://swagger.io/download-page/，</a> </p>
-<ol>
-<li><p>使用npm下载通过http-server 启动该服务。运行如下命令  npm install -g http-server，这是指安装http-server服务器，-g是指全局安装，在安装nodejs时可指定全局位置，具体可以去网上搜索看如何指定位置，不指定也没影响，这里不详细说明。</p>
-</li>
-<li><p>启动 swagger-editor 服务。使用nodejs服务启动。 后面会讲使用java启动，嵌入到自己的web项目中。</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http-server swagger-editor -p 8089</div></pre></td></tr></table></figure>
-<p>启动界面如下：</p>
-<p><img src="http://ojle7m433.bkt.clouddn.com/spring-rest01.png" alt="spring-rest01" title="spring-rest01"></p>
-<p>访问界面如下：借助于swagger-UI强大的展示界面</p>
-<p><img src="http://ojle7m433.bkt.clouddn.com/spring-rest02.png" alt="spring-rest02" title="spring-rest02"></p>
-<h3 id="yaml编写rest接口"><a href="#yaml编写rest接口" class="headerlink" title="yaml编写rest接口"></a>yaml编写rest接口</h3><blockquote>
-<p>yaml一种配件文件类似json，这里不多讲。关于swagger-editor支持的yaml语法比较简单。这个是API接口语法 <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md" title="swagger-editor" target="_blank" rel="external">spring-rest-url01</a>。官方有现成的demo可以拿来直接用。先面讲一下我在生产环境遇到的问题。</p>
-</blockquote>
-<ol>
-<li>rest接口部署</li>
-</ol>
-<p>这里讲的API接口都是部署在自己WEB项目中。使用于swagger-UI + yaml 文件展示。swagger-UI下载：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https:<span class="comment">//github.com/swagger-api/swagger-ui</span></div></pre></td></tr></table></figure></p>
-<p>目前使用的版本是<strong>3.X</strong> 。唯一不足的没有中文支持。<strong>2.X</strong>是支持中文界面的。大概所有需要文件有，以下是文件目录：</p>
-<p><img src="http://ojle7m433.bkt.clouddn.com/spring-rest05.png" alt="spring-rest05" title="spring-rest05"></p>
-<p>需要修改一下，index.html中引入yaml文件的路径。使用swagger-editor编辑完的yaml代码。copy到对应的 xxx.yaml文件中。</p>
-<p><img src="http://ojle7m433.bkt.clouddn.com/spring-rest06.png" alt="spring-rest06" title="spring-rest06"></p>
-<p>就可以访问该目录下的index.html文件。访问地址：<a href="http://你的项目地址/apiv3/index.hltml" target="_blank" rel="external">http://你的项目地址/apiv3/index.hltml</a></p>
-<p><img src="http://ojle7m433.bkt.clouddn.com/spring-rest07.png" alt="spring-rest07" title="spring-rest07"></p>
-<ol>
-<li>token的验证</li>
-</ol>
-<p>因为后台API接口有token验证，所以文档需要支持token，为了这个折腾了好久。下面是正常的例子。<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安全相关</span></div><div class="line"><span class="attr">securityDefinitions:</span></div><div class="line"><span class="attr">  petstore_auth:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">"oauth2"</span></div><div class="line"><span class="attr">    authorizationUrl:</span> <span class="string">"http://petstore.swagger.io/oauth/dialog"</span></div><div class="line"><span class="attr">    flow:</span> <span class="string">"implicit"</span></div><div class="line"><span class="attr">    scopes:</span></div><div class="line"><span class="attr">      write:</span>pets: <span class="string">"modify pets in your account"</span></div><div class="line"><span class="attr">      read:</span>pets: <span class="string">"read your pets"</span></div><div class="line"><span class="attr">  APIKey:</span></div><div class="line"><span class="attr">    type:</span> <span class="string">"apiKey"</span></div><div class="line"><span class="attr">    name:</span> <span class="string">"token"</span></div><div class="line"><span class="attr">    in:</span> <span class="string">"header"</span></div><div class="line"><span class="attr">security:</span></div><div class="line"><span class="attr">  - APIKey:</span> []</div></pre></td></tr></table></figure></p>
-<p>授权验证：</p>
-<p><img src="http://ojle7m433.bkt.clouddn.com/spring-rest03.png" alt="spring-rest03" title="spring-rest03"></p>
-<p>请求接口：以后所有的请求接口都会带入token值，通过httpheader。</p>
-<p><img src="http://ojle7m433.bkt.clouddn.com/spring-rest04.png" alt="spring-rest04" title="spring-rest04"></p>
-<ol>
-<li>跨域问题</li>
-</ol>
-<p>使用swagger-ui的接口文档访问后台一般都是前后分离部署，就会有跨域问题。解决方法有很多，nginx代理、手动修改Request和response请求类型。最简单的解决方法就是用Tomcat提供的Filter。如果请求的Url会有自定义的属性在httpheader中，需要扩展<strong>cors.allowed.headers</strong>下的属性，例如增加<strong>token</strong></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CorsFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>org.apache.catalina.filters.CorsFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.allowed.origins<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>*<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.allowed.methods<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>GET,POST,PUT,DELETE,HEAD,OPTIONS<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.allowed.headers<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>token,Content-Type,X-Requested-With,accept,Origin,Access-Control-Request-Method,Access-Control-Request-Headers<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.exposed.headers<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>Access-Control-Allow-Origin,Access-Control-Allow-Credentials<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.support.credentials<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>true<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>cors.preflight.maxage<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>10<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CorsFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="使用yaml接口文件，生成html和pdf接口描述文档"><a href="#使用yaml接口文件，生成html和pdf接口描述文档" class="headerlink" title="使用yaml接口文件，生成html和pdf接口描述文档"></a>使用yaml接口文件，生成html和pdf接口描述文档</h2><blockquote>
-<p>待更新</p>
-</blockquote>
-<p><img src="http://ojle7m433.bkt.clouddn.com/spring-rest08.png" alt="spring-rest08" title="spring-rest08"></p>
-<p>## </p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/19/spring/Spring-rest/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
