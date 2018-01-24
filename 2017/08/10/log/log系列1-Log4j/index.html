@@ -84,7 +84,7 @@
 <meta name="description" content="运行过程中配置log4j在java运行过程中，可以通过初始化一个properties文件设置log4j的配置参数。然后通过PropertyConfigurator类将该properties文件加载到log4j运行的配置类中。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="log系列1-log4j">
-<meta property="og:url" content="http://www.star45.xyz/2017/08/10/log/log系列1-Log4j/index.html">
+<meta property="og:url" content="http://star45.coding.me/2017/08/10/log/log系列1-Log4j/index.html">
 <meta property="og:site_name" content="Star45的博客">
 <meta property="og:description" content="运行过程中配置log4j在java运行过程中，可以通过初始化一个properties文件设置log4j的配置参数。然后通过PropertyConfigurator类将该properties文件加载到log4j运行的配置类中。">
 <meta property="og:updated_time" content="2017-08-17T10:07:54.610Z">
@@ -120,7 +120,7 @@
 
 
 
-  <link rel="canonical" href="http://www.star45.xyz/2017/08/10/log/log系列1-Log4j/"/>
+  <link rel="canonical" href="http://star45.coding.me/2017/08/10/log/log系列1-Log4j/"/>
 
 
 
@@ -327,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.star45.xyz/2017/08/10/log/log系列1-Log4j/">
+    <link itemprop="mainEntityOfPage" href="http://star45.coding.me/2017/08/10/log/log系列1-Log4j/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Star45">
@@ -401,7 +401,7 @@
       
         <h3 id="运行过程中配置log4j"><a href="#运行过程中配置log4j" class="headerlink" title="运行过程中配置log4j"></a>运行过程中配置log4j</h3><p>在java运行过程中，可以通过初始化一个properties文件设置log4j的配置参数。然后通过PropertyConfigurator类将该properties文件加载到log4j运行的配置类中。<br><a id="more"></a></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">initLog4j</span><span class="params">()</span> </span>&#123;</div><div class="line">    Properties prop = <span class="keyword">new</span> Properties();</div><div class="line">    prop.setProperty(<span class="string">"log4j.rootLogger"</span>, <span class="string">"DEBUG, CONSOLE"</span>);</div><div class="line">    prop.setProperty(<span class="string">"log4j.appender.CONSOLE"</span>, <span class="string">"org.apache.log4j.ConsoleAppender"</span>);</div><div class="line">    prop.setProperty(<span class="string">"log4j.appender.CONSOLE.layout"</span>, <span class="string">"org.apache.log4j.PatternLayout"</span>);</div><div class="line">    prop.setProperty(<span class="string">"log4j.appender.CONSOLE.layout.ConversionPattern"</span>, <span class="string">"%d&#123;HH:mm:ss,SSS&#125; [%t] %-5p %C&#123;1&#125; : %m%n"</span>);</div><div class="line">    PropertyConfigurator.configure(prop);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>本文出自Star45的博客 <a href="http://www.star45.xyz/2017/08/10/log/log系列1-Log4j/">http://www.star45.xyz/2017/08/10/log/log系列1-Log4j/</a> 欢迎转载，转载请注明出处！</p>
+<p>本文出自Star45的博客 <a href="http://star45.coding.me/2017/08/10/log/log系列1-Log4j/">http://star45.coding.me/2017/08/10/log/log系列1-Log4j/</a> 欢迎转载，转载请注明出处！</p>
 
       
     </div>

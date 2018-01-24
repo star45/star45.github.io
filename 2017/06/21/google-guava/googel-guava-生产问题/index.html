@@ -84,7 +84,7 @@
 <meta name="description" content="Google Guava实际开发遇到的问题总结Guava Lists.transform dubbo请求序列化问题问题引发今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="googel-guava-生产问题">
-<meta property="og:url" content="http://www.star45.xyz/2017/06/21/google-guava/googel-guava-生产问题/index.html">
+<meta property="og:url" content="http://star45.coding.me/2017/06/21/google-guava/googel-guava-生产问题/index.html">
 <meta property="og:site_name" content="Star45的博客">
 <meta property="og:description" content="Google Guava实际开发遇到的问题总结Guava Lists.transform dubbo请求序列化问题问题引发今天遇到一个问题，大概是这样的：使用了guava的Lists.transform对一个ArrayList进行转化后，做一个dubbo的请求参数，发生异常。但是使用原生态的ArrayList是没问题的。">
 <meta property="og:image" content="http://hmkcode.com/wp-content/uploads/2013/06/google-guava.png">
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="http://www.star45.xyz/2017/06/21/google-guava/googel-guava-生产问题/"/>
+  <link rel="canonical" href="http://star45.coding.me/2017/06/21/google-guava/googel-guava-生产问题/"/>
 
 
 
@@ -329,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.star45.xyz/2017/06/21/google-guava/googel-guava-生产问题/">
+    <link itemprop="mainEntityOfPage" href="http://star45.coding.me/2017/06/21/google-guava/googel-guava-生产问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Star45">
@@ -433,7 +433,7 @@
 <p>大概意思：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">  * 该方法返回一个列表，这个列表中元素是运用方法中传入的功能函数(Function)对原列表中的元素进行处理后的结果,</div><div class="line">  * 它是原列表的一个功能视图，任何对原列表的改变将会体现到视图列表中。因为Function函数是不可逆的，</div><div class="line">  * 所以这样的转换是单向的，并且转换的结果不能存储在返回的列表中。</div><div class="line">  * 所有对视图列表的添加（add/addAll）、设置（set）等都是不被支持的。</div><div class="line">  */</div></pre></td></tr></table></figure></p>
 <p>所以说，返回的对象列表是一个视图，其中对它的任何更改都是无效的，并且也不建议对视图对象产生更改，如果需要更改返回的列表，那么需要自己进一步包装，如Lists.newArrayList(retList);<br>如果需要对返回的结果视图进行处理：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">List&lt;String&gt; storeIdsArrayList = Lists.newArrayList(storeIds);</div></pre></td></tr></table></figure></p>
 <p>这样就可以正常的去做为一个rpc请求的参数了。</p>
-<p>本文出自Star45的博客 <a href="http://www.star45.xyz/2017/06/21/google-guava/googel-guava-生产问题/">http://www.star45.xyz/2017/06/21/google-guava/googel-guava-生产问题/</a> 欢迎转载，转载请注明出处！</p>
+<p>本文出自Star45的博客 <a href="http://star45.coding.me/2017/06/21/google-guava/googel-guava-生产问题/">http://star45.coding.me/2017/06/21/google-guava/googel-guava-生产问题/</a> 欢迎转载，转载请注明出处！</p>
 
       
     </div>
